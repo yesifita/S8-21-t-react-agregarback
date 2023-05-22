@@ -1,32 +1,30 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserProvider";
+import { FormState, UserContextType } from "../../types";
+import PopUpConfirm from "./PopUpConfirm";
 
-import {FormState, UserContextType } from "../../types";
-
-
-const Login = () => {
+const Register = () => {
   const { user, setUser } = useContext(UserContext) as UserContextType;
   const [inputValues, setInputValues] = useState<FormState["inputValues"]>({
-    id:'',
+    id: Date.now(),
     usuario: "",
     password: "",
     rol: "",
   });
+  const [visible, setVisible] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogin = () => {
-    setUser([]);
-    navigate("/");
-  };
+  // const handleLogin = () => {
+  //   setUser(true);
+  //   navigate("/");
+  // };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setUser(
-    [...user,
-       inputValues
-      ]);
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement | HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    setUser([...user, inputValues]);
   };
 
   const handleChange = (
@@ -37,9 +35,6 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  useEffect(() => {}, [])
-  
   return (
     <>
       <h2>{user ? "en linea" : "offline"}</h2>
@@ -70,10 +65,6 @@ const Login = () => {
               name="password"
               placeholder="contraseña"
             ></input>
-            <label id="checkbox">
-              Recordarme
-              <input type="checkbox" id="checkbox"></input>
-            </label>
 
             <select
               name="rol"
@@ -92,24 +83,20 @@ const Login = () => {
                 Postulante
               </option>
             </select>
-            <button type="submit"
-              onClick={handleLogin}
+
+            <button
+              type="submit"
               className="w-40 h-8 mb-2 bg-white border-solid border-slate-800 rounded-"
+              onClick={() => setVisible(true)}
             >
-              Iniciar Sesion
+              Aceptar
             </button>
-            <button className="w-48 h-8 mb-2 bg-white border-solid border-slate-800 rounded-xl">
-              Iniciar Sesion con Google
-            </button>
-            <p>¿Olvidaste tu contraseña?</p>
-            <Link to="/Registro">
-              <p>Registra tu usuario</p>
-            </Link>
           </form>
         </div>
+        {visible ? <PopUpConfirm /> : null}
       </div>
     </>
   );
 };
 
-export default Login;
+export default Register;
