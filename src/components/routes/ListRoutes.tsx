@@ -5,6 +5,7 @@ import ProtectedPath from "../protectedPath/ProtectedPath";
 import UserProvider from "../../context/UserProvider";
 import RecDashboard from "../../routes/recDashboard";
 import { Apliccants } from "../../componentes/Apliccants/Apliccants";
+import Profile from "../../componentes/Profile/Profile";
 
 
 const ListRoutes = () => {
@@ -13,8 +14,7 @@ const ListRoutes = () => {
     <>
     <UserProvider>
       <Routes>
-        <Route path="/*" element={<h1>not found</h1>} />
-        <Route
+        <Route path="/*" element={<h1>not found</h1>} />   <Route
       
           path="/recruiter/dashboard"
           element={          
@@ -22,6 +22,11 @@ const ListRoutes = () => {
           
           }
         ></Route>
+<Route
+path='/profile'
+element={<Profile/>}
+></Route>
+
         <Route
             path='/postulantes'
             element={

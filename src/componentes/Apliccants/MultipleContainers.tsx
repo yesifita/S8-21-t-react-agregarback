@@ -1,55 +1,123 @@
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable as DroppableDnd } from 'react-beautiful-dnd';
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { Container } from './Container'
-import { IItemApliccants } from '../../interfaces/IItemApliccants'
+import { IItemApliccant } from '../../interfaces/IItemApliccants'
+import { setContainers } from '../../store/slices/apliccants.slices'
+import { useDispatch } from 'react-redux'
 
 export const MultipleContainers = () => {
-  const containers = useSelector((state: RootState) => state.apliccants.containers)
+  const dispatch = useDispatch()
+  const containers = useSelector((state: RootState) => state.apliccants)
 
-  const handleDeleteApliccant = (containerId: string, item:IItemApliccants) => {
-    console.log('handleDeleteApliccant',{containerId, item}) // TODO: completar funcion 
+  const handleDeleteApliccant = (containerId: string, item:IItemApliccant) => {
+        const updateContainer = containers[containerId].reduce((acc, itemContainer) => {
+      if (itemContainer.id === item.id) {
+        return acc
+      }
+      return [...acc, itemContainer]
+    }, []  as IItemApliccant[])
+    const newContainers = { ...containers, [containerId]: updateContainer }
+    dispatch(setContainers(newContainers))
   }
 
-  const handleDragEnd =  (event:any) =>{
-    console.log('handleDragEnd', event) //TODO: Falta por hacer
+  const getStatus = containerId => {
+    switch (containerId) {
+      case 'guardados':
+        return 'guardados'
+      case 'enProceso':
+        return 'enProceso'
+      case 'readys':
+        return 'ready progress'
+      case 'inTable':
+        return 'in table'
+      case 'payables':
+        return 'payable'
+      default:
+        return 'rejected'
+    }
+  }
+
+  const reorder = (list, startIndex, endIndex) => {
+    const result = [...list]
+    const [removed] = result.splice(startIndex, 1)
+    result.splice(endIndex, 0, removed)
+
+    return result
+  }
+
+   const handleDragEnd = event => {
+    const { source, destination, draggableId } = event
+    if (!destination) return
+    if (source.index === destination.index && source.droppableId === destination.droppableId) {
+      return
+    }
+
+    // Almecenarlos a otro contenedor
+    const sourceList:IItemApliccant[] = containers[source.droppableId]
+    const destinationList = containers[destination.droppableId]
+
+    if (sourceList === destinationList) {
+      const reorderedList = reorder(sourceList, source.index, destination.index)
+      const newItems = { ...containers, [source.droppableId]: reorderedList }
+      dispatch(setContainers(newItems))
+    } else {
+      const sourceClone = Array.from(sourceList)
+      const [draggedItem] = sourceClone.splice(source.index, 1)
+      const destinationClone = Array.from(destinationList)
+      destinationClone.splice(destination.index, 0, draggedItem)
+      const newItems = {
+        ...containers,
+        [source.droppableId]: sourceClone,
+        [destination.droppableId]: destinationClone,
+      }
+      dispatch(setContainers(newItems))
+      const status = getStatus(destination.droppableId)
+
+      // axios
+      //   .put('http://localhost:3001/api/ticket', { _id: draggableId, status })
+      //   .catch(error => console.log(error))
+    }
   }
   return (
     <div style={{ marginTop: '15px' }}>
       <DragDropContext onDragEnd={handleDragEnd}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Container
-            dropId={containers[0].name}
-            title={containers[0].name}
-            items={containers[0].items}
+            dropId={"guardados"}
+            title={"Guardados"}
+            items={containers.guardados}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={containers[1].name}
-            title={containers[1].name}
-            items={containers[1].items}
+            dropId={"enProceso"}
+            title={"En Proceso"}
+            items={containers.enProceso}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={containers[2].name}
-            title={containers[2].name}
-            items={containers[2].items}
+            dropId={"entrevista"}
+            title={"Entrevista"}
+            items={containers.entrevista}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={containers[3].name}
-            title={containers[3].name}
-            items={containers[3].items}
+            dropId={"contratado"}
+            title={"Contratado"}
+            items={containers.contratado}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={containers[4].name}
-            title={containers[4].name}
-            items={containers[4].items}
+            dropId={"noSeleccionado"}
+            title={"No Seleccionado"}
+            items={containers.noSeleccionado}
             handleDeleteApliccant={handleDeleteApliccant}
-          />
+          /> 
         </div>
       </DragDropContext>
     </div>
   )
+
+
+  
 }
