@@ -1,24 +1,25 @@
 import { Draggable } from 'react-beautiful-dnd'
 import trash from '../../assets/icons/fi_trash-2.svg'
 import { FC } from 'react'
-import { IItemApliccants } from '../../interfaces/IItemApliccants'
+import { IItemApliccant } from '../../interfaces/IItemApliccants'
 
 interface ICardContainerProps{
-  item: IItemApliccants,
+  item: IItemApliccant,
   index: number,
   containerId: string,
   
-handleDeleteApliccant: (containerId: string, item: IItemApliccants)=>void
+handleDeleteApliccant: (containerId: string, item: IItemApliccant)=>void
 }
 
 export const CardContainer: FC<ICardContainerProps> = ({ item, index, containerId, handleDeleteApliccant }) => {
+
   return (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {draggableProvided => (
         <div
           style={{
-            width: '100%',
-            border: '0',
+            width: '100%',   
+            border: '1px solid black',
           }}
           {...draggableProvided.draggableProps}
           ref={draggableProvided.innerRef}
