@@ -1,7 +1,10 @@
 input {
-    @apply text-start border-solid border-slate-800 border-2 rounded-xl
+    @apply text-start border-solid border-slate-400 border-2 rounded-xl bg-slate-100 
 }
 
 button{
     @apply bg-white w-12 h-8 border-solid border-slate-800 rounded-xl
+}
+::placeholder{
+    @aplly text-black
 }

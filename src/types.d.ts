@@ -1,8 +1,8 @@
 export interface User {
-  id:number
-  usuario: string;
+  // id:number
+ email: string;
   password: string | number;
-  rol: string;
+  // rol: string;
 }
 
 interface Props{
@@ -18,6 +18,7 @@ export interface FormProps {
 }
 
 export type UserContextType={
+signUp:Array<User>,
 user:Array<User>,
 setUser:(value:Array<User>)=>void
 }

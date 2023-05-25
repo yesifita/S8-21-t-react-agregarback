@@ -1,17 +1,17 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserProvider";
-import { FormState, UserContextType } from "../../types";
+import { useState } from "react";
+import { FormState} from "../../types";
 import PopUpConfirm from "./PopUpConfirm";
+import { useUser } from "../../context/UserProvider";
+
 
 const Register = () => {
-  const { user, setUser } = useContext(UserContext) as UserContextType;
   const [inputValues, setInputValues] = useState<FormState["inputValues"]>({
-    id: Date.now(),
-    usuario: "",
+     email: "",
     password: "",
-    rol: "",
-  });
+    });
   const [visible, setVisible] = useState(false);
+
+  const authUser=useUser()
 
   // const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const Register = () => {
     e: React.FormEvent<HTMLFormElement | HTMLButtonElement>
   ) => {
     e.preventDefault();
-    setUser([...user, inputValues]);
+authUser.register(inputValues.email,inputValues.password)
   };
 
   const handleChange = (
@@ -37,14 +37,14 @@ const Register = () => {
   };
   return (
     <>
-      <h2>{user ? "en linea" : "offline"}</h2>
-      <div
-        className="flex items-center justify-center w-full h-screen bg-slate-400"
+      {/* <h2>{user ? "en linea" : "offline"}</h2> */}
+          <div
+        className="flex items-center justify-center w-full h-screen bg-gradiente1/75 bg-gradient-to-b from-slate-400 to-gradiente1/10"
         id="container"
       >
         <div
           id="content"
-          className="flex flex-col w-4/6 bg-orange-100 h-3/6 justify-content-center rounded-xl"
+          className="flex flex-col w-4/6 bg-white h-3/6 justify-content-center rounded-xl bg-gradient"
         >
           <form
             onSubmit={handleSubmit}
@@ -52,9 +52,9 @@ const Register = () => {
           >
             <input
               onChange={handleChange}
-              value={inputValues.usuario}
+              value={inputValues.email}
               type="email"
-              name="usuario"
+              name="email"
               placeholder="Correo Electronico"
               className="mb-4"
             ></input>
@@ -66,27 +66,9 @@ const Register = () => {
               placeholder="contraseña"
             ></input>
 
-            <select
-              name="rol"
-              defaultValue={inputValues.rol}
-              onChange={handleChange}
-              className="w-32 m-3 text-center border-2 border-solid border-slate-800 rounded-xl"
-            >
-              <option id="" value="">
-                Elige tu rol
-              </option>
-
-              <option id="reclutador" value="reclutador">
-                Reclutador
-              </option>
-              <option id="postulante" value="postulante">
-                Postulante
-              </option>
-            </select>
-
             <button
               type="submit"
-              className="w-40 h-8 mb-2 bg-white border-solid border-slate-800 rounded-"
+              className="w-40 h-8 mb-2 font-semibold text-white border-solid bg-boton border-slate-800 rounded-xl"
               onClick={() => setVisible(true)}
             >
               Aceptar

@@ -2,8 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Login from "../login/Login";
 import Register from "../login/Register";
 import Dashboard from "../dashboard/Dashboard";
-import ProtectedRout from "../protectedRout/ProtectedRout";
+import ProtectedPath from "../protectedPath/ProtectedPath";
 import UserProvider from "../../context/UserProvider";
+
 
 const ListRoutes = () => {
 
@@ -15,9 +16,9 @@ const ListRoutes = () => {
         <Route
           path="/"
           element={
-            <ProtectedRout>
+          
               <Dashboard />
-            </ProtectedRout>
+          
           }
         ></Route>
         <Route path="/login" element={<Login />}></Route>
