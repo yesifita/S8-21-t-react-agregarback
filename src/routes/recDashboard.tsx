@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import CardWelcome from "../componentes/Apliccants/CardWelcome";
 import CardNewJob from "../componentes/Apliccants/CardNewJob";
 import NavMenu from "../componentes/navMenu";
 import CardNewPostulates from "../componentes/Apliccants/CardNewPostulates";
 import CardNewTotals from "../componentes/Apliccants/CardNewTotals";
+import NavLogo from "../componentes/Nav/NavLogo";
 
 
 
@@ -16,21 +16,8 @@ export default function RecDashboard() {
                 <NavMenu/>
             </div>
 
-
-
-
             <div className=" absolute left-20 px-6">
-                <nav>
-                    <Link to={'/'} className="block text-2xl font-bold p-4">Reclutando</Link>
-                    <hr />
-                </nav>
-
-
-
-
-
-
-
+                <NavLogo/>
                 <div className="flex flex-col items-center mx-auto p-4">
                     <div className="flex flex-wrap my-8 w-full">
                         <div className="w-1/2 pr-4">
