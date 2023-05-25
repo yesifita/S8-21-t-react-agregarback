@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import { Droppable } from 'react-beautiful-dnd'
-import { IItemApliccants } from '../../interfaces/IItemApliccants'
+import { IItemApliccant } from '../../interfaces/IItemApliccants'
 import { CardContainer } from './CardContainer'
+import { Droppable } from './Droppable'
 
 interface IContainerProps{
-  items: IItemApliccants[],
+  items: IItemApliccant[],
   title: string,
   dropId: string,
-  handleDeleteApliccant: (containerId: string, item: IItemApliccants)=>void
+  handleDeleteApliccant: (containerId: string, item: IItemApliccant)=>void
 }
 
 
@@ -32,9 +32,9 @@ export const Container:FC<IContainerProps> = ({ items, title, dropId,  handleDel
         }}
       >
         {/* <img src={icon}></img> */}
-        <h3>{title}</h3>
+        <h3>{title} ({items.length})</h3>
       </div>
-      <Droppable droppableId={dropId}>
+      <Droppable dropId={dropId} >
         {droppableProvided => (
           <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
             {items.map((item, index) => {
