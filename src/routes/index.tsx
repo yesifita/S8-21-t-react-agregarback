@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Apliccants } from "../componentes/Apliccants/Apliccants";
+import Profile from "../componentes/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <div>Componente Home</div>
+    path: '/profile',
+    element: <Profile/>
   },
   {path: '/postulantes',
   element: <Apliccants />
