@@ -24,7 +24,7 @@ export default function NavMenu() {
 
     return (
         <div
-        className={`flex justify-center h-screen bg-zinc-200 transition-all duration-300 ${
+        className={`flex fixed justify-center h-screen bg-zinc-200 transition-all duration-300 ${
             isHovered ? 'w-64' : 'w-20'
         }`}
         onMouseEnter={handleNavHover}
@@ -73,7 +73,7 @@ export default function NavMenu() {
                     </Link>
                 </div>
                 <div className='flex flex-col gap-y-3'>
-                    <Link to={'/'} className="flex items-center mb-4">
+                    <Link to={'/profile'} className="flex items-center mb-4">
                         <div className="mr-4 w-6">
                             <img src={iconProfile} alt="" />
                         </div>
