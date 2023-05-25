@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: [ "./index.html",
+  "./src/**/*.{js,ts,jsx,tsx}",],  
+  
   theme: {
     extend: {
       colors: {
+        gradiente1:'#1E1E1E',
+        boton:'#2336DB',
         blanco: "#f0f0f0",
         celeste: "#0077c0",
         celesteCard: "#F2F6FF",

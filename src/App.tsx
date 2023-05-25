@@ -1,16 +1,18 @@
 
-import { database } from './service/firebase';
-import { RouterProvider } from 'react-router-dom';
-import {router} from './routes';
 import { GlobalStyles } from './styles/global'
+import './App.css'
+import ListRoutes from './components/routes/ListRoutes';
 
-console.log(database.app.name)
+
+
 function App() {
 
   return (
-     <div>    
+     <div> 
+     
       <GlobalStyles />
-      <RouterProvider router= {router}/>
+      <ListRoutes/>
+  
      </div>
   )
 }
