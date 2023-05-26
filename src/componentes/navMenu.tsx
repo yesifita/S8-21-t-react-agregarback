@@ -13,8 +13,7 @@ import { useUser } from '../context/UserProvider';
 
 export default function NavMenu() {
     const authUser=useUser();
-    const {displayName}= authUser.user;
-    const handleLogout=()=>{
+        const handleLogout=()=>{
     authUser.logout()
     }
     const [isHovered, setIsHovered] = useState(false);
@@ -29,7 +28,7 @@ export default function NavMenu() {
 
     return (
         <div
-        className={`flex justify-center h-screen bg-zinc-200 transition-all duration-300 ${
+        className={`flex fixed justify-center h-screen bg-zinc-200 transition-all duration-300 ${
             isHovered ? 'w-64' : 'w-20'
         }`}
         onMouseEnter={handleNavHover}

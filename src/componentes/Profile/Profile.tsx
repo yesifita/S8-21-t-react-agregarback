@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import EditIcon from '../../assets/icons/edit.svg';
+import NavMenu from '../navMenu';
+import { Link } from 'react-router-dom';
+import NavLogo from '../Nav/NavLogo';
 
 interface Dates {
     nombre: string;
@@ -33,17 +36,18 @@ export default function Profile() {
         console.log("nuevos dates" , newDates)
     }
 
-    const containerClasses = `flex items-center ${!edit ? 'justify-center' : 'justify-end'} bg-grisClaro w-[30rem] h-44 rounded-xl mt-10`;
+    const containerClasses = `flex items-center ${!edit ? 'justify-center' : 'justify-end'} w-[30rem] h-44 rounded-xl mt-10`;
 
   return (
     <>
-      <div className="absolute bg-azul w-full h-full flex">
-        <div className="bg-grisClaro w-100 h-full  border-2 border-slate-400">Hamburguesa</div>
+      <div className="absolute w-full h-full flex">
+        <div className="w-[5.3rem]"><NavMenu/> </div>
 
-        <div className="w-full h-full bg-azul">
-          <div className="bg-blanco h-20 border-2 border-slate-400">LOGO</div>
+        <div className="w-full h-full">
 
-          <div className="flex bg-blanco h-[54rem]">
+        <NavLogo/>
+
+          <div className="flex justify-around h-[54rem]">
 
             <div className=" ml-14">
 
@@ -61,7 +65,7 @@ export default function Profile() {
                 </div>
 
                 {edit && (
-                    <button className="self-start text-center text-white bg-celeste p-4 rounded-lg w-[3.7rem] transform -translate-x-2 translate-y-2">
+                    <button className="self-start text-center text-white bg-celeste p-4 rounded-lg w-[3.7rem] h-auto transform -translate-x-2 translate-y-2">
                     <img src={EditIcon}/>
                     </button>
                 )}
@@ -77,7 +81,7 @@ export default function Profile() {
                 <div className="w-96 mt-[1.5rem]">
                 <p>A esta dirección te enviaremos las notificaciones sobre el estado de tus empleos publicados, y recuperación de datos.</p>
                 </div>
-                <button className="bg-celeste text-blanco text-center rounded-xl p-4 mt-[2.5rem]">
+                <button className="bg-celeste text-blanco text-center rounded-xl p-4 w-52 h-auto mt-[2.5rem]">
                 <p>Modificar clave y correo</p>
                 </button>
             </div>
@@ -141,7 +145,7 @@ export default function Profile() {
                 <p>Aca una breve descripción de la empresa, que solamente se muestren 3 líneas y el resto de la información se observe cuando la persona vaya a editar esta parte...</p>
                 </div>
 
-                <button className="bg-celeste text-blanco text-center rounded-xl p-4 mt-[2.5rem]" onClick={()=>handlEdit()}>
+                <button className="bg-celeste text-blanco text-center rounded-xl p-4 w-52 h-auto mt-[2.5rem]" onClick={()=>handlEdit()}>
                 <p>Modificar información</p>
                 </button>
 
