@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import iconMenu from '../assets/icons/menu.png'
 import iconDashboard from '../assets/icons/home.png'
 import iconTablero from '../assets/icons/assignment.png'
@@ -10,8 +9,13 @@ import iconProfile from '../assets/icons/profile.png'
 import iconNotificaciones from '../assets/icons/notifications.png'
 import iconAyuda from '../assets/icons/help.png'
 import iconSalir from '../assets/icons/tab_move.png'
+import { useUser } from '../context/UserProvider';
 
 export default function NavMenu() {
+    const authUser=useUser();
+        const handleLogout=()=>{
+    authUser.logout()
+    }
     const [isHovered, setIsHovered] = useState(false);
 
     const handleNavHover = () => {
@@ -74,7 +78,7 @@ export default function NavMenu() {
                 </div>
                 <div className='flex flex-col gap-y-3'>
                     <Link to={'/profile'} className="flex items-center mb-4">
-                        <div className="mr-4 w-6">
+                        <div className="w-6 mr-4">
                             <img src={iconProfile} alt="" />
                         </div>
                         {isHovered && (
@@ -97,12 +101,15 @@ export default function NavMenu() {
                             <p>Ayudar</p>
                         )}
                     </Link>
-                    <Link to={'/'} className="flex items-center mb-4">
+                    <Link to={'/login'} className="flex items-center mb-4">
                         <div className="mr-4">
                             <img src={iconSalir} alt="" />
                         </div>
                         {isHovered && (
-                            <p>Salir</p>
+                              <button onClick={handleLogout} className="">
+                             salir
+                            </button>
+                           
                         )}
                     </Link>
 

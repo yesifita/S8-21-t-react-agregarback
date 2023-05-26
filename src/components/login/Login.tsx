@@ -5,19 +5,16 @@ import { useUser } from "../../context/UserProvider";
 
 
 const Login = () => {
-  // const { user, setUser } = useContext(UserContext) as UserContextType;
   const [inputValues, setInputValues] = useState<FormState["inputValues"]>({
     email: "",
     password: ""  
   });
   const authUser=useUser();
-  const {displaName}=authUser.user
-
   const navigate = useNavigate();
 
   const handleLogin = () => {
     
-navigate ('/')
+navigate ('/recruiter/dashboard')
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
