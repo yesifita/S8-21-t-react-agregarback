@@ -1,3 +1,6 @@
+#group-input{
+    @apply grid grid-cols-2 w-full h-28 gap-10 items-center p-1 pl-4 justify-around
+}
 input {
     @apply text-start border-solid border-slate-400 border-2 rounded-xl bg-slate-100 
 }
