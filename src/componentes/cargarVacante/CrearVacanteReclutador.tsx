@@ -3,21 +3,61 @@ const CrearVacanteReclutador = () => {
   const authUser = useUser()
   return (
     <>
-    <h1>Crear nueva oferta de empleo</h1>
+      <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
       <form
         id="conteiner-job"
-        className="flex flex-col items-center justify-start w-screen h-screen bg-white"
+        className="flex flex-col items-start justify-start w-screen h-screen bg-white"
       >
-        <div className='w-48 h-48 bg-orange-700 rounded-full'>
-          <img>
-          </img>
+        <div className="flex justify-around w-screen ">
+          <div className="items-center justify-center text-center border-2 border-dashed text-xxs border-slate-400 w-87 h-14 rounded-xl">
+            <div className="items-center pl-8">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="18"
+                viewBox="0 -960 960 960"
+                width="18"
+              >
+                <path d="M479.825-313Q467-313 458.5-321.625T450-343v-341l-99 99q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l150-150q5-5 10.133-7 5.134-2 11-2Q486-788 491-786q5 2 10 7l151 151q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9l-99-98v341q0 12.75-8.675 21.375-8.676 8.625-21.5 8.625ZM220-160q-24 0-42-18t-18-42v-113q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T220-333v113h520v-113q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T800-333v113q0 24-18 42t-42 18H220Z" />
+              </svg>{' '}
+            </div>
+            <label className="">
+              subir imagen
+              <input
+                type="file"
+                id="file"
+                name="file"
+                className="h-6 border-2 border-dashed cursor-pointer w-14 rounded-xl border-slate-400 opacity-20"
+              ></input>
+            </label>
+          </div>
+          <div className="flex flex-row ">
+            <div className="justify-center p-4 pl-8 bg-black w-87 h-14 rounded-xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+                fill="white"
+              >
+                <path d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="perfil buscado:UX/UI"
+              className="pl-2 bg-white border-none w-96 h-14"
+            ></input>
+          </div>
         </div>
         <div className="h-screen bg-orange-300">
-          <div id="group-input" >
-            <div className="bg-slate-200">
-              <label>
-                experiencia
+          <div id="group-input">
+            <div className="flex flex-col max-w-sm">
+              <label className="flex flex-col pr-4 text-lg ">
+                Experiencia
                 <select defaultValue="">
+                  <option id="" value="selecciona">
+                    Selecciona nivel de experiencia{' '}
+                  </option>
                   <option id="traine" value="traine">
                     Trainee
                   </option>
@@ -34,18 +74,18 @@ const CrearVacanteReclutador = () => {
               </label>
             </div>
             <div>
-              <h4>Modalidad </h4>
-              <label>Presencial</label>
+              <h4 className="text-lg ">Modalidad </h4>
+              <label className='m-6 ml-0'>Presencial</label>
               <input type="radio" id="presencial" name="modo" value="presencial"></input>
-              <label>Virtual</label>
+              <label  className='m-6 ml-12'>Virtual</label>
               <input type="radio" id="hibrido" name="modo" value="hibrido"></input>
-              <label>Hibrido</label>
+              <label  className='m-6 ml-12'>Hibrido</label>
               <input type="radio" id="virtual" name="modo" value="virtual"></input>
             </div>
           </div>
           <div id="group-input">
             <div className="bg-slate-200">
-              <label>Ubicacion</label>
+              <label className="flex flex-col text-xl">Ubicacion</label>
               <select defaultValue="">
                 <option id="cordoba" value="cordoba">
                   cordoba
@@ -79,14 +119,14 @@ const CrearVacanteReclutador = () => {
               </select>
             </div>
           </div>
-         {/* ----------------------------------------------------------------------------- */}
+          {/* ----------------------------------------------------------------------------- */}
 
-          <div id="group-input" >
-            <div className="flex flex-col ">
+          <div id="group-input">
+            <div className="flex flex-col">
               <label>Breve descripcipn del puesto</label>
               <textarea className="w-64 h-36 bg-slate-200"></textarea>
             </div>
-            <div className='flex flex-col bg-white'>
+            <div className="flex flex-col bg-white">
               <div className="flex flex-col mb-10 bg-red-400">
                 <h4>Requerimientos del puesto </h4>
                 <div className="flex-row">
@@ -147,7 +187,7 @@ const CrearVacanteReclutador = () => {
               </div>
             </div>
           </div>
-         
+
           <div id="group-input">
             <div className="flex flex-col mt-20">
               <h4 className="pb-2">Beneficios</h4>

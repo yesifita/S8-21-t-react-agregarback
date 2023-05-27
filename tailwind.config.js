@@ -17,6 +17,12 @@ export default {
         grisClaro: "#dfdddd",
         grisOscuro: "#636262",
       },
+      spacing: {
+        87:'87px'
+      },
+      fontSize: {
+        xxs:'10px'
+      }
     },
   },
   plugins: [],
