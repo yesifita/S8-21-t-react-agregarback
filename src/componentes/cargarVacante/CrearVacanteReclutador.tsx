@@ -1,4 +1,14 @@
 import { useUser } from '../../context/UserProvider'
+import imgupload from '../../assets/icons/upload_img.svg'
+import imgIconPerson from '../../assets/icons/icon_person_form_createJob.svg'
+import vacaciones from '../../assets/icons/vacaciones_beneficios.svg'
+import service from '../../assets/icons/service_beneficios.svg'
+import computadora from '../../assets/icons/computer_beneficios.svg'
+import horario from '../../assets/icons/clock_beneficios.svg'
+import bebidas from '../../assets/icons/tapas_beneficios.svg'
+import prepaga from '../../assets/icons/prepaga_beneficios.svg'
+import platzi from '../../assets/icons/platzi_beneficios.svg'
+import clases from '../../assets/icons/clases_beneficios.svg'
 const CrearVacanteReclutador = () => {
   const authUser = useUser()
   return (
@@ -11,14 +21,7 @@ const CrearVacanteReclutador = () => {
         <div className="flex justify-around w-screen ">
           <div className="items-center justify-center text-center border-2 border-dashed text-xxs border-slate-400 w-87 h-14 rounded-xl">
             <div className="items-center pl-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="18"
-                viewBox="0 -960 960 960"
-                width="18"
-              >
-                <path d="M479.825-313Q467-313 458.5-321.625T450-343v-341l-99 99q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l150-150q5-5 10.133-7 5.134-2 11-2Q486-788 491-786q5 2 10 7l151 151q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9l-99-98v341q0 12.75-8.675 21.375-8.676 8.625-21.5 8.625ZM220-160q-24 0-42-18t-18-42v-113q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T220-333v113h520v-113q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T800-333v113q0 24-18 42t-42 18H220Z" />
-              </svg>{' '}
+              <img src={imgupload}></img>
             </div>
             <label className="">
               subir imagen
@@ -32,15 +35,7 @@ const CrearVacanteReclutador = () => {
           </div>
           <div className="flex flex-row ">
             <div className="justify-center p-4 pl-8 bg-black w-87 h-14 rounded-xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24"
-                viewBox="0 -960 960 960"
-                width="24"
-                fill="white"
-              >
-                <path d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Z" />
-              </svg>
+              <img src={imgIconPerson}></img>
             </div>
             <input
               type="text"
@@ -75,11 +70,11 @@ const CrearVacanteReclutador = () => {
             </div>
             <div>
               <h4 className="text-lg ">Modalidad </h4>
-              <label className='m-6 ml-0'>Presencial</label>
+              <label className="m-6 ml-0">Presencial</label>
               <input type="radio" id="presencial" name="modo" value="presencial"></input>
-              <label  className='m-6 ml-12'>Virtual</label>
+              <label className="m-6 ml-12">Virtual</label>
               <input type="radio" id="hibrido" name="modo" value="hibrido"></input>
-              <label  className='m-6 ml-12'>Hibrido</label>
+              <label className="m-6 ml-12">Hibrido</label>
               <input type="radio" id="virtual" name="modo" value="virtual"></input>
             </div>
           </div>
@@ -190,92 +185,123 @@ const CrearVacanteReclutador = () => {
 
           <div id="group-input">
             <div className="flex flex-col mt-20">
-              <h4 className="pb-2">Beneficios</h4>
+              <h4 className="pb-4">Beneficios</h4>
 
-              <div className="grid grid-cols-3 gap-x-96 gap-y-12">
-                <label className="w-48 ml-2 bg-red-500 text-start">
+              <div className="grid grid-cols-3 gap-x-96 gap-y-6">
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={horario} className='ml-2'></img>
+                <label className="w-48 pl-1 ml-2">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
-                  horario flexible
-                </label>
-                <label className="w-48 ml-56 bg-red-500 text-start">
+                  Horario flexible
+                </label></div>
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={clases} className='ml-56 '></img>
+                <label className="w-48 ml-56">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
                   Clases de Ingles
-                </label>
-                <label className="w-48 bg-red-500 ml-72 text-start">
+                </label></div>
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={bebidas} className=' ml-72'></img>
+                <label className="w-48 pl-1 ml-72">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
                   Bebidas y Snack
                 </label>
-                <label className="w-48 ml-2 bg-red-500 text-start">
+                </div>
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={computadora} className='ml-2'></img>
+                <label className="w-48 pl-1 ml-2">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
                   Computadora
                 </label>
-                <label className="w-48 ml-56 bg-red-500 text-start">
+                </div>
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={prepaga} className='ml-56'></img>
+                <label className="w-48 pr-1 ml-56">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
                   Cobertura Prepaga
                 </label>
-                <label className="w-48 bg-red-500 ml-72 text-start">
+                </div>
+                <div className='grid h-6 grid-rows-1 '>
+                  <img src={service} className='ml-72'></img>
+                <label className="w-56 pr-1 ml-72 ">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
+                    className="ml-6 mr-2 text-base font-normal"
                   ></input>{' '}
                   Servicio Tecnico para PC
                 </label>
-                <label className="w-48 ml-2 bg-red-500 text-start">
+                </div>
+                <div className='grid h-6 grid-rows-1'>
+                  <img src={vacaciones} className='ml-2'></img>
+                <label className="w-48 pr-1 ml-2 ">
                   <input
                     type="checkbox"
                     id="requerimiento"
                     name="requerimientos"
                     value="js"
-                  ></input>{' '}
+                    className="ml-6 mr-2 text-base font-normal"
+                  ></input>
                   Vacaciones Extras
                 </label>
-                <label className="w-48 ml-56 bg-red-500 text-start">
-                  <input
-                    type="checkbox"
-                    id="requerimiento"
-                    name="requerimientos"
-                    value="js"
-                  ></input>{' '}
-                  Descuentos en Platzi
-                </label>
+                </div>
+                <div className="grid h-6 grid-rows-1 bg-slate-200">
+                  <img src={platzi} className="ml-56"></img>
+
+                  <label className="pr-1 ml-56 w-72">
+                    <input
+                      type="checkbox"
+                      id="requerimiento"
+                      name="requerimientos"
+                      value="js"
+                      className="ml-6 mr-2 text-base font-normal"
+                    ></input>
+                    Descuentos en Platzi
+                  </label>
+                </div>
               </div>
               <div>
-                <label>
-                  <input type="checkbox"></input>Acepto termino y condiciones
-                </label>
+                <label className='bg-red-400 '>
+                  <input type="checkbox" className='mt-12 ml-4'></input>Acepto termino y condiciones
+                  </label>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-row justify-around w-screen bg-slate-500">
+        <div className="flex flex-row justify-around w-screen pt-4 mt-2 ">
           <button className="w-48 h-12 bg-blue-400 ">Publicar Oferta</button>
           <button className="w-48 h-12 bg-blue-400 ">cancelar</button>
         </div>

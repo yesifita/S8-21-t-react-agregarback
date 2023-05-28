@@ -1,9 +1,9 @@
 #group-input{
     @apply grid grid-cols-2 w-full h-28 gap-10 items-center p-1 pl-4 justify-around
 }
-input {
+/* input {
     @apply text-start border-solid border-slate-400 border-2 rounded-xl bg-slate-100 
-}
+} */
 
 button{
     @apply bg-white w-12 h-8 border-solid border-slate-800 rounded-xl
