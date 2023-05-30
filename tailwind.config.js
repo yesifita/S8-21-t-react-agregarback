@@ -6,6 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        primaryBlueDark: '#070729',
+        primaryGreen : '#69BA00',
+        secundaryGreyLight: '#F7F7F7',
+        secundaryGreyLight2: '#E6E6E6',
+        secundaryViolet: '#473E83',
         gradiente1:'#1E1E1E',
         boton:'#2336DB',
         blanco: "#f0f0f0",

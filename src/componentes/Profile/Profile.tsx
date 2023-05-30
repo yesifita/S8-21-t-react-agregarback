@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import EditIcon from '../../assets/icons/edit.svg';
-import NavMenu from '../navMenu';
+import NavMenu from '../Nav/NavMenu';
 import { Link } from 'react-router-dom';
 import NavLogo from '../Nav/NavLogo';
 
