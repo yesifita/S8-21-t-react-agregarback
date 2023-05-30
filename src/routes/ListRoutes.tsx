@@ -9,6 +9,7 @@ import Profile from '../componentes/Profile/Profile'
 import CrearVacanteReclutador from '../componentes/cargarVacante/CrearVacanteReclutador'
 
 
+
 const ListRoutes = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const ListRoutes = () => {
           <Route path="/postulantes" element={<Apliccants />}></Route>
           <Route path="/registro" element={<Register />}></Route>
           <Route path="/empleo" element={<CrearVacanteReclutador/>}></Route>
+          
          
         </Routes>
       </UserProvider>

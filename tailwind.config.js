@@ -14,6 +14,7 @@ export default {
         skyblue:'#008BEA',
       },
       spacing: {
+        84:'84px',
         87: '87px',
         134:'134px',
         182:"182px",
@@ -21,11 +22,16 @@ export default {
         253: '253px',
         325:'325px',
         327: '327px',
+        360:'360px',
+        450:'450px',
         505:'505px',
       },
       fontSize: {
         xxs: '10px',
       },
+      backgroundSize: {
+        25:'25%'
+      }
     },
   },
   plugins: [],

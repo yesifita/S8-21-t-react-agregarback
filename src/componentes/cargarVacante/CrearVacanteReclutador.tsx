@@ -11,51 +11,124 @@ import platzi from '../../assets/icons/platzi_beneficios.svg'
 import clases from '../../assets/icons/clases_beneficios.svg'
 import close from '../../assets/icons/close X.svg'
 import { Link } from 'react-router-dom'
+import Loader from '../loader/Loader'
+import { useState } from 'react'
+
 
 const CrearVacanteReclutador = () => {
-  const authUser = useUser()
+ 
+  const [loading, setLoading] = useState(false)
+
+  const [inputCheck, setInputCheck] = useState({
+    requerimientos: {
+      vsc: false,
+      php: false,
+      eclipse: false,
+      figma: false,
+      java: false,
+      ds: false,
+      reactnative: false,
+      react: false,
+      node: false,
+    },
+    beneficios: {
+      horario: false,
+      ingles: false,
+      bebidas: false,
+      computadora: false,
+      prepaga: false,
+      service: false,
+      vacaciones: false,
+      platzi: false,
+    },
+    acuerdo: true,
+  })
+  const [inputValues, setInputValues] = useState({
+    imagen: '',
+    empresa: '',
+    puesto: '',
+    experiencia: '',
+    modo: '',
+    ciudades: '',
+    salario: '',
+    textarea: '',
+    ingles: '',
+  })
+  // :React.FormEvent<HTMLFormElement>
+  const handleSubmit = e => {
+    e.preventDefault(), setLoading(true)
+    setInputValues
+    setInputCheck
+  }
+  // : React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  const handleChange = e => {
+    setInputValues({
+      ...inputValues,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleChangeChecked = e => {
+    console.log(e)
+    setInputCheck({
+      ...inputCheck,
+      [e.target.name]: e.target.checked,
+    })
+  }
+  console.log(setInputCheck)
   return (
     <>
-      <div id="header_container" className="flex justify-between w-full pt-1 flex-cols-2">
+      <div>
+      {loading && <Loader />}
+      <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
         <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
         <Link to="/recruiter/dashboard">
           <button className="mr-6 w-14 h-14 bg- bg-secondary_grey">
-            <img src={close} className="p-4 "></img>
+            <img src={close} className="w-full h-full p-4"></img>
           </button>
         </Link>
       </div>
       <form
+        onSubmit={handleSubmit}
         id="conteiner-form"
         className="flex flex-col items-start justify-start w-full h-full bg-white"
       >
         <div id="conteiner_upload_image" className="flex flex-row w-full">
           <div id="conteiner_ imput_img" className="flex ml-20 flex-rows ">
             <div className="items-center justify-center text-center border-2 border-dashed text-xxs border-slate-400 w-87 h-14 rounded-xl">
-              <div className="items-center pl-8 ">
+              <div className="items-center pt-1 pb-2 pl-8">
                 <img src={imgupload}></img>
               </div>
-              <label className="">
+              <label className="h-6 text-xs font-bold cursor-pointer">
                 subir imagen
                 <input
+                  onChange={handleChange}
                   type="file"
-                  id="file"
-                  name="file"
-                  className="h-6 border-2 border-dashed cursor-pointer w-14 rounded-xl border-slate-400 opacity-20"
+                  id="imagen"
+                  name="imagen"
+                  className="hidden border-2 border-dashed r w-14 rounded-xl border-slate-400 opacity-20"
                 ></input>
+                <img src="" alt="" className="z-50 bg-center bg-no-repeat bg-cover"></img>
               </label>
             </div>
             <input
               type="text"
+              name="empresa"
+              value={inputValues.empresa}
+              onChange={handleChange}
               className="w-64 ml-4 border-b-2 border-slate-500"
               placeholder="Ingrese el nombre de su empresa"
             ></input>
           </div>
-          <div className="flex flex-row ml-505">
+          <div className="flex flex-row ml-360">
             <div className="justify-center p-4 pl-8 bg-black w-87 h-14 rounded-xl">
               <img src={imgIconPerson}></img>
             </div>
             <input
               type="text"
+              name="puesto"
+              value={inputValues.puesto}
+              onChange={handleChange}
               placeholder="Perfil buscado:UX/UI"
               className="w-64 pr-2 ml-4 bg-white border-b-2 border-slate-500 h-14"
             ></input>
@@ -67,10 +140,12 @@ const CrearVacanteReclutador = () => {
             <div className="flex flex-col max-w-sm ">
               <label className="pb-2 pr-4 text-xl font-medium ">Experiencia</label>
               <select
-                defaultValue=""
+                defaultValue={inputValues.experiencia}
+                onChange={handleChange}
+                name="experiencia"
                 className="items-center px-6 pr-2 text-white w-327 h-14 bg-primary rounded-xl"
               >
-                <option id="" value="selecciona">
+                <option id="" value="">
                   Selecciona nivel de experiencia
                 </option>
                 <option id="traine" value="traine">
@@ -91,8 +166,9 @@ const CrearVacanteReclutador = () => {
               <h4 className="pb-2 text-xl font-medium">Modalidad </h4>
               <label className="pl-0 mr-4 text-base font-normal">
                 <input
+                  onChange={handleChange}
                   type="radio"
-                  id="presencial"
+                  id={inputValues.modo}
                   name="modo"
                   value="presencial"
                   className="mr-2"
@@ -101,20 +177,22 @@ const CrearVacanteReclutador = () => {
               </label>
               <label className="pl-12 mr-4 text-base font-normal">
                 <input
+                  onChange={handleChange}
                   type="radio"
-                  id="hibrido"
+                  value="virtual"
                   name="modo"
-                  value="hibrido"
+                  id={inputValues.modo}
                   className="mr-2"
                 ></input>
                 Virtual
               </label>
               <label className="pl-12 mr-4 text-base font-normal">
                 <input
+                  onChange={handleChange}
                   type="radio"
-                  id="virtual"
+                  id={inputValues.modo}
+                  value="hibrido"
                   name="modo"
-                  value="virtual"
                   className="mr-2"
                 ></input>
                 Hibrido
@@ -125,9 +203,14 @@ const CrearVacanteReclutador = () => {
             <div className="flex flex-col ">
               <label className="pb-2 text-xl font-medium">Ubicacion del Empleo</label>
               <select
-                defaultValue=""
+                onChange={handleChange}
+                defaultValue={inputValues.ciudades}
+                name="ciudades"
                 className="items-center px-6 pr-2 text-white w-327 h-14 bg-primary rounded-xl"
               >
+                <option id="" value="">
+                  Elije ciudad
+                </option>
                 <option id="cordoba" value="cordoba">
                   cordoba
                 </option>
@@ -142,11 +225,13 @@ const CrearVacanteReclutador = () => {
             <div className="flex flex-col">
               <label className="pb-2 text-xl font-medium">Salario </label>
               <select
-                defaultValue=""
+                onChange={handleChange}
+                defaultValue={inputValues.salario}
+                name="salario"
                 className="items-center px-6 pr-2 text-white w-253 h-14 bg-primary rounded-xl"
                 placeholder="Seleciona un rango"
               >
-                <option id="0" value="0">
+                <option id="" value="">
                   Seleciona un rango
                 </option>
                 <option id="0" value="0">
@@ -177,6 +262,10 @@ const CrearVacanteReclutador = () => {
                 enfrentará?
               </p>
               <textarea
+                // type='text'
+                onChange={handleChange}
+                name="textarea"
+                value={inputValues.textarea}
                 className="h-56 pt-2 pl-3 border-2 resize-none w-325 border-secondary rounded-xl"
                 placeholder="Las tareas que tendras que realizar a diario..."
               ></textarea>
@@ -184,87 +273,100 @@ const CrearVacanteReclutador = () => {
             <div className="flex flex-col h-56 mb-12 ">
               <div className="flex flex-col pb-6">
                 <h4 className="pb-2 text-xl font-medium">Requerimientos del puesto </h4>
-                <p className='text-base font-normal'>¿Qué perfil técnico y herramientas debería manejar el/la postulante? ¿Cuáles son las skills para este puesto?</p>
+                <p className="pb-1 pr-48 text-base font-normal">
+                  ¿Qué perfil técnico y herramientas debería manejar el/la postulante? ¿Cuáles son
+                  las skills para este puesto?
+                </p>
                 <div id="requerimientos" className="grid grid-cols-3 pt-2">
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="vsc"
                       name="requerimientos"
-                      value="js"
+                      defaultChecked={inputCheck.requerimientos.vsc}
                       className="mr-3"
                     ></input>
                     Visual studio code
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="php"
                       name="requerimientos"
-                      value="js"
+                      value="php"
+                      defaultChecked={inputCheck.requerimientos.php}
                     ></input>{' '}
                     PHP
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="eclipse"
                       name="requerimientos"
-                      value="js"
+                      defaultChecked={inputCheck.requerimientos.eclipse}
                     ></input>{' '}
                     Eclipse
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="figma"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.figma}
                     ></input>{' '}
-                    FIgma
+                    Figma
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="ds"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.ds}
                     ></input>{' '}
                     Design Thinking
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="java"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.java}
                     ></input>{' '}
                     Java
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="reactnative"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.reactnative}
                     ></input>{' '}
                     React Native
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="react"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.react}
                     ></input>{' '}
                     React
                   </label>
                   <label>
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
+                      id="node"
                       name="requerimientos"
-                      value="js"
+                      checked={inputCheck.requerimientos.node}
                     ></input>{' '}
                     Node Js
                   </label>
@@ -272,18 +374,23 @@ const CrearVacanteReclutador = () => {
               </div>
               <div className="flex flex-col">
                 <label className="pb-2 text-xl font-medium">Nivel Ingles </label>
-                <select className="items-center px-6 pr-2 text-white w-253 h-14 bg-primary rounded-xl">
+                <select
+                  onChange={handleChange}
+                  name="ingles"
+                  defaultValue={inputValues.ingles}
+                  className="items-center px-6 pr-2 text-white w-253 h-14 bg-primary rounded-xl"
+                >
                   <option id="notiene" value="notiene">
-                    No requiere
+                    No requiere experincia
                   </option>
                   <option id="ados" value="ados">
-                    A2
+                    A2-Principiante
                   </option>
                   <option id="bdos" value="bdos">
-                    B2
+                    B2-Intermedio
                   </option>
                   <option id="cuno" value="cuno">
-                    C1
+                    C1-Avanzado
                   </option>
                 </select>
               </div>
@@ -297,10 +404,11 @@ const CrearVacanteReclutador = () => {
                   <img src={horario} className="ml-10"></img>
                   <label className="w-48 pl-6 ml-5">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="horario"
-                      name="requerimientos"
-                      value="horario"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.horario}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>{' '}
                     Horario flexible
@@ -310,10 +418,11 @@ const CrearVacanteReclutador = () => {
                   <img src={clases} className="ml-36 "></img>
                   <label className="w-48 ml-36">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="ingles"
-                      name="requerimientos"
-                      value="ingles"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.ingles}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>{' '}
                     Clases de Ingles
@@ -323,10 +432,11 @@ const CrearVacanteReclutador = () => {
                   <img src={bebidas} className="ml-48 "></img>
                   <label className="w-48 pl-1 ml-48">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
-                      id="requerimiento"
-                      name="requerimientos"
-                      value="js"
+                      id="bebidas"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.bebidas}
                       className="ml-5 mr-2 text-base font-normal"
                     ></input>{' '}
                     Bebidas y Snack
@@ -336,10 +446,11 @@ const CrearVacanteReclutador = () => {
                   <img src={computadora} className="ml-10"></img>
                   <label className="w-48 pl-1 ml-10">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="computadora"
-                      name="requerimientos"
-                      value="computadora"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.computadora}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>{' '}
                     Computadora
@@ -349,10 +460,11 @@ const CrearVacanteReclutador = () => {
                   <img src={prepaga} className="ml-36"></img>
                   <label className="w-48 pr-1 ml-36">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="prepaga"
-                      name="requerimientos"
-                      value="prepaga"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.prepaga}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>{' '}
                     Cobertura Prepaga
@@ -362,10 +474,11 @@ const CrearVacanteReclutador = () => {
                   <img src={service} className="ml-48"></img>
                   <label className="pr-1 ml-48 ">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="service"
-                      name="requerimientos"
-                      value="service"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.service}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>{' '}
                     Servicio Tecnico para PC
@@ -375,10 +488,11 @@ const CrearVacanteReclutador = () => {
                   <img src={vacaciones} className="ml-10"></img>
                   <label className="w-48 pl-1 ml-10 ">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="vacaciones"
-                      name="requerimientos"
-                      value="vacaciones"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.vacaciones}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>
                     Vacaciones Extras
@@ -389,36 +503,49 @@ const CrearVacanteReclutador = () => {
 
                   <label className="pr-1 ml-36 w-72">
                     <input
+                      onChange={handleChangeChecked}
                       type="checkbox"
                       id="platzi"
-                      name="requerimientos"
-                      value="platzi"
+                      name="beneficios"
+                      checked={inputCheck.beneficios.platzi}
                       className="ml-6 mr-2 text-base font-normal"
                     ></input>
                     Descuentos en Platzi
                   </label>
                 </div>
               </div>
-              <div className="h-6 pt-6 pb-0 mb-0">
+              <div className="h-6 pt-6 pb-0 mb-0 ">
                 <label className="text-xl font-medium ">
-                  <input type="checkbox" className="ml-16 mr-2 "></input>He leido y
-                  estoy de acuerdo con la politica de Reclutando
+                  <input
+                    onChange={handleChangeChecked}
+                    type="checkbox"
+                    id="acuerdo"
+                    name="acuerdo"
+                    checked
+                    defaultChecked={inputCheck.acuerdo}
+                    className="ml-16 mr-2"
+                  ></input>
+                  He leido y estoy de acuerdo con la politica de Reclutando
                 </label>
+                <p className="text-xs font-normal pl-84">
+                  Tu anuncio de empleo será revisado y publicado en nuestro sitio.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-around w-full pt-16">
-          <Link to='/recruiter/dashboard'>
-          <button className="w-48 h-12 text-base font-medium bg-white border-2 border-skyblue text-skyblue">
-            Cancelar
-          </button>
+        <div className="flex flex-row justify-around w-full pt-16 pb-8 pl-12 pr-20">
+          <Link to="/recruiter/dashboard">
+            <button className="w-48 h-12 text-base font-medium bg-white border-2 border-skyblue text-skyblue">
+              Cancelar
+            </button>
           </Link>
           <button className="w-48 h-12 text-base font-medium text-white bg-primary_green">
             Publicar Oferta
           </button>
         </div>
       </form>
+      </div>
     </>
   )
 }
