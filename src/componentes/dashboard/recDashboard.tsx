@@ -1,9 +1,9 @@
-import CardWelcome from "../componentes/Apliccants/CardWelcome";
-import CardNewJob from "../componentes/Apliccants/CardNewJob";
-import NavMenu from "../componentes/navMenu";
-import CardNewPostulates from "../componentes/Apliccants/CardNewPostulates";
-import CardNewTotals from "../componentes/Apliccants/CardNewTotals";
-import NavLogo from "../componentes/Nav/NavLogo";
+import CardWelcome from "../Apliccants/CardWelcome";
+import CardNewJob from "../Apliccants/CardNewJob";
+import NavMenu from "../navMenu";
+import CardNewPostulates from "../Apliccants/CardNewPostulates";
+import CardNewTotals from "../Apliccants/CardNewTotals";
+import NavLogo from "../Nav/NavLogo";
 
 
 export default function RecDashboard() {
@@ -16,7 +16,7 @@ export default function RecDashboard() {
                 <NavMenu/>
             </div>
 
-            <div className="absolute px-6  left-20">
+            <div className="absolute px-6 left-20">
                 <NavLogo/>
                 <div className="flex flex-col items-center p-4 mx-auto">
                     <div className="flex flex-wrap w-full my-8">

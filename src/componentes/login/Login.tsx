@@ -1,41 +1,36 @@
-import { Link, useNavigate } from "react-router-dom";
-import {  useState } from "react";
-import { FormState } from "../../types";
-import { useUser } from "../../context/UserProvider";
-
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { FormState } from '../../types'
+import { useUser } from '../../context/UserProvider'
 
 const Login = () => {
-  const [inputValues, setInputValues] = useState<FormState["inputValues"]>({
-    email: "",
-    password: ""  
-  });
-  const authUser=useUser();
-  const navigate = useNavigate();
+  const [inputValues, setInputValues] = useState<FormState['inputValues']>({
+    email: '',
+    password: '',
+  })
+  const authUser = useUser()
+  const navigate = useNavigate()
 
   const handleLogin = () => {
-    
-navigate ('/recruiter/dashboard')
-  };
+    navigate('/recruiter/dashboard')
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-authUser.login(inputValues.email,inputValues.password)
+    e.preventDefault()
+    authUser.login(inputValues.email, inputValues.password)
+  }
 
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setInputValues({
       ...inputValues,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
-const handleGoogle=(e:React.MouseEvent<HTMLButtonElement>)=>{
-  e.preventDefault();
-authUser.loginGoogle();
-}
+  const handleGoogle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    authUser.loginGoogle()
+  }
   return (
     <>
       {/* <h2>{user ? "en linea" : "offline"}</h2> */}
@@ -56,7 +51,6 @@ authUser.loginGoogle();
               value={inputValues.email}
               type="email"
               name="email"
-              id=""
               placeholder="Correo Electronico"
               className="mb-4"
             ></input>
@@ -70,8 +64,8 @@ authUser.loginGoogle();
             <label id="checkbox">
               Recordarme
               <input type="checkbox" id="checkbox"></input>
-            </label>            
-        
+            </label>
+
             <button
               type="submit"
               onClick={handleLogin}
@@ -79,7 +73,10 @@ authUser.loginGoogle();
             >
               Iniciar Sesion
             </button>
-            <button onClick={handleGoogle} className="w-48 h-8 mb-2 text-white border-solid border-slate-800 rounded-xl bg-boton">
+            <button
+              onClick={handleGoogle}
+              className="w-48 h-8 mb-2 text-white border-solid border-slate-800 rounded-xl bg-boton"
+            >
               Iniciar Sesion con Google
             </button>
             <p>¿Olvidaste tu contraseña?</p>
@@ -90,7 +87,7 @@ authUser.loginGoogle();
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

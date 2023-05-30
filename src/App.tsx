@@ -1,19 +1,11 @@
-
-import { GlobalStyles } from './styles/global'
 import './App.css'
-import ListRoutes from './components/routes/ListRoutes';
-
-
+import ListRoutes from '../src/routes/ListRoutes'
 
 function App() {
-
   return (
-     <div> 
-     
-      <GlobalStyles />
-      <ListRoutes/>
-  
-     </div>
+    <div>
+      <ListRoutes />
+    </div>
   )
 }
 

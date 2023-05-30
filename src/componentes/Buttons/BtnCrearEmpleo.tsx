@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function BtnCrearEmpleo() {
     return (
         <Link 
-            to={'/'} 
-            className="bg-zinc-300 p-4 rounded-xl block w-48 text-center"
+            to={'/empleo'} 
+            className="block w-48 p-4 text-center bg-zinc-300 rounded-xl"
         >
             Crear nuevo empleo
         </Link>

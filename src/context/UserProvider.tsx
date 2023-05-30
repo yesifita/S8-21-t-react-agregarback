@@ -27,7 +27,7 @@ const UserProvider = (props: Props) => {
         setUser(currentUser);
       }
     });
-    return () => suscribed;
+    return suscribed;
   }, []);
 
   // const navigate = useNavigate();
