@@ -6,16 +6,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        gradiente1:'#1E1E1E',
-        boton:'#2336DB',
-        blanco: "#f0f0f0",
-        celeste: "#0077c0",
-        celesteCard: "#F2F6FF",
-        azul: "#0022aa",
-        negroClaro: "#161616",
-        negroOscuro: "#0e0e0e",
-        grisClaro: "#dfdddd",
-        grisOscuro: "#636262",
+        colorPrimario:'#070729',
+        botonesPrincipales:'#69BA00',
+        botonesHover:'#518f01',
+        botonesSecundarios: "#473E83",
+        blanco: "#FFFFFF",
+        bgCARDS: "#F7F7F7",
+        negro: "#000000",
+        grisTexto: "#616161",
+        grisOptions: "#E6E6E6",
+        rojo: "#D6142C"
       },
     },
   },
