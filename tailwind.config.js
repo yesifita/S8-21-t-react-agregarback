@@ -9,9 +9,15 @@ export default {
         boton: '#2336DB',
         secondary: '#666565',
         secondary_grey: '#F7F7F7',
-        primary: '#070729',
-        primary_green:' #69BA00',
+        primary: '#070729',       
         skyblue:'#008BEA',
+        colorPrimario:'#070729',
+        botonesPrincipales:'#69BA00',
+        botonesHover:'#518f01',
+        botonesSecundarios: "#473E83",       
+        grisTexto: "#616161",
+        grisOptions: "#E6E6E6",
+        rojo: "#D6142C"
       },
       spacing: {
         84:'84px',
