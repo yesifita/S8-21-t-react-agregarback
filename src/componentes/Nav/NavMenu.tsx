@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useUser } from '../../context/UserProvider';
 import cerrarsesion from '../../assets/icons/cerrar_sesion_nav.svg'
-import tablero from '../../assets/icons/asssigment.svg'
+import tablero from '../../assets/icons/tablero_nav.svg'
 import preguntas from '../../assets/icons/preguntas_nav.svg'
 import menu from '../../assets/icons/menu_dasboard.svg'
 import perfil from '../../assets/icons/icono_perfil_nav.svg'
-import home from '../../assets/icons/home.png'
+import home from '../../assets/icons/home_icon_nav.svg'
+import notificacion from '../../assets/icons/notificacion_nav.svg'
+import empleo from '../../assets/icons/empleo_nav.svg'
 
 
 const NavMenu = () => {
@@ -32,7 +34,7 @@ const NavMenu = () => {
             >
                 <div className="flex px-4">
                     {isMenuOpen ? (
-                        <img src={cerrarsesion} className="text-3xl text-white" />
+                        <img src={menu} className="text-3xl text-white" />
                     ) : (
                         < img src={menu} className="text-2xl text-white" />
                     )}
@@ -91,9 +93,9 @@ const NavMenu = () => {
                     >
                         <Link to={"/empleo"} className="flex px-4">
                             {isMenuOpen ? (
-                                <img src={menu} className="text-2xl text-white" />
+                                <img src={empleo} className="text-2xl text-white" />
                             ) : (
-                                <img src={menu} className="text-2xl text-white" />
+                                <img src={empleo} className="text-2xl text-white" />
                             )}
                             {isMenuOpen && <span className="ml-2 text-white">Publicar empleo</span>}
                         </Link>
@@ -128,10 +130,10 @@ const NavMenu = () => {
                     >
                         <Link to={"/"} className="flex px-4">
                             {isMenuOpen ? (
-                                <img src={perfil
+                                <img src={notificacion
                                 } className="text-2xl text-white" />
                             ) : (
-                                <img src={perfil
+                                <img src={notificacion
                                 } className="text-2xl text-white" />
                             )}
                             {isMenuOpen && <span className="ml-2 text-white">Notificaciones</span>}

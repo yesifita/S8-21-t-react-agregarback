@@ -83,7 +83,7 @@ const CrearVacanteReclutador = () => {
       <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
         <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
         <Link to="/recruiter/dashboard">
-          <button className="mr-6 w-14 h-14 bg- bg-secondary_grey">
+          <button className="mr-6 w-14 h-14 bg-secundaryGreyLight2">
             <img src={close} className="w-full h-full p-4"></img>
           </button>
         </Link>
@@ -143,7 +143,7 @@ const CrearVacanteReclutador = () => {
                 defaultValue={inputValues.experiencia}
                 onChange={handleChange}
                 name="experiencia"
-                className="items-center px-6 pr-2 text-white w-327 h-14 bg-primary rounded-xl"
+                className="items-center px-6 pr-2 text-white w-327 h-14 bg-primaryBlueDark rounded-xl"
               >
                 <option id="" value="">
                   Selecciona nivel de experiencia
@@ -206,7 +206,7 @@ const CrearVacanteReclutador = () => {
                 onChange={handleChange}
                 defaultValue={inputValues.ciudades}
                 name="ciudades"
-                className="items-center px-6 pr-2 text-white w-327 h-14 bg-primary rounded-xl"
+                className="items-center px-6 pr-2 text-white w-327 h-14 bg-primaryBlueDark rounded-xl"
               >
                 <option id="" value="">
                   Elije ciudad
@@ -228,7 +228,7 @@ const CrearVacanteReclutador = () => {
                 onChange={handleChange}
                 defaultValue={inputValues.salario}
                 name="salario"
-                className="items-center px-6 pr-2 text-white w-253 h-14 bg-primary rounded-xl"
+                className="items-center px-6 pr-2 text-white w-253 h-14 bg-primaryBlueDark rounded-xl"
                 placeholder="Seleciona un rango"
               >
                 <option id="" value="">
@@ -378,7 +378,7 @@ const CrearVacanteReclutador = () => {
                   onChange={handleChange}
                   name="ingles"
                   defaultValue={inputValues.ingles}
-                  className="items-center px-6 pr-2 text-white w-253 h-14 bg-primary rounded-xl"
+                  className="items-center px-6 pr-2 text-white w-253 h-14 bg-primaryBlueDark rounded-xl"
                 >
                   <option id="notiene" value="notiene">
                     No requiere experincia
@@ -540,7 +540,7 @@ const CrearVacanteReclutador = () => {
               Cancelar
             </button>
           </Link>
-          <button className="w-48 h-12 text-base font-medium text-white bg-primary_green">
+          <button className="w-48 h-12 text-base font-medium text-white bg-primaryGreen">
             Publicar Oferta
           </button>
         </div>
