@@ -1,9 +1,9 @@
-import CardWelcome from "../componentes/Apliccants/CardWelcome";
-import CardNewJob from "../componentes/Apliccants/CardNewJob";
-import NavMenu from "../componentes/Nav/navMenu";
-import CardNewPostulates from "../componentes/Apliccants/CardNewPostulates";
-import CardNewTotals from "../componentes/Apliccants/CardNewTotals";
-import NavLogo from "../componentes/Nav/NavLogo";
+import CardWelcome from "../Apliccants/CardWelcome";
+import CardNewJob from "../Apliccants/CardNewJob";
+import NavMenu from "../Nav/NavMenu";
+import CardNewPostulates from "../Apliccants/CardNewPostulates";
+import CardNewTotals from "../Apliccants/CardNewTotals";
+import NavLogo from "../Nav/NavLogo";
 
 
 
