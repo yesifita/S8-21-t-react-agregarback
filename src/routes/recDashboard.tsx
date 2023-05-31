@@ -1,9 +1,9 @@
 import CardWelcome from "../componentes/Apliccants/CardWelcome";
 import CardNewJob from "../componentes/Apliccants/CardNewJob";
-import NavMenu from "../componentes/Nav/navMenu";
 import CardNewPostulates from "../componentes/Apliccants/CardNewPostulates";
 import CardNewTotals from "../componentes/Apliccants/CardNewTotals";
 import NavLogo from "../componentes/Nav/NavLogo";
+import NavMenu from "../componentes/Nav/NavMenu";
 
 
 

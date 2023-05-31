@@ -91,7 +91,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/"} className="px-4 flex">
+                        <Link to={"/empleo"} className="px-4 flex">
                             {isMenuOpen ? (
                                 <MdWork className="text-white text-2xl" />
                             ) : (
@@ -113,7 +113,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/"} className="px-4 flex">
+                        <Link to={"/profile"} className="px-4 flex">
                             {isMenuOpen ? (
                                 <CgProfile className="text-white text-2xl" />
                             ) : (
