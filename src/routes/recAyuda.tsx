@@ -1,7 +1,7 @@
 import BtnQuestion from "../componentes/Buttons/BtnQuestion";
 import InputSearch from "../componentes/Inputs/InputSearch";
 import NavLogo from "../componentes/Nav/NavLogo";
-import NavMenu from "../componentes/Nav/navMenu";
+import NavMenu from "../componentes/Nav/NavMenu";
 import { MdQuiz } from "react-icons/md";
 
 

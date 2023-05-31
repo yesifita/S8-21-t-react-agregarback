@@ -36,16 +36,17 @@ export default function Profile() {
 
   return (
     <>
-      <div className="absolute flex w-full h-full">
-        <div className="w-[5.3rem]">
+      {/* <div className="absolute flex w-full h-full"> */}
+      <div className="relative flex">
+        <div className="z-10">
           <NavMenu />
         </div>
 
-        <div className="w-full h-full">
+        <div className="absolute pl-16 w-full">
           <NavLogo />
-
-          <div className="flex justify-between h-[54rem]">
-            <div className="ml-14">
+          <div className='mx-10 '>
+          <div className="flex justify-between">
+            <div className="">
               <div className="flex items-center justify-center w-[30rem] h-44 rounded-xl mt-10 bg-bgCARDS">
                 <div className="flex space-x-4 mr-9">
                   <img className="w-32 h-32" src={Avatar} alt="Imagen" />
@@ -145,6 +146,7 @@ export default function Profile() {
                 <PopManager togglePopup={togglePopup}/>
               )}
             </div>
+          </div>
           </div>
         </div>
       </div>
