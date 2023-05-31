@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-
+import logo from '../../assets/images/logo.png'
 
 export default function NavLogo() {
-
   return (
     <nav>
-    <Link to={'/recruiter/dashboard'} className="block p-4 text-2xl font-bold">Reclutando</Link>
-   
-    <hr />
+      <Link to={'/recruiter/dashboard'} className="block px-10 py-5">
+        <img src={logo} alt="" />
+      </Link>
+      <hr />
     </nav>
   )
 }

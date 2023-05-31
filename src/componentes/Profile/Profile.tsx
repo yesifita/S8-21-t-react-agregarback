@@ -1,9 +1,12 @@
-import { useState } from 'react'
+
 import Avatar from '../../assets/images/Avatar.svg'
-import NavMenu from '../navMenu'
-import NavLogo from '../Nav/NavLogo'
 import PopCompany from './PopCompany'
 import PopManager from './PopManager'
+import { useState } from 'react';
+
+import NavMenu from '../Nav/NavMenu';
+
+import NavLogo from '../Nav/NavLogo';
 
 interface Dates {
   nombre: string
@@ -33,7 +36,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className="absolute w-full h-full flex">
+      <div className="absolute flex w-full h-full">
         <div className="w-[5.3rem]">
           <NavMenu />
         </div>
@@ -48,10 +51,10 @@ export default function Profile() {
                   <img className="w-32 h-32" src={Avatar} alt="Imagen" />
 
                   <div className="flex flex-col justify-center">
-                    <h1 className="text-colorPrimario font-extrabold text-3xl leading-10 not-italic">
+                    <h1 className="text-3xl not-italic font-extrabold leading-10 text-colorPrimario">
                       Eduardo Vargas
                     </h1>
-                    <p className="text-botonesSecundarios font-normal text-base leading-5">
+                    <p className="text-base font-normal leading-5 text-botonesSecundarios">
                       Reclutador de Tiendas Nova
                     </p>
                   </div>
@@ -88,29 +91,29 @@ export default function Profile() {
               </h1>
 
               <div className="flex items-center justify-between space-x-5 mt-[3.5rem] w-96">
-                <h6 className="text-botonesSecundarios font-bold text-lg leading-5">Nombre</h6>
-                <div className="bg-botonesSecundarios text-blanco text-center w-64 h-12 rounded-xl p-4">
+                <h6 className="text-lg font-bold leading-5 text-botonesSecundarios">Nombre</h6>
+                <div className="w-64 h-12 p-4 text-center bg-botonesSecundarios text-blanco rounded-xl">
                   <p>{newDates.nombre}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
-                <h6 className="text-botonesSecundarios font-bold text-lg leading-5">RUC</h6>
-                <div className="bg-botonesSecundarios text-blanco text-center w-64 h-12 rounded-xl p-4">
+                <h6 className="text-lg font-bold leading-5 text-botonesSecundarios">RUC</h6>
+                <div className="w-64 h-12 p-4 text-center bg-botonesSecundarios text-blanco rounded-xl">
                   <p>{newDates.ruc}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
-                <h6 className="text-botonesSecundarios font-bold text-lg leading-5">Dirección</h6>
-                <div className="bg-botonesSecundarios text-blanco text-center w-64 h-12 rounded-xl p-4">
+                <h6 className="text-lg font-bold leading-5 text-botonesSecundarios">Dirección</h6>
+                <div className="w-64 h-12 p-4 text-center bg-botonesSecundarios text-blanco rounded-xl">
                   <p>{newDates.direccion}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
-                <h6 className="text-botonesSecundarios font-bold text-lg leading-5">Rubro</h6>
-                <div className="bg-botonesSecundarios text-blanco text-center w-64 h-12 rounded-xl p-4">
+                <h6 className="text-lg font-bold leading-5 text-botonesSecundarios">Rubro</h6>
+                <div className="w-64 h-12 p-4 text-center bg-botonesSecundarios text-blanco rounded-xl">
                   <p>{newDates.rubro}</p>
                 </div>
               </div>
