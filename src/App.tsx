@@ -1,15 +1,12 @@
-import "./App.css";
-import { database } from "./service/firebase";
-import PostuladosContainer from "./components/postulados/PostuladosContainer/PostuladosContainer";
-import FiltrosContainer from "./components/filtros/FiltrosContainer/FiltrosContainer";
+import './App.css'
+import ListRoutes from '../src/routes/ListRoutes'
 
-console.log(database.app.name);
 function App() {
   return (
-    <>
-      <PostuladosContainer />
-    </>
-  );
+    <div>
+      <ListRoutes />
+    </div>
+  )
 }
 
 export default App;
