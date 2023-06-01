@@ -1,8 +1,8 @@
-import { DragDropContext, Droppable as DroppableDnd } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable as DroppableDnd } from 'react-beautiful-dnd'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { Container } from './Container'
-import { IItemApliccant } from '../../interfaces/IItemApliccants'
+import { IApliccant } from '../../interfaces/IItemApliccants'
 import { setContainers } from '../../store/slices/apliccants.slices'
 import { useDispatch } from 'react-redux'
 
@@ -10,13 +10,13 @@ export const MultipleContainers = () => {
   const dispatch = useDispatch()
   const containers = useSelector((state: RootState) => state.apliccants)
 
-  const handleDeleteApliccant = (containerId: string, item:IItemApliccant) => {
-        const updateContainer = containers[containerId].reduce((acc, itemContainer) => {
+  const handleDeleteApliccant = (containerId: string, item: IApliccant) => {
+    const updateContainer = containers[containerId].reduce((acc, itemContainer) => {
       if (itemContainer.id === item.id) {
         return acc
       }
       return [...acc, itemContainer]
-    }, []  as IItemApliccant[])
+    }, [] as IApliccant[])
     const newContainers = { ...containers, [containerId]: updateContainer }
     dispatch(setContainers(newContainers))
   }
@@ -46,7 +46,7 @@ export const MultipleContainers = () => {
     return result
   }
 
-   const handleDragEnd = event => {
+  const handleDragEnd = event => {
     const { source, destination, draggableId } = event
     if (!destination) return
     if (source.index === destination.index && source.droppableId === destination.droppableId) {
@@ -54,7 +54,7 @@ export const MultipleContainers = () => {
     }
 
     // Almecenarlos a otro contenedor
-    const sourceList:IItemApliccant[] = containers[source.droppableId]
+    const sourceList: IApliccant[] = containers[source.droppableId]
     const destinationList = containers[destination.droppableId]
 
     if (sourceList === destinationList) {
@@ -84,40 +84,37 @@ export const MultipleContainers = () => {
       <DragDropContext onDragEnd={handleDragEnd}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Container
-            dropId={"guardados"}
-            title={"Guardados"}
+            dropId={'guardados'}
+            title={'Guardados'}
             items={containers.guardados}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={"enProceso"}
-            title={"En Proceso"}
+            dropId={'enProceso'}
+            title={'En Proceso'}
             items={containers.enProceso}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={"entrevista"}
-            title={"Entrevista"}
+            dropId={'entrevista'}
+            title={'Entrevista'}
             items={containers.entrevista}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={"contratado"}
-            title={"Contratado"}
+            dropId={'contratado'}
+            title={'Contratado'}
             items={containers.contratado}
             handleDeleteApliccant={handleDeleteApliccant}
           />
           <Container
-            dropId={"noSeleccionado"}
-            title={"No Seleccionado"}
+            dropId={'noSeleccionado'}
+            title={'No Seleccionado'}
             items={containers.noSeleccionado}
             handleDeleteApliccant={handleDeleteApliccant}
-          /> 
+          />
         </div>
       </DragDropContext>
     </div>
   )
-
-
-  
 }
