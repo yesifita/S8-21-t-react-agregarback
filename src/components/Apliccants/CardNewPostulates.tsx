@@ -1,7 +1,7 @@
 
 
 import newPostulates from '../../assets/images/list.png'
-import BtnRevisarTablero from '../Buttons/BtnRevisarTablero';
+import BtnRevisarTablero from '../../componentes/Buttons/BtnRevisarTablero';
 
 
 export default function CardNewPostulates() {

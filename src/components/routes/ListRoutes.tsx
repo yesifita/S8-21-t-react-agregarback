@@ -4,7 +4,7 @@ import Register from "../login/Register";
 import ProtectedPath from "../protectedPath/ProtectedPath";
 import UserProvider from "../../context/UserProvider";
 import RecDashboard from "../../routes/recDashboard";
-import { Apliccants } from "../../componentes/Apliccants/Apliccants";
+import { Apliccants } from "../Apliccants/Apliccants";
 import Profile from "../../componentes/Profile/Profile";
 
 

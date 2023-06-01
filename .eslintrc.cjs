@@ -14,5 +14,13 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    'react/jsx-curly-newline': [
+      'error',
+      {
+        multiline: 'consistent',
+        singleline: 'consistent',
+      },
+    ],
+    'react/jsx-indent': ['error', 2],
   },
 }

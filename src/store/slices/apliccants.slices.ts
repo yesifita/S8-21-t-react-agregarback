@@ -1,56 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { IItemApliccant } from '../../interfaces/IItemApliccants'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { IApliccant } from '../../interfaces/IItemApliccants'
 
-interface IApliccantsInitialState {
-  [key: string]: IItemApliccant[]
+export interface IApliccantsInitialState {
+  [key: string]: IApliccant[]
 }
 
 const initialState: IApliccantsInitialState = {
-  guardados: [
-    {
-      id: '1s',
-      fullName: 'Carlos',
-    },
-    {
-      id: '2s',
-      fullName: 'Juan',
-    },
-  ],
-
-  enProceso: [
-    {
-      id: 'En proceso',
-      fullName: 'Pedro',
-    },
-  ],
-
-  entrevista: [
-    {
-      id: 'Entrevista',
-      fullName: 'Carlos',
-    },
-  ],
-
-  contratado: [
-    {
-      id: '4',
-      fullName: 'Carlos',
-    },
-  ],
-
-  noSeleccionado: [
-    {
-      id: '5',
-      fullName: 'Carlos',
-    },
-  ],
+  guardados: [],
+  enProceso: [],
+  entrevista: [],
+  contratado: [],
+  noSeleccionado: [],
 }
 
 export const apliccantsSlice = createSlice({
   name: 'apliccants',
   initialState,
   reducers: {
-    setContainers: (state, action) => {
+    setContainers: (state, action: PayloadAction<IApliccantsInitialState>) => {
       state.guardados = action.payload.guardados
       state.enProceso = action.payload.enProceso
       state.entrevista = action.payload.entrevista

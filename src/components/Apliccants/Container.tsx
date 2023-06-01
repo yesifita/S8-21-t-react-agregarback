@@ -1,17 +1,16 @@
 import { FC } from 'react'
-import { IItemApliccant } from '../../interfaces/IItemApliccants'
+import { IApliccant } from '../../interfaces/IItemApliccants'
 import { CardContainer } from './CardContainer'
 import { Droppable } from './Droppable'
 
-interface IContainerProps{
-  items: IItemApliccant[],
-  title: string,
-  dropId: string,
-  handleDeleteApliccant: (containerId: string, item: IItemApliccant)=>void
+interface IContainerProps {
+  items: IApliccant[]
+  title: string
+  dropId: string
+  handleDeleteApliccant: (containerId: string, item: IApliccant) => void
 }
 
-
-export const Container:FC<IContainerProps> = ({ items, title, dropId,  handleDeleteApliccant }) => {
+export const Container: FC<IContainerProps> = ({ items, title, dropId, handleDeleteApliccant }) => {
   return (
     <div
       style={{
@@ -32,9 +31,11 @@ export const Container:FC<IContainerProps> = ({ items, title, dropId,  handleDel
         }}
       >
         {/* <img src={icon}></img> */}
-        <h3>{title} ({items.length})</h3>
+        <h3>
+          {title} ({items.length})
+        </h3>
       </div>
-      <Droppable dropId={dropId} >
+      <Droppable dropId={dropId}>
         {droppableProvided => (
           <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
             {items.map((item, index) => {
@@ -58,4 +59,3 @@ export const Container:FC<IContainerProps> = ({ items, title, dropId,  handleDel
     </div>
   )
 }
-

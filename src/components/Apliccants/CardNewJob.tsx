@@ -1,5 +1,5 @@
 import newJob from '../../assets/images/newJob.png'
-import BtnCrearEmpleo from "../Buttons/BtnCrearEmpleo";
+import BtnCrearEmpleo from "../../componentes/Buttons/BtnCrearEmpleo";
 
 
 export default function CardNewJob() {
