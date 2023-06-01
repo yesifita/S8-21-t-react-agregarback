@@ -1,5 +1,6 @@
-import { FirebaseOptions, initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
+import { FirebaseOptions, initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig: FirebaseOptions = {
@@ -12,6 +13,23 @@ const firebaseConfig: FirebaseOptions = {
   appId: '1:283197585075:web:47b4122a9888e98837e2c6',
 }
 
-export const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
+const firestoreDB = getFirestore(app);
+export const database = getDatabase(app);
+export default firestoreDB;
 export const db = getFirestore(app)
 export const auth = getAuth(app)
+
+export const getCollections = async (name: string) => {
+  const colecciones = collection(firestoreDB, name);
+  const products = await getDocs(colecciones);
+  return products.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
+};
+
+
+
