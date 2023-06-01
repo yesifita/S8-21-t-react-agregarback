@@ -1,10 +1,16 @@
-input {
-    @apply text-start border-solid border-slate-400 border-2 rounded-xl bg-slate-100 
+#group-input{
+    @apply grid grid-cols-2 w-full gap-10 items-center p-1 pl-16 justify-around
 }
-
+/* input {
+    @apply text-start border-solid border-slate-400 border-2 rounded-xl bg-slate-100 
+} */
+#conteiner-job{
+    @apply w-full h-full
+}
 button{
     @apply bg-white w-12 h-8 border-solid border-slate-800 rounded-xl
 }
-::placeholder{
-    @aplly text-black
+
+#requerimientos input {
+    @apply mr-2 font-normal text-base 
 }
