@@ -45,7 +45,9 @@ export default {
       backgroundSize: {
         25: '25%',
       },
-    },
+      backgroundImage: {
+        upload:"./src/assets/icons/upload_img.svg"
+    }},
   },
   plugins: [],
 }
