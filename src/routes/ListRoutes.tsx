@@ -24,7 +24,6 @@ const ListRoutes = () => {
           <Route path="/registro" element={<Register />}></Route>
           <Route path="/recruiter/ayuda" element={<RecAyuda/>}></Route>
           <Route path="/empleo" element={<CrearVacanteReclutador/>}></Route>
-         
         </Routes>
       </UserProvider>
     </>
