@@ -91,7 +91,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/empleo"} className="flex px-4">
+                        <Link to={"/jobs"} className="flex px-4">
                             {isMenuOpen ? (
                                 <img src={empleo} className="text-2xl text-white" />
                             ) : (
