@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdRemove } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 
-function BtnQuestion() {
+function BtnQuestion({question, answer}) {
   const [showText, setShowText] = useState(false);
 
   const handleToggleText = () => {
@@ -17,16 +17,14 @@ function BtnQuestion() {
         } flex justify-between items-center px-8`}
         onClick={handleToggleText}
       >
-        Cómo usar el tablero de forma efectiva?
+        {question}
         <span className="text-xl font-bold">
           {showText ? <MdRemove /> : <GoPlus />}
         </span>
       </button>
       {showText && (
         <div className="bg-secundaryGreyLight2 p-4 rounded-b-md">
-          <p>
-            Por defecto, al ingresar a tu tablero de proceso por primera vez, encontrarás 4 columnas predefinidas: Invitaciones, Postulantes, Descartados y Contratados. Cuando las y los profesionales postulan a tu empleo, éstos llegan automáticamente a la columna 'Postulantes'. Ahí podrás filtrar postulantes y moverlos a diferentes fases arrastrándolos, o bien, haciendo click en su tarjeta y seleccionando la opción 'Mover a' y seleccionar la fase a la que deseas moverlos.
-          </p>
+          <p>{answer}</p>
         </div>
       )}
     </div>

@@ -6,19 +6,18 @@ function CardWelcome() {
     const { displayName } = authUser.user;
 
     return (
-        <div className="overflow-hidden bg-secundaryGreyLight h-72 rounded-xl">
-            <div className="flex items-center justify-between h-full gap-x-8">
+        <div className="bg-secundaryGreyLight h-72 rounded-xl">
+            <div className="flex items-center h-full">
 
-                <div>
+                <div className='w-full'>
                     <p className="pl-8 mb-4 text-2xl text-primaryBlueDark">Bienvenido,</p>
                     {displayName && <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark">{displayName}</h2>}
                     <p className="px-8 py-2 text-2xl text-white bg-secundaryViolet">Un gusto tenerte aquí</p>
                 </div>
-
-                <div className="relative">
-                    <img src={photoProfile} alt="photo profile" className="w-48 h-60 rounded-xl" />
+                <div className="relative z-10 mr-6">
+                    <div className="bg-no-repeat bg-center bg-cover rounded-xl" style={{ backgroundImage: `url(${photoProfile})`, height: '240px', width: '220px'}}>
+                    </div>
                 </div>
-
             </div>
         </div>
     )
