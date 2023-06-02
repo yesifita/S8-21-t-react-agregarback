@@ -35,9 +35,10 @@ export default function InputSearch() {
         ref={inputRef}
         type="text"
         placeholder="Buscar en preguntas frecuentes"
-        className={`h-14 pl-10 pr-6 bg-secundaryGreyLight rounded-xl ${
-          expanded ? "w-450" : "w-10"
-        }`}
+        className={`
+          h-14 pl-10 pr-6 bg-secundaryGreyLight rounded-xl 
+          ${expanded ? "w-450 border focus:border-primaryGreen" : "w-10"}
+        `}
         style={{ transition: "width 0.3s" }}
         onClick={handleInputClick}
       />
