@@ -8,6 +8,7 @@ import { Apliccants } from '../componentes/Apliccants/Apliccants'
 import Profile from '../componentes/Profile/Profile'
 import CrearVacanteReclutador from '../componentes/cargarVacante/CrearVacanteReclutador'
 import RecAyuda from './recAyuda'
+import PostuladosContainer from '../components/postulados/PostuladosContainer/PostuladosContainer'
 
 
 
@@ -24,6 +25,7 @@ const ListRoutes = () => {
           <Route path="/registro" element={<Register />}></Route>
           <Route path="/recruiter/ayuda" element={<RecAyuda/>}></Route>
           <Route path="/empleo" element={<CrearVacanteReclutador/>}></Route>
+          <Route path="/postulados" element={<PostuladosContainer/>}></Route>
          
         </Routes>
       </UserProvider>

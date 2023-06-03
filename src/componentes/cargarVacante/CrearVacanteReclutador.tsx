@@ -14,46 +14,50 @@ import { Link } from 'react-router-dom'
 import Loader from '../loader/Loader'
 import { useState, useRef } from 'react'
 
+const INITIAL_CHECK={
+  vsc: false,
+  php: false,
+  eclipse: false,
+  figma: false,
+  java: false,
+  ds: false,
+  reactnative: false,
+  react: false,
+  node: false,
+  horario: false,
+  ingles: false,
+  bebidas: false,
+  computadora: false,
+  prepaga: false,
+  service: false,
+  vacaciones: false,
+  platzi: false,
+  acuerdo: true,
+}
+const INITIAL_VALUES={
+  imagen: '',
+  empresa: '',
+  puesto: '',
+  experiencia: '',
+  modo: '',
+  ciudades: '',
+  salario: '',
+  textarea: '',
+  ingles: '',
+}
+
 const CrearVacanteReclutador = () => {
   const [loading, setLoading] = useState(false)
   const [Image, setImage] = useState('')
-  const [inputCheck, setInputCheck] = useState({
-    vsc: false,
-    php: false,
-    eclipse: false,
-    figma: false,
-    java: false,
-    ds: false,
-    reactnative: false,
-    react: false,
-    node: false,
-    horario: false,
-    ingles: false,
-    bebidas: false,
-    computadora: false,
-    prepaga: false,
-    service: false,
-    vacaciones: false,
-    platzi: false,
-    acuerdo: true,
-  })
-  const [inputValues, setInputValues] = useState({
-    imagen: '',
-    empresa: '',
-    puesto: '',
-    experiencia: '',
-    modo: '',
-    ciudades: '',
-    salario: '',
-    textarea: '',
-    ingles: '',
-  })
+  const [inputCheck, setInputCheck] = useState(INITIAL_CHECK)
+  const [inputValues, setInputValues] = useState(INITIAL_VALUES)
   const [file, setFile] = useState('')
+  const [response, setResponse] = useState(null)
+  const [db, setDb] = useState(null)
 
   const handleSubmit = e => {
-    e.preventDefault(), setLoading(true)
-    setInputValues
-    setInputCheck
+    e.preventDefault(), 
+    createJob()    
   }
 
   const handleChange = e => {
@@ -80,6 +84,27 @@ const CrearVacanteReclutador = () => {
   const selectImage = () => {
     refInputFile.current.click()
   }
+
+  const createJob=()=>{
+    crud
+			.post(urlPost, {
+				body: [inputCheck,inputValues],
+				headers: { 'content-type': 'application/json' },
+			})
+    .then(res => {
+      if (!res.err) {
+         
+        setDb([...db, res]),       
+        setLoading(true)
+
+      } else {
+       
+        setResponse(res),
+        setInputValues(INITIAL_VALUES),
+        setInputCheck(INITIAL_CHECK)
+      }
+    })
+  }
   // const addImage = e => {
   //   e.preventDefault()
   //   refInputFile.current.files = e.dataTransfer.files
@@ -92,12 +117,9 @@ const CrearVacanteReclutador = () => {
   //   setFile(file)
   // }
 
-  // const uploadImage = e => {
-  //   const files = e.target.files
-  //   const file = files[0]
-  //   showImage(file)
-  // }
-  // console.log(setInputCheck)
+  // 
+  
+  
   return (
     <>
       <div>
@@ -122,7 +144,7 @@ const CrearVacanteReclutador = () => {
               // onDrag={addImage}
               // {dragImage}
               id="conteiner_ imput_img"
-              className="flex flex-col items-center justify-center w-32 mb-3 ml-20 text-center bg-red-500 border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl"
+              className="flex flex-col items-center justify-center w-32 mb-3 ml-20 text-center border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl"
             >
               <input
                 onChange={handleChange}
@@ -563,13 +585,13 @@ const CrearVacanteReclutador = () => {
           </div>
           <div className="flex flex-row justify-around w-full pt-16 pb-8 pl-12 pr-20 ">
             <Link to="/recruiter/dashboard">
-              <button className="w-48 h-12 mb-8 text-base font-medium bg-white border-2 border-skyblue text-skyblue">
+              <button className="w-48 h-12 mb-8 text-base font-medium bg-white border-2 rounded-xl border-skyblue text-skyblue">
                 Cancelar
               </button>
             </Link>
             <button
               onClick={() => setLoading(true)}
-              className="w-48 h-12 text-base font-medium text-white bg-primaryGreen"
+              className="w-48 h-12 text-base font-medium text-white rounded-xl bg-primaryGreen"
             >
               Publicar Oferta
             </button>

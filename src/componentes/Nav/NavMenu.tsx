@@ -78,7 +78,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/"} className="flex px-4">
+                        <Link to={"/postulados"} className="flex px-4">
                             {isMenuOpen ? (
                                 <img src={perfil} className="text-2xl text-white" />
                             ) : (
