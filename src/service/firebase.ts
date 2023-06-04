@@ -1,5 +1,5 @@
 import { FirebaseOptions, initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth'
 
@@ -14,11 +14,10 @@ const firebaseConfig: FirebaseOptions = {
 }
 
 const app = initializeApp(firebaseConfig);
-const firestoreDB = getFirestore(app);
-export const database = getDatabase(app);
-export default firestoreDB;
 export const db = getFirestore(app)
 export const auth = getAuth(app)
+
+const firestoreDB = getFirestore(app);
 
 export const getCollections = async (name: string) => {
   const colecciones = collection(firestoreDB, name);

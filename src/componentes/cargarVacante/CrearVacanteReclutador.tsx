@@ -1,4 +1,3 @@
-import { useUser } from '../../context/UserProvider'
 import imgupload from '../../assets/icons/upload_img.svg'
 import imgIconPerson from '../../assets/icons/icon_person_form_createJob.svg'
 import vacaciones from '../../assets/icons/vacaciones_beneficios.svg'
@@ -13,8 +12,10 @@ import close from '../../assets/icons/close X.svg'
 import { Link } from 'react-router-dom'
 import Loader from '../loader/Loader'
 import { useState, useRef } from 'react'
+import { db } from '../../service/firebase'
+import { collection, addDoc } from 'firebase/firestore'
 
-const INITIAL_CHECK={
+const INITIAL_CHECK = {
   vsc: false,
   php: false,
   eclipse: false,
@@ -34,7 +35,7 @@ const INITIAL_CHECK={
   platzi: false,
   acuerdo: true,
 }
-const INITIAL_VALUES={
+const INITIAL_VALUES = {
   imagen: '',
   empresa: '',
   puesto: '',
@@ -47,17 +48,14 @@ const INITIAL_VALUES={
 }
 
 const CrearVacanteReclutador = () => {
-  const [loading, setLoading] = useState(false)
   const [Image, setImage] = useState('')
   const [inputCheck, setInputCheck] = useState(INITIAL_CHECK)
   const [inputValues, setInputValues] = useState(INITIAL_VALUES)
-  const [file, setFile] = useState('')
-  const [response, setResponse] = useState(null)
-  const [db, setDb] = useState(null)
 
   const handleSubmit = e => {
     e.preventDefault(), 
-    createJob()    
+    createJob({ inputValues, inputCheck });
+<Loader/>
   }
 
   const handleChange = e => {
@@ -85,46 +83,14 @@ const CrearVacanteReclutador = () => {
     refInputFile.current.click()
   }
 
-  const createJob=()=>{
-    crud
-			.post(urlPost, {
-				body: [inputCheck,inputValues],
-				headers: { 'content-type': 'application/json' },
-			})
-    .then(res => {
-      if (!res.err) {
-         
-        setDb([...db, res]),       
-        setLoading(true)
-
-      } else {
-       
-        setResponse(res),
-        setInputValues(INITIAL_VALUES),
-        setInputCheck(INITIAL_CHECK)
-      }
-    })
+  const createJob = async e => {
+    await addDoc(collection(db, 'Jobs'), { inputCheck, inputValues })
   }
-  // const addImage = e => {
-  //   e.preventDefault()
-  //   refInputFile.current.files = e.dataTransfer.files
-  //   const file = refInputFile.current.files[0]
-  //   showImage(file)
-  //   fileReader('load', (e) => {
-  //     setImage(
-  //       e.target.result)
-  //   })
-  //   setFile(file)
-  // }
 
-  // 
-  
-  
   return (
     <>
       <div>
-        {loading ? <Loader /> : null}
-        <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
+          <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
           <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
           <Link to="/recruiter/dashboard">
             <button className="mr-6 w-14 h-14 bg-secundaryGreyLight2">
@@ -140,9 +106,6 @@ const CrearVacanteReclutador = () => {
           <div id="conteiner_upload_image" className="flex flex-row w-full cursor-pointer">
             <div
               onClick={selectImage}
-              // onDrop={addImage}
-              // onDrag={addImage}
-              // {dragImage}
               id="conteiner_ imput_img"
               className="flex flex-col items-center justify-center w-32 mb-3 ml-20 text-center border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl"
             >
@@ -198,8 +161,8 @@ const CrearVacanteReclutador = () => {
                   <option id="" value="">
                     Selecciona nivel de experiencia
                   </option>
-                  <option id="traine" value="traine">
-                    Trainee
+                  <option id="sin experiencia" value="sin experiencia">
+                    Sin experiencia
                   </option>
                   <option id="junior" value="junior">
                     Junior
@@ -284,19 +247,19 @@ const CrearVacanteReclutador = () => {
                   <option id="" value="">
                     Seleciona un rango
                   </option>
-                  <option id="0" value="0">
+                  <option id="0-50.000" value="0-50.000">
                     0-50.000
                   </option>
-                  <option id="5" value="5">
+                  <option id="50.000-100.000" value="50.000-100.000">
                     50.000-100.000
                   </option>
-                  <option id="10" value="10">
+                  <option id="100.000-250.000" value="100.000-250.000">
                     100.000-250.000
                   </option>
-                  <option id="25" value="25">
+                  <option id="250.000-400.000" value="250.000-400.000">
                     250.000-400.000
                   </option>
-                  <option id="40" value="40">
+                  <option id="400.000" value="400.000">
                     400.000-600.000
                   </option>
                 </select>
@@ -331,8 +294,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="vsc"
-                        name="vsc"
+                        id="Visual Studio Code"
+                        name="Visual Studio Code"
                         defaultChecked={inputCheck.vsc}
                         className="mr-3"
                       ></input>
@@ -342,8 +305,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="php"
-                        name="php"
+                        id="PHP"
+                        name="PHP"
                         defaultChecked={inputCheck.php}
                       ></input>{' '}
                       PHP
@@ -352,8 +315,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="eclipse"
-                        name="eclipse"
+                        id="Eclipse"
+                        name="Eclipse"
                         defaultChecked={inputCheck.eclipse}
                       ></input>{' '}
                       Eclipse
@@ -362,8 +325,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="figma"
-                        name="figma"
+                        id="Figma"
+                        name="Figma"
                         defaultChecked={inputCheck.figma}
                       ></input>{' '}
                       Figma
@@ -372,8 +335,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="ds"
-                        name="ds"
+                        id=" Design thinking"
+                        name=" Design Jhinking"
                         defaultChecked={inputCheck.ds}
                       ></input>{' '}
                       Design Thinking
@@ -382,8 +345,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="java"
-                        name="java"
+                        id="Java"
+                        name="Java"
                         defaultChecked={inputCheck.java}
                       ></input>{' '}
                       Java
@@ -392,8 +355,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="reactnative"
-                        name="reactnative"
+                        id="React native"
+                        name="React native"
                         defaultChecked={inputCheck.reactnative}
                       ></input>{' '}
                       React Native
@@ -402,8 +365,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="react"
-                        name="react"
+                        id="React"
+                        name="React"
                         defaultChecked={inputCheck.react}
                       ></input>{' '}
                       React
@@ -412,8 +375,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="node"
-                        name="node"
+                        id="Node"
+                        name="Node"
                         defaultChecked={inputCheck.node}
                       ></input>{' '}
                       Node Js
@@ -431,13 +394,13 @@ const CrearVacanteReclutador = () => {
                     <option id="notiene" value="notiene">
                       No requiere experiencia
                     </option>
-                    <option id="ados" value="ados">
+                    <option id="A2-Principiante" value="A2-Principiante">
                       A2-Principiante
                     </option>
-                    <option id="bdos" value="bdos">
+                    <option id="B2-Intermedio" value="B2-Intermedio">
                       B2-Intermedio
                     </option>
-                    <option id="cuno" value="cuno">
+                    <option id="C1-Avanzado" value="C1-Avanzado">
                       C1-Avanzado
                     </option>
                   </select>
@@ -454,8 +417,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="horario"
-                        name="horarios"
+                        id="Horario flexible"
+                        name="Horario flexible"
                         defaultChecked={inputCheck.horario}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -468,8 +431,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="ingles"
-                        name="ingles"
+                        id="Clases de Ingles"
+                        name="Clases de Ingles"
                         defaultChecked={inputCheck.ingles}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -482,8 +445,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="bebidas"
-                        name="bebidas"
+                        id="Bebidas y Snack"
+                        name="Bebidas y Snack"
                         defaultChecked={inputCheck.bebidas}
                         className="ml-5 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -496,8 +459,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="computadora"
-                        name="computadora"
+                        id="Computadora"
+                        name="Computadora"
                         defaultChecked={inputCheck.computadora}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -510,8 +473,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="prepaga"
-                        name="prepaga"
+                        id="Cobertura Prepaga"
+                        name="Cobertura Prepaga"
                         defaultChecked={inputCheck.prepaga}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -524,8 +487,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="service"
-                        name="service"
+                        id="Servicio Tecnico para PC"
+                        name="Servicio Tecnico para PC"
                         defaultChecked={inputCheck.service}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -538,8 +501,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="vacaciones"
-                        name="vacaciones"
+                        id="Vacaciones Extras"
+                        name="Vacaciones Extras"
                         defaultChecked={inputCheck.vacaciones}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>
@@ -553,8 +516,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="platzi"
-                        name="platzi"
+                        id="Descuentos en Platzi"
+                        name="Descuentos en Platzi"
                         defaultChecked={inputCheck.platzi}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>
@@ -590,7 +553,7 @@ const CrearVacanteReclutador = () => {
               </button>
             </Link>
             <button
-              onClick={() => setLoading(true)}
+              onClick={handleSubmit}
               className="w-48 h-12 text-base font-medium text-white rounded-xl bg-primaryGreen"
             >
               Publicar Oferta
