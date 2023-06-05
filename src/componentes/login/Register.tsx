@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
     email: '',
-    password: '',
+    password: ''  
   })
   const [visible, setVisible] = useState(false)
 
@@ -67,11 +67,11 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Contraseña"
-              className="pl-4 bg-secundaryGreyLight rounded-xl w-404 h-14 text-primaryBlueDark placeholder:text-primaryBlueDark"
-            ></input>
+              className="pl-4 mb-4 bg-secundaryGreyLight rounded-xl w-404 h-14 text-primaryBlueDark placeholder:text-primaryBlueDark"
+            ></input>  
             <div className="pt-4 w-404 ">
               <label id="checkbox " className="text-start text-md">
-                <input type="checkbox" checked id="checkbox" className="mr-2"></input>
+                <input type="checkbox" checked id="checkbox" onChange={handleChange} className="mr-2"></input>
                 He leído y acepto los Términos y condiciones y la Política de privacidad
               </label>
             </div>

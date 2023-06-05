@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { FormState } from '../../types'
 import { useUser } from '../../context/UserProvider'
 import NavBarLogin from './NavBarLogin'
+import Register from './Register'
 
 const Login = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
@@ -10,15 +11,25 @@ const Login = () => {
     password: '',
   })
   const authUser = useUser()
+  const user=authUser.user
+
   const navigate = useNavigate()
 
   const handleLogin = () => {
     navigate('/recruiter/dashboard')
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit =  (e: React.FormEvent<HTMLFormElement | HTMLButtonElement>)=> {
     e.preventDefault()
-    authUser.login(inputValues.email, inputValues.password)
+    if(!user){
+      return navigate('/Registro')
+    }else{
+      authUser.login(inputValues.email, inputValues.password)
+      setTimeout(() => {
+       handleLogin()
+      }, 3000)
+
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -31,11 +42,13 @@ const Login = () => {
   const handleGoogle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     authUser.loginGoogle()
+
+    setTimeout(() => {
+      handleLogin()
+    }, 7000)
   }
   return (
     <>
-      {/* <h2>{user ? "en linea" : "offline"}</h2> */}
-     
       <NavBarLogin />
       <div
         className="flex items-center justify-center w-full h-673 bg-gradiente bg-gradient-to-b from-primaryBlueDark to-gradiente1/10"
@@ -66,11 +79,12 @@ const Login = () => {
               className="pl-4 bg-secundaryGreyLight rounded-xl w-404 h-14 text-primaryBlueDark placeholder:text-primaryBlueDark"
             ></input>
             <div>
-              <label id="checkbox " className='text-base font-normal'>
+              <label id="checkbox " className="text-base font-normal">
                 <input
                   type="checkbox"
                   id="checkbox"
                   checked
+                  onChange={handleChange}
                   className="mt-8 mr-2 "
                 ></input>
                 Recordarme
@@ -79,7 +93,7 @@ const Login = () => {
             <div className="flex flex-col items-center w-full gap-1 pt-8">
               <button
                 type="submit"
-                onClick={handleLogin}
+                onClick={handleSubmit}
                 className="mb-2 text-base font-medium text-white border-solid w-404 h-14 rounded-xl bg-primaryGreen"
               >
                 Iniciar Sesion
@@ -110,7 +124,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-     
     </>
   )
 }

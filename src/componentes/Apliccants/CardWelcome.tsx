@@ -3,7 +3,7 @@ import photoProfile from '../../assets/images/photoProfile.png'
 
 function CardWelcome() {
     const authUser = useUser();
-    const { displayName } = authUser.user;
+    const { displayName,email } = authUser.user;
 
     return (
         <div className="overflow-hidden bg-secundaryGreyLight h-72 rounded-xl">
@@ -11,7 +11,7 @@ function CardWelcome() {
 
                 <div>
                     <p className="pl-8 mb-4 text-2xl text-primaryBlueDark">Bienvenido,</p>
-                    {displayName && <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark">{displayName}</h2>}
+                    {displayName ? <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark">{displayName}</h2> : <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark">{email}</h2>}
                     <p className="px-8 py-2 text-2xl text-white bg-secundaryViolet">Un gusto tenerte aquí</p>
                 </div>
 
