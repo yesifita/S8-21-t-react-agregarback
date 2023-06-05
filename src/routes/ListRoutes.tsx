@@ -8,6 +8,7 @@ import { Apliccants } from '../componentes/Apliccants/Apliccants'
 import Profile from '../componentes/Profile/Profile'
 import CrearVacanteReclutador from '../componentes/cargarVacante/CrearVacanteReclutador'
 import RecAyuda from './recAyuda'
+import PostuDashboard from './postuDashboard'
 
 
 
@@ -19,10 +20,12 @@ const ListRoutes = () => {
           <Route path="/*" element={<h1>not found</h1>}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/recruiter/dashboard" element={<RecDashboard />}></Route>
+          <Route path="/postulate/dashboard" element={<PostuDashboard />}></Route>
+          <Route path="/recruiter/ayuda" element={<RecAyuda/>}></Route>
+          <Route path="/postulate/ayuda" element={<RecAyuda/>}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/postulantes" element={<Apliccants />}></Route>
           <Route path="/registro" element={<Register />}></Route>
-          <Route path="/recruiter/ayuda" element={<RecAyuda/>}></Route>
           <Route path="/empleo" element={<CrearVacanteReclutador/>}></Route>
         </Routes>
       </UserProvider>
