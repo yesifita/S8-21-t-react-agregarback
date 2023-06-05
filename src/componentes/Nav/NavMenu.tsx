@@ -32,7 +32,7 @@ const NavMenu = () => {
 
 {/* -------------------------------- Menu Icon */}
             <div
-                className={`flex transform duration-300 text-lg ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
+                className={`flex transform duration-300 text-lg cursor-pointer ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                 onClick={toggleMenu}
             >
                 <div className="px-4 flex">
