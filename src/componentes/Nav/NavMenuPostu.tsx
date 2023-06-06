@@ -2,9 +2,8 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { HiHome } from "react-icons/hi";
-import { MdAssignment, MdLogout } from "react-icons/md";
-import { BsFillPersonFill } from "react-icons/bs";
-import { MdWork } from "react-icons/md";
+import { MdLogout, MdOutlineContentPasteSearch } from "react-icons/md";
+import { BsClipboard2PlusFill, BsFillClipboard2CheckFill } from "react-icons/bs";
 import { IoIosNotifications, IoMdHelpCircle } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
@@ -12,7 +11,7 @@ import { useUser } from '../../context/UserProvider';
 import { useLocation } from "react-router-dom";
 
 
-const NavMenu = () => {
+const NavMenuPostu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -58,7 +57,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/recruiter/dashboard"} className="px-4 flex">
+                        <Link to={"/postulate/dashboard"} className="px-4 flex">
                             {isMenuOpen ? (
                                 <HiHome className="text-white text-2xl" />
                             ) : (
@@ -71,13 +70,26 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
+                        <Link to={"/empleo"} className="px-4 flex">
+                            {isMenuOpen ? (
+                                <MdOutlineContentPasteSearch className="text-white text-2xl" />
+                            ) : (
+                                <MdOutlineContentPasteSearch className="text-white text-2xl" />
+                            )}
+                            {isMenuOpen && <span className="ml-2 text-white">Buscar empleo</span>}
+                        </Link>
+                    </div>
+                    <div
+                        className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
+                        onClick={toggleMenu}
+                    >
                         <Link to={"/postulantes"} className="px-4 flex">
                             {isMenuOpen ? (
-                                <MdAssignment className="text-white text-2xl" />
+                                <BsFillClipboard2CheckFill className="text-white text-2xl" />
                             ) : (
-                                <MdAssignment className="text-white text-2xl" />
+                                <BsFillClipboard2CheckFill className="text-white text-2xl" />
                             )}
-                            {isMenuOpen && <span className="ml-2 text-white">Tablero</span>}
+                            {isMenuOpen && <span className="ml-2 text-white">Postulaciones</span>}
                         </Link>
                     </div>
                     <div
@@ -86,24 +98,11 @@ const NavMenu = () => {
                     >
                         <Link to={"/empleo"} className="px-4 flex">
                             {isMenuOpen ? (
-                                <BsFillPersonFill className="text-white text-2xl" />
+                                <BsClipboard2PlusFill className="text-white text-2xl" />
                             ) : (
-                                <BsFillPersonFill className="text-white text-2xl" />
+                                <BsClipboard2PlusFill className="text-white text-2xl" />
                             )}
-                            {isMenuOpen && <span className="ml-2 text-white">Postulados</span>}
-                        </Link>
-                    </div>
-                    <div
-                        className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
-                        onClick={toggleMenu}
-                    >
-                        <Link to={"/jobs"} className="flex px-4">
-                            {isMenuOpen ? (
-                                <MdWork className="text-white text-2xl" />
-                            ) : (
-                                <MdWork className="text-white text-2xl" />
-                            )}
-                            {isMenuOpen && <span className="ml-2 text-white">Publicar empleo</span>}
+                            {isMenuOpen && <span className="ml-2 text-white">Mejora tu CV</span>}
                         </Link>
                     </div>
 
@@ -151,7 +150,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/recruiter/ayuda"} className="px-4 flex">
+                        <Link to={"/postulate/ayuda"} className="px-4 flex">
                             {isMenuOpen ? (
                                 <IoMdHelpCircle className="text-white text-2xl" />
                             ) : (
@@ -180,4 +179,4 @@ const NavMenu = () => {
     );
 };
 
-export default NavMenu;
+export default NavMenuPostu;
