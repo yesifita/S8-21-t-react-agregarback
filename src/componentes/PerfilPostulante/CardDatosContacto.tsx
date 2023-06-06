@@ -6,6 +6,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import { AiFillBehanceSquare } from 'react-icons/ai'
 import { AiOutlineInstagram } from 'react-icons/ai'
 import { AiFillLinkedin } from 'react-icons/ai'
+import check from '../../assets/icons/check_box.svg'
 import { Link } from 'react-router-dom'
 
 const CardDatosContacto = () => {
@@ -74,10 +75,11 @@ const CardDatosContacto = () => {
                 </p>
               </div>
             </div>
-            <div className="w-56 h-10 pt-2 bg-secundaryGreyLight2 rounded-br-xl rounded-tr-xl">
-                <input type="checkbox" className='pl-3 pr-2' checked></input>
-              <label className='w-56 pl-1 font-semibold text-xxs h-80 text-start text-secundaryViolet'>Disponible para trabajo remoto
-              </label>
+            <div className="flex flex-row justify-center h-10 pt-2 items-centerw-56 bg-secundaryGreyLight2 rounded-br-xl rounded-tr-xl">
+              <img src={check} className="w-10 h-10 pb-3 pl-3 pr-2 "></img>
+              <p className="w-56 pt-1 pl-1 text-xs font-semibold h-80 text-start text-secundaryViolet">
+                Disponible para trabajo remoto
+              </p>
             </div>
           </div>
         </main>
