@@ -1,10 +1,8 @@
 export interface User {
  email: string;
-  password: string | number;
-
+  password: string | number
 }
 export interface Job{
-  // imagen: string;
   empresa: string
   puesto :string
   experiencia: boolean

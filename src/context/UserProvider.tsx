@@ -9,6 +9,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../service/firebase";
+import { useNavigate } from "react-router-dom";
+
+ ''
 
 export const UserContext = createContext({});
 export const useUser = () => {
@@ -17,20 +20,22 @@ export const useUser = () => {
 };
 
 const UserProvider = (props: Props) => {
-  const [user, setUser] = useState("");
-
+  const [user, setUser] = useState(null);
+  
+const navigate=useNavigate()
+  
   useEffect(() => {
     const suscribed = onAuthStateChanged(auth, (currentUser) => {
-      if (!currentUser) {
-        console.log("no hay usuario registrado");
-      } else {
+     console.log(currentUser)
+      if (currentUser) {
         setUser(currentUser);
-      }
+        navigate('/recruiter/dashboard')
+      } 
     });
     return suscribed;
   }, []);
 
-  // const navigate = useNavigate();
+
 
   const register = async (email, password) => {
     const response = await createUserWithEmailAndPassword(

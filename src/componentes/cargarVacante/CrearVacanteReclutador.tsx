@@ -1,5 +1,4 @@
-import { useUser } from '../../context/UserProvider'
-import imgupload from '../../assets/icons/upload_img.svg'
+import imgupload from '../../assets/icons/upload_LOGO.svg'
 import imgIconPerson from '../../assets/icons/icon_person_form_createJob.svg'
 import vacaciones from '../../assets/icons/vacaciones_beneficios.svg'
 import service from '../../assets/icons/service_beneficios.svg'
@@ -13,47 +12,49 @@ import close from '../../assets/icons/close X.svg'
 import { Link } from 'react-router-dom'
 import Loader from '../loader/Loader'
 import { useState, useRef } from 'react'
+import { db } from '../../service/firebase'
+import { collection, addDoc } from 'firebase/firestore'
+
+const INITIAL_CHECK = {
+  vsc: false,
+  php: false,
+  eclipse: false,
+  figma: false,
+  java: false,
+  ds: false,
+  reactnative: false,
+  react: false,
+  node: false,
+  horario: false,
+  ingles: false,
+  bebidas: false,
+  computadora: false,
+  prepaga: false,
+  service: false,
+  vacaciones: false,
+  platzi: false,
+  acuerdo: true,
+}
+const INITIAL_VALUES = {
+  imagen: '',
+  empresa: '',
+  puesto: '',
+  experiencia: '',
+  modo: '',
+  ciudades: '',
+  salario: '',
+  textarea: '',
+  ingles: '',
+}
 
 const CrearVacanteReclutador = () => {
-  const [loading, setLoading] = useState(false)
   const [Image, setImage] = useState('')
-  const [inputCheck, setInputCheck] = useState({
-    vsc: false,
-    php: false,
-    eclipse: false,
-    figma: false,
-    java: false,
-    ds: false,
-    reactnative: false,
-    react: false,
-    node: false,
-    horario: false,
-    ingles: false,
-    bebidas: false,
-    computadora: false,
-    prepaga: false,
-    service: false,
-    vacaciones: false,
-    platzi: false,
-    acuerdo: true,
-  })
-  const [inputValues, setInputValues] = useState({
-    imagen: '',
-    empresa: '',
-    puesto: '',
-    experiencia: '',
-    modo: '',
-    ciudades: '',
-    salario: '',
-    textarea: '',
-    ingles: '',
-  })
-  const [file, setFile] = useState('')
+  const [inputCheck, setInputCheck] = useState(INITIAL_CHECK)
+  const [inputValues, setInputValues] = useState(INITIAL_VALUES)
 
   const handleSubmit = e => {
-    e.preventDefault(), setLoading(true)
-    setInputValues
-    setInputCheck
+    e.preventDefault(), createJob({ inputValues, inputCheck })
+    ;<Loader />
   }
 
   const handleChange = e => {
@@ -80,28 +81,14 @@ const CrearVacanteReclutador = () => {
   const selectImage = () => {
     refInputFile.current.click()
   }
-  // const addImage = e => {
-  //   e.preventDefault()
-  //   refInputFile.current.files = e.dataTransfer.files
-  //   const file = refInputFile.current.files[0]
-  //   showImage(file)
-  //   fileReader('load', (e) => {
-  //     setImage(
-  //       e.target.result)
-  //   })
-  //   setFile(file)
-  // }
 
-  // const uploadImage = e => {
-  //   const files = e.target.files
-  //   const file = files[0]
-  //   showImage(file)
-  // }
-  // console.log(setInputCheck)
+  const createJob = async e => {
+    await addDoc(collection(db, 'Jobs'), { inputCheck, inputValues })
+  }
+
   return (
     <>
       <div>
-        {loading ? <Loader /> : null}
         <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
           <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
           <Link to="/jobs">
@@ -118,11 +105,8 @@ const CrearVacanteReclutador = () => {
           <div id="conteiner_upload_image" className="flex flex-row w-full cursor-pointer">
             <div
               onClick={selectImage}
-              // onDrop={addImage}
-              // onDrag={addImage}
-              // {dragImage}
               id="conteiner_ imput_img"
-              className="flex flex-col items-center justify-center w-32 mb-3 ml-20 text-center bg-red-500 border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl"
+              className="flex flex-col items-center justify-center p-4 pl-8 mb-3 ml-20 text-center bg-black border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl w-87 h-14 "
             >
               <input
                 onChange={handleChange}
@@ -132,12 +116,10 @@ const CrearVacanteReclutador = () => {
                 name="imagen"
                 className="hidden h-full border-2 border-dashed w-14 rounded-xl border-slate-400 opacity-20"
               ></input>
-              <h3 className="text-xs font-bold bg-transparent w-fulw-full"> subir imagen</h3>
-              <img
-                src={Image}
-                onBlur={showImage}
-                className="z-50 w-full h-12 pb-2 bg-center bg-no-repeat bg-cover "
-              ></img>
+              <img src={imgupload} className="w-8 h-10 mr-2 "></img>
+              <h3 className="items-start w-20 h-2 mb-3 mr-3 text-xs font-bold text-center text-white bg-transparent ">
+                subir imagen
+              </h3>
             </div>
             <input
               type="text"
@@ -176,8 +158,8 @@ const CrearVacanteReclutador = () => {
                   <option id="" value="">
                     Selecciona nivel de experiencia
                   </option>
-                  <option id="traine" value="traine">
-                    Trainee
+                  <option id="sin experiencia" value="sin experiencia">
+                    Sin experiencia
                   </option>
                   <option id="junior" value="junior">
                     Junior
@@ -240,13 +222,13 @@ const CrearVacanteReclutador = () => {
                     Elije ciudad
                   </option>
                   <option id="cordoba" value="cordoba">
-                    cordoba
+                    Cordoba
                   </option>
                   <option id="bs as" value="bs as">
-                    buenod aires
+                    Buenos Aires
                   </option>
                   <option id="mendoza" value="mendoza">
-                    mendoza
+                    Mendoza
                   </option>
                 </select>
               </div>
@@ -262,19 +244,19 @@ const CrearVacanteReclutador = () => {
                   <option id="" value="">
                     Seleciona un rango
                   </option>
-                  <option id="0" value="0">
+                  <option id="0-50.000" value="0-50.000">
                     0-50.000
                   </option>
-                  <option id="5" value="5">
+                  <option id="50.000-100.000" value="50.000-100.000">
                     50.000-100.000
                   </option>
-                  <option id="10" value="10">
+                  <option id="100.000-250.000" value="100.000-250.000">
                     100.000-250.000
                   </option>
-                  <option id="25" value="25">
+                  <option id="250.000-400.000" value="250.000-400.000">
                     250.000-400.000
                   </option>
-                  <option id="40" value="40">
+                  <option id="400.000" value="400.000">
                     400.000-600.000
                   </option>
                 </select>
@@ -309,8 +291,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="vsc"
-                        name="vsc"
+                        id="Visual Studio Code"
+                        name="Visual Studio Code"
                         defaultChecked={inputCheck.vsc}
                         className="mr-3"
                       ></input>
@@ -320,8 +302,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="php"
-                        name="php"
+                        id="PHP"
+                        name="PHP"
                         defaultChecked={inputCheck.php}
                       ></input>{' '}
                       PHP
@@ -330,8 +312,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="eclipse"
-                        name="eclipse"
+                        id="Eclipse"
+                        name="Eclipse"
                         defaultChecked={inputCheck.eclipse}
                       ></input>{' '}
                       Eclipse
@@ -340,8 +322,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="figma"
-                        name="figma"
+                        id="Figma"
+                        name="Figma"
                         defaultChecked={inputCheck.figma}
                       ></input>{' '}
                       Figma
@@ -350,8 +332,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="ds"
-                        name="ds"
+                        id=" Design thinking"
+                        name=" Design Jhinking"
                         defaultChecked={inputCheck.ds}
                       ></input>{' '}
                       Design Thinking
@@ -360,8 +342,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="java"
-                        name="java"
+                        id="Java"
+                        name="Java"
                         defaultChecked={inputCheck.java}
                       ></input>{' '}
                       Java
@@ -370,8 +352,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="reactnative"
-                        name="reactnative"
+                        id="React native"
+                        name="React native"
                         defaultChecked={inputCheck.reactnative}
                       ></input>{' '}
                       React Native
@@ -380,8 +362,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="react"
-                        name="react"
+                        id="React"
+                        name="React"
                         defaultChecked={inputCheck.react}
                       ></input>{' '}
                       React
@@ -390,8 +372,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="node"
-                        name="node"
+                        id="Node"
+                        name="Node"
                         defaultChecked={inputCheck.node}
                       ></input>{' '}
                       Node Js
@@ -409,13 +391,13 @@ const CrearVacanteReclutador = () => {
                     <option id="notiene" value="notiene">
                       No requiere experiencia
                     </option>
-                    <option id="ados" value="ados">
+                    <option id="A2-Principiante" value="A2-Principiante">
                       A2-Principiante
                     </option>
-                    <option id="bdos" value="bdos">
+                    <option id="B2-Intermedio" value="B2-Intermedio">
                       B2-Intermedio
                     </option>
-                    <option id="cuno" value="cuno">
+                    <option id="C1-Avanzado" value="C1-Avanzado">
                       C1-Avanzado
                     </option>
                   </select>
@@ -432,8 +414,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="horario"
-                        name="horarios"
+                        id="Horario flexible"
+                        name="Horario flexible"
                         defaultChecked={inputCheck.horario}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -446,8 +428,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="ingles"
-                        name="ingles"
+                        id="Clases de Ingles"
+                        name="Clases de Ingles"
                         defaultChecked={inputCheck.ingles}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -460,8 +442,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="bebidas"
-                        name="bebidas"
+                        id="Bebidas y Snack"
+                        name="Bebidas y Snack"
                         defaultChecked={inputCheck.bebidas}
                         className="ml-5 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -474,8 +456,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="computadora"
-                        name="computadora"
+                        id="Computadora"
+                        name="Computadora"
                         defaultChecked={inputCheck.computadora}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -488,8 +470,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="prepaga"
-                        name="prepaga"
+                        id="Cobertura Prepaga"
+                        name="Cobertura Prepaga"
                         defaultChecked={inputCheck.prepaga}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -502,8 +484,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="service"
-                        name="service"
+                        id="Servicio Tecnico para PC"
+                        name="Servicio Tecnico para PC"
                         defaultChecked={inputCheck.service}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>{' '}
@@ -516,8 +498,8 @@ const CrearVacanteReclutador = () => {
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="vacaciones"
-                        name="vacaciones"
+                        id="Vacaciones Extras"
+                        name="Vacaciones Extras"
                         defaultChecked={inputCheck.vacaciones}
                         className="ml-6 mr-2 text-base font-normal"
                       ></input>
@@ -527,14 +509,14 @@ const CrearVacanteReclutador = () => {
                   <div className="grid h-6 grid-rows-1 ">
                     <img src={platzi} className="ml-36"></img>
 
-                    <label className="pr-1 ml-36 w-72">
+                    <label className="pr-1 ml-36 w-80">
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
-                        id="platzi"
-                        name="platzi"
+                        id="Descuentos en Platzi"
+                        name="Descuentos en Platzi"
                         defaultChecked={inputCheck.platzi}
-                        className="ml-6 mr-2 text-base font-normal"
+                        className="ml-6 mr-3 text-base font-normal"
                       ></input>
                       Descuentos en Platzi
                     </label>
@@ -563,14 +545,14 @@ const CrearVacanteReclutador = () => {
           </div>
           <div className="flex flex-row justify-around w-full pt-16 pb-8 pl-12 pr-20 ">
             <Link to="/recruiter/dashboard">
-              <button className="w-48 h-12 mb-8 text-base font-medium bg-white border-2 border-skyblue text-skyblue">
+              <button className="w-48 h-12 mb-8 text-base font-medium bg-white border-2 rounded-xl border-skyblue text-skyblue">
                 Cancelar
               </button>
             </Link>
             <button
-              onClick={() => setLoading(true)}
-              className="w-48 h-12 text-base font-medium text-white bg-primaryGreen"
-            >
+              type="submit"
+              onClick={handleSubmit}
+              className="w-48 h-12 text-base font-medium text-white rounded-xl bg-primaryGreen"            >
               Publicar Oferta
             </button>
           </div>

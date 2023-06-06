@@ -7,9 +7,6 @@
 #conteiner-job{
     @apply w-full h-full
 }
-button{
-    @apply bg-white w-12 h-8 border-solid border-slate-800 rounded-xl
-}
 
 #requerimientos input {
     @apply mr-2 font-normal text-base 
