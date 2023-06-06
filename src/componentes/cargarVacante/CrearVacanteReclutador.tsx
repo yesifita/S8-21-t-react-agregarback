@@ -1,4 +1,4 @@
-import imgupload from '../../assets/icons/upload_img.svg'
+import imgupload from '../../assets/icons/upload_LOGO.svg'
 import imgIconPerson from '../../assets/icons/icon_person_form_createJob.svg'
 import vacaciones from '../../assets/icons/vacaciones_beneficios.svg'
 import service from '../../assets/icons/service_beneficios.svg'
@@ -53,9 +53,8 @@ const CrearVacanteReclutador = () => {
   const [inputValues, setInputValues] = useState(INITIAL_VALUES)
 
   const handleSubmit = e => {
-    e.preventDefault(), 
-    createJob({ inputValues, inputCheck });
-<Loader/>
+    e.preventDefault(), createJob({ inputValues, inputCheck })
+    ;<Loader />
   }
 
   const handleChange = e => {
@@ -90,7 +89,7 @@ const CrearVacanteReclutador = () => {
   return (
     <>
       <div>
-          <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
+        <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
           <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
           <Link to="/recruiter/dashboard">
             <button className="mr-6 w-14 h-14 bg-secundaryGreyLight2">
@@ -107,7 +106,7 @@ const CrearVacanteReclutador = () => {
             <div
               onClick={selectImage}
               id="conteiner_ imput_img"
-              className="flex flex-col items-center justify-center w-32 mb-3 ml-20 text-center border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl"
+              className="flex flex-col items-center justify-center p-4 pl-8 mb-3 ml-20 text-center bg-black border-2 border-dashed h-18 flex-rows text-xxs border-slate-400 rounded-xl w-87 h-14 "
             >
               <input
                 onChange={handleChange}
@@ -117,12 +116,10 @@ const CrearVacanteReclutador = () => {
                 name="imagen"
                 className="hidden h-full border-2 border-dashed w-14 rounded-xl border-slate-400 opacity-20"
               ></input>
-              <h3 className="text-xs font-bold bg-transparent w-fulw-full"> subir imagen</h3>
-              <img
-                src={Image}
-                onBlur={showImage}
-                className="z-50 w-full h-12 pb-2 bg-center bg-no-repeat bg-cover "
-              ></img>
+              <img src={imgupload} className="w-8 h-10 mr-2 "></img>
+              <h3 className="items-start w-20 h-2 mb-3 mr-3 text-xs font-bold text-center text-white bg-transparent ">
+                subir imagen
+              </h3>
             </div>
             <input
               type="text"
@@ -225,13 +222,13 @@ const CrearVacanteReclutador = () => {
                     Elije ciudad
                   </option>
                   <option id="cordoba" value="cordoba">
-                    cordoba
+                    Cordoba
                   </option>
                   <option id="bs as" value="bs as">
-                    buenod aires
+                    Buenos Aires
                   </option>
                   <option id="mendoza" value="mendoza">
-                    mendoza
+                    Mendoza
                   </option>
                 </select>
               </div>
@@ -512,14 +509,14 @@ const CrearVacanteReclutador = () => {
                   <div className="grid h-6 grid-rows-1 ">
                     <img src={platzi} className="ml-36"></img>
 
-                    <label className="pr-1 ml-36 w-72">
+                    <label className="pr-1 ml-36 w-80">
                       <input
                         onChange={handleChangeChecked}
                         type="checkbox"
                         id="Descuentos en Platzi"
                         name="Descuentos en Platzi"
                         defaultChecked={inputCheck.platzi}
-                        className="ml-6 mr-2 text-base font-normal"
+                        className="ml-6 mr-3 text-base font-normal"
                       ></input>
                       Descuentos en Platzi
                     </label>
@@ -553,9 +550,9 @@ const CrearVacanteReclutador = () => {
               </button>
             </Link>
             <button
+              type="submit"
               onClick={handleSubmit}
-              className="w-48 h-12 text-base font-medium text-white rounded-xl bg-primaryGreen"
-            >
+              className="w-48 h-12 text-base font-medium text-white rounded-xl bg-primaryGreen"            >
               Publicar Oferta
             </button>
           </div>

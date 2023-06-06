@@ -12,7 +12,7 @@ const NavBarLogin = () => {
         <img src={logo} alt="logo" className="block px-10 py-5 w-52"/>
     
         <div className="flex flex-row gap-4 mr-14">
-          <Link to='/login'>
+          <Link to='/'>
             <button className="h-12 text-base font-medium text-white w-36 bg-primaryGreen rounded-xl">Iniciar sesion</button>
             </Link>
             <Link to='/Registro'>

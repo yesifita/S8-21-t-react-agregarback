@@ -8,18 +8,17 @@ import Profile from '../componentes/Profile/Profile'
 import CrearVacanteReclutador from '../componentes/cargarVacante/CrearVacanteReclutador'
 import RecAyuda from './recAyuda'
 import PostuladosContainer from '../components/postulados/PostuladosContainer/PostuladosContainer'
-import ProtectedPath from '../componentes/protectedPath/ProtectedPath'
 
 
 
 const ListRoutes = () => {
-
+ 
   return (
     <>
       <UserProvider>
         <Routes>
-          <Route path="*/" element={<h1>not found</h1>}></Route>
-          <Route path="/login" element={<Login />}></Route>
+        <Route path="/*" element={<h1>not found</h1>}></Route>
+          <Route path="/" element={<Login />}></Route>     
           <Route path="/recruiter/dashboard" element={<RecDashboard />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/postulantes" element={<Apliccants />}></Route>

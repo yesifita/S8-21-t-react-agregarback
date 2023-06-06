@@ -128,7 +128,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/"} className="flex px-4">
+                        <Link to={"/notifcaciones"} className="flex px-4">
                             {isMenuOpen ? (
                                 <img src={notificacion
                                 } className="text-2xl text-white" />
@@ -156,7 +156,7 @@ const NavMenu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/login"} className="flex px-4" onClick={handleLogout}>
+                        <Link to={"/"} className="flex px-4" onClick={handleLogout}>
                             {isMenuOpen ? (
                                 <img src={cerrarsesion} className="text-2xl text-white fill-white" />
                             ) : (
