@@ -104,7 +104,7 @@ const CrearVacanteReclutador = () => {
         {loading ? <Loader /> : null}
         <div id="header_container" className="flex justify-between w-full pt-4 pl-8 flex-cols-2">
           <h1 className="pb-1 pl-6 text-3xl font-bold">Crear nueva oferta de empleo</h1>
-          <Link to="/recruiter/dashboard">
+          <Link to="/jobs">
             <button className="mr-6 w-14 h-14 bg-secundaryGreyLight2">
               <img src={close} className="w-full h-full p-4"></img>
             </button>
