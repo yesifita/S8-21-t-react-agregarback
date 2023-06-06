@@ -26,7 +26,7 @@ export default function RecDashboard() {
             </div>
           </div>
 
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap w-full mx-10">
             <div className="w-1/2 pr-4">
               <CardNewJob />
             </div>

@@ -1,11 +1,13 @@
 import express from 'express'
 import axios from 'axios'
+import cors from 'cors';
 
 const app = express()
 const port = 3000
 
 app.use(express.static('public'))
 app.use(express.json())
+app.use(cors()); // Permitir solicitudes CORS desde cualquier origen
 
 // Rutas de prueba
 app.get('/', (req, res) => {
@@ -17,6 +19,7 @@ const OPENAI_API_KEY = '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'
 app.post('/chat', async (req, res) => {
   try {
     const { messages } = req.body
+    console.log(req.body)
     const userMessage = messages[0].content // Accede al contenido del mensaje del usuario
 
     const response = await axios.post(

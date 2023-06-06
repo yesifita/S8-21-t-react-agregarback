@@ -4,8 +4,7 @@ import BtnCrearEmpleo from '../Buttons/BtnCrearEmpleo'
 export default function CardNewJob() {
   return (
     <div className="flex items-center bg-secundaryGreyLight p-6 rounded-xl h-96">
-      <div className="mr-4">
-        <img src={newJob} alt="New Job" className="rounded-xl" style={{ width: '370px' }} />
+      <div className="bg-no-repeat bg-center bg-cover mr-6 rounded-xl" style={{ backgroundImage: `url(${newJob})`, height: '340px', width: '300px'}}>
       </div>
       <div>
         <h2 className="text-3xl text-primaryBlueDark font-extrabold mb-4">
@@ -15,8 +14,11 @@ export default function CardNewJob() {
           Confia en nuestra experiencia para encontrar el talento ideal que impulse el crecimiento
           de tu organización
         </p>
+        
         <BtnCrearEmpleo />
       </div>
     </div>
   )
 }
+
+

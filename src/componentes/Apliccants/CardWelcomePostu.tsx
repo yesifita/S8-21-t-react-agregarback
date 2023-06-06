@@ -1,9 +1,9 @@
 import { useUser } from '../../context/UserProvider'
-import photoProfile from '../../assets/images/photoProfile.png'
+import photoProfile from '../../assets/images/photoProfile2.png'
 
-function CardWelcome() {
+export default function CardWelcomePostu() {
     const authUser = useUser();
-    const { displayName,email } = authUser.user;
+    const { displayName } = authUser.user;
 
     return (
         <div className="bg-secundaryGreyLight h-72 rounded-xl">
@@ -11,7 +11,7 @@ function CardWelcome() {
 
                 <div className='w-full'>
                     <p className="pl-8 mb-4 text-2xl text-primaryBlueDark">Bienvenido,</p>
-                    <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark"> {displayName ? displayName : email}</h2>
+                    {displayName && <h2 className="pl-8 mb-4 text-4xl font-extrabold text-primaryBlueDark">{displayName}</h2>}
                     <p className="px-8 py-2 text-2xl text-white bg-secundaryViolet">Un gusto tenerte aquí</p>
                 </div>
                 <div className="relative z-10 mr-6">
@@ -22,5 +22,3 @@ function CardWelcome() {
         </div>
     )
 }
-
-export default CardWelcome;

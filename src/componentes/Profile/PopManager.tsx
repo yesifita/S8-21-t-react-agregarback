@@ -18,8 +18,8 @@ export default function PopManager({ togglePopup }) {
     cargo: 'Selecciona una opción',
   })
   const [switches, setSwitch] = useState("encargado")
-  const activo = `bg-colorPrimario text-blanco border-none font-bold rounded-none ${switches === "encargado" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
-  const noActivo = "bg-grisOptions text-colorPrimario text-center font-bold rounded-none rounded-r-lg w-4/5 h-12"
+  const activo = `bg-primaryBlueDark text-blanco border-none font-bold rounded-none ${switches === "encargado" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
+  const noActivo = `bg-secundaryGreyLight2 text-primaryBlueDark text-center font-bold rounded-none ${switches === "recuperación" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>): void {
     console.log(e.target.name)
@@ -34,7 +34,7 @@ export default function PopManager({ togglePopup }) {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-      <div className="flex flex-col justify-between bg-white p-8 w-4/5 h-4/6 rounded-xl border-2 border-colorPrimario">
+      <div className="flex flex-col justify-between bg-white p-8 w-4/5 h-4/6 rounded-xl border-2 border-primaryBlueDark">
         <div className="h-full">
           <div className="flex flex-col items-center">
             <div className="flex justify-between w-full">
@@ -68,14 +68,14 @@ export default function PopManager({ togglePopup }) {
 
                       <div className="flex justify-between gap-x-2">
                         <button
-                          className="hover:bg-rojo hover:text-blanco hover:border-none text-botonesPrincipales font-bold border-2 border-botonesPrincipales rounded-xl w-4/5 h-12"
+                          className="hover:bg-rojo hover:text-blanco hover:border-none text-primaryGreen font-bold border-2 border-primaryGreen rounded-xl w-4/5 h-12"
                           id="PERSONALES"
                           onClick={e => togglePopup(e)}
                         >
                           Borrar imagen
                         </button>
                         <button
-                          className="bg-botonesPrincipales hover:bg-botonesHover text-white text-center font-bold rounded-xl w-4/5 h-12"
+                          className="bg-primaryGreen hover:bg-botonesHover text-white text-center font-bold rounded-xl w-4/5 h-12"
                           id="PERSONALES"
                           onClick={e => togglePopup(e)}
                         >
@@ -92,25 +92,25 @@ export default function PopManager({ togglePopup }) {
           {switches === 'encargado' && (
             <div className="flex gap-x-6">
               <div className="flex flex-col w-full mt-4">
-                <label className="text-colorPrimario font-bold text-base">Nombre y apelido</label>
+                <label className="text-primaryBlueDark font-bold text-base">Nombre y apelido</label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="nombre"
                   value={newDates.nombre}
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">Teléfono</label>
+                <label className="text-primaryBlueDark font-bold text-base">Teléfono</label>
                 <div className="flex gap-x-2">
                   <input
-                    className="border-none rounded-xl w-16 h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                    className="border-none rounded-xl w-16 h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                     type="text"
                     name="codigoArea"
                     value={newDates.codigoArea}
                     onChange={e => handleInput(e)}
                   />
                   <input
-                    className="border-none rounded-xl w-full h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                    className="border-none rounded-xl w-full h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                     type="number"
                     name="telefono"
                     value={newDates.telefono}
@@ -120,23 +120,23 @@ export default function PopManager({ togglePopup }) {
               </div>
 
               <div className="flex flex-col w-full mt-4">
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Titular/Descripción
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="descripcion"
                   value={newDates.descripcion}
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">Cargo</label>
+                <label className="text-primaryBlueDark font-bold text-base">Cargo</label>
                 <div className="flex items-center w-full">
                   <select
                     name="cargo"
                     id="cargo"
                     defaultValue={newDates.cargo}
-                    className="border-r-8 border-transparent text-colorPrimario rounded-xl w-full h-12 bg-bgCARDS p-3 mt-3 mb-8"
+                    className="border-r-8 border-transparent text-primaryBlueDark rounded-xl w-full h-12 bg-secundaryGreyLight p-3 mt-3 mb-8"
                   >
                     <option disabled>{newDates.cargo}</option>
                     <option value="Gerente de la empresa">Gerente de la empresa</option>
@@ -156,61 +156,61 @@ export default function PopManager({ togglePopup }) {
           {switches === 'recuperación' && (
             <div className="flex gap-x-6 mt-10">
               <div className="flex flex-col w-full mt-4">
-                <label className="text-colorPrimario font-bold text-base">Correo actual</label>
+                <label className="text-primaryBlueDark font-bold text-base">Correo actual</label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="nombre"
                   placeholder="vargas@nova.com"
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Repetir el nuevo correo
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="direccion"
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Ingresa la nueva clave
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-4"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-4"
                   type="text"
                   name="ubicacion"
                   onChange={e => handleInput(e)}
                 />
-                <div className="text-botonesSecundarios font-normal text-xs leading-4">
+                <div className="text-secundaryViolet font-normal text-xs leading-4">
                   La clave debe contener un mínimo de 4 caracteres y un máximo de 10
                 </div>
               </div>
 
               <div className="flex flex-col w-full mt-4">
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Ingresar el nuevo correo
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="ruc"
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Ingresa la clave actual
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="rubro"
                   onChange={e => handleInput(e)}
                 />
-                <label className="text-colorPrimario font-bold text-base">
+                <label className="text-primaryBlueDark font-bold text-base">
                   Repetir la nueva clave
                 </label>
                 <input
-                  className="border-none rounded-xl h-12 bg-bgCARDS p-4 mt-3 mb-8"
+                  className="border-none rounded-xl h-12 bg-secundaryGreyLight p-4 mt-3 mb-8"
                   type="text"
                   name="rubro"
                   onChange={e => handleInput(e)}
@@ -222,14 +222,14 @@ export default function PopManager({ togglePopup }) {
 
         <div className="flex justify-between gap-x-6">
           <button
-            className="hover:bg-rojo hover:text-blanco hover:border-none text-botonesPrincipales font-bold border-2 border-botonesPrincipales rounded-xl w-4/5 h-12"
+            className="hover:bg-rojo hover:text-blanco hover:border-none text-primaryGreen font-bold border-2 border-primaryGreen rounded-xl w-4/5 h-12"
             id="PERSONALES"
             onClick={e => togglePopup(e)}
           >
             Cancelar
           </button>
           <button
-            className="bg-botonesPrincipales hover:bg-botonesHover text-white text-center font-bold rounded-xl w-4/5 h-12"
+            className="bg-primaryGreen hover:bg-botonesHover text-white text-center font-bold rounded-xl w-4/5 h-12"
             id="PERSONALES"
             onClick={e => togglePopup(e)}
           >
