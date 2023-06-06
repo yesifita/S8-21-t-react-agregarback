@@ -24,19 +24,34 @@ export default {
         negroOscuro: '#0e0e0e',
         grisClaro: '#dfdddd',
         grisOscuro: '#636262',
+        fondoT:'rgba(51, 51, 51, 0.8)'
       },
       spacing: {
+        71:'71px',
+        78:'78px',
         84: '84px',
         87: '87px',
         134: '134px',
+        150:'150px',
         182: '182px',
         199: '199px',
+        234:'234px',
         253: '253px',
+        264:'264px',
+        296:'296px',
         325: '325px',
         327: '327px',
         360: '360px',
+        407:'407px',
         450: '450px',
+        467:'467px',
+        483:'483px',
         505: '505px',
+        512:'512px',
+        643:'643px',
+        664:'664px',
+        720:'720px',
+        819:'819px',
       },
       fontSize: {
         xxs: '10px',
@@ -47,6 +62,9 @@ export default {
       backgroundImage: {
         upload:"./src/assets/icons/upload_img.svg"
     }},
+    fontFamily:{
+      primaria:'Inter, sans-serif'
+    }
   },
   plugins: [],
 };
