@@ -7,31 +7,30 @@ import { Apliccants } from '../componentes/Apliccants/Apliccants'
 import Profile from '../componentes/Profile/Profile'
 import CrearVacanteReclutador from '../componentes/cargarVacante/CrearVacanteReclutador'
 import RecAyuda from './recAyuda'
+import PerfilPostulante from '../componentes/PerfilPostulante/PerfilPostulante'
 import PostuladosContainer from '../components/postulados/PostuladosContainer/PostuladosContainer'
 import JobPosting from '../componentes/JobPosting/JobPosting'
 import IA from '../componentes/IA/IA'
 import PostuDashboard from './postuDashboard'
 import PostuAyuda from './postuAyuda'
 
-
-
 const ListRoutes = () => {
- 
   return (
     <>
       <UserProvider>
         <Routes>
-        <Route path="/*" element={<h1>not found</h1>}></Route>
-          <Route path="/" element={<Login />}></Route>     
+          <Route path="/*" element={<h1>not found</h1>}></Route>
+          <Route path="/" element={<Login />}></Route>
           <Route path="/recruiter/dashboard" element={<RecDashboard />}></Route>
           <Route path="/postulate/dashboard" element={<PostuDashboard />}></Route>
           <Route path="/postulate/ayuda" element={<PostuAyuda />}></Route>
-          <Route path="/recruiter/ayuda" element={<RecAyuda/>}></Route>         
+          <Route path="/recruiter/ayuda" element={<RecAyuda />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/postulantes" element={<Apliccants />}></Route>
-          <Route path="/registro" element={<Register />}></Route>          
+          <Route path="/registro" element={<Register />}></Route>
           <Route path="/postulados" element={<PostuladosContainer />}></Route>
-          <Route path="/empleo" element={<CrearVacanteReclutador/>}></Route>
+          <Route path="/empleo" element={<CrearVacanteReclutador />}></Route>
+          <Route path="/postulante/perfil" element={<PerfilPostulante />}></Route>
           <Route path="/jobs" element={<JobPosting />}></Route>
           <Route path="/ia" element={<IA />}></Route>
         </Routes>
