@@ -1,13 +1,15 @@
-import { useContext } from "react"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../context/UserProvider"
-import {Props, UserContextType} from '../../types'
+import {Props} from '../../types'
 
-const ProtectedPath = ({children}:Props) => {
-  const{user}= useContext(UserContext) as UserContextType;
+const ProtectedPath = ({user,children}) => {
+  
+
+
+  const navigate = useNavigate()
   
 if(!user){
-    return <Navigate to='/registro'/>
+    return navigate('/login')
 }
 return children;
 }
