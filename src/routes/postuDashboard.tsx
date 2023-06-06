@@ -1,5 +1,5 @@
 import CardMejoCV from '../componentes/Apliccants/CardMejoCV'
-import CardWelcome from '../componentes/Apliccants/CardWelcome'
+import CardWelcomePostu from '../componentes/Apliccants/CardWelcomePostu'
 import NavLogoPostu from '../componentes/Nav/NavLogoPostu'
 import NavMenuPostu from '../componentes/Nav/NavMenuPostu'
 import PostulateCardJobsFilter from '../componentes/Sections/PostulateCardJobsFilter'
@@ -16,7 +16,7 @@ export default function PostuDashboard() {
 
         <div className='flex flex-wrap w-full px-10 my-8'>
           <div className='flex flex-col w-1/2 pr-4 gap-y-8'>
-            <CardWelcome />
+            <CardWelcomePostu />
             <CardMejoCV/>
           </div>
           <div className='w-1/2 pl-4'>
