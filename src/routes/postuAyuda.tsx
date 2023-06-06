@@ -1,12 +1,12 @@
 import BtnQuestion from "../componentes/Buttons/BtnQuestion";
-import NavLogo from "../componentes/Nav/NavLogo";
-import NavMenu from "../componentes/Nav/NavMenu";
 import { MdQuiz } from "react-icons/md";
 
 import { BsSearch } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
+import NavMenuPostu from "../componentes/Nav/NavMenuPostu";
+import NavLogoPostu from "../componentes/Nav/NavLogoPostu";
 
-export default function RecAyuda() {
+export default function PostuAyuda() {
   const [expanded, setExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
   const inputRef = useRef(null);
@@ -86,11 +86,11 @@ export default function RecAyuda() {
     return (
     <div className="flex relative">
       <div className="z-10">
-        <NavMenu/>
+        <NavMenuPostu/>
       </div>
 
       <div className="absolute pl-16 w-full">
-        <NavLogo/>
+        <NavLogoPostu/>
         <div className="mx-10">
           <div className="flex justify-between mt-6 mb-10">
             <div className="flex items-center text-xl">
