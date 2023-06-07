@@ -7,7 +7,7 @@ const NavBarLogin = () => {
 
     
   return (
-    <nav className="flex flex-row items-center justify-between w-full bg-white h-72">
+    <nav className="flex flex-row items-center justify-between w-full bg-white h-h2">
           
         <img src={logo} alt="logo" className="block px-10 py-5 w-52"/>
     

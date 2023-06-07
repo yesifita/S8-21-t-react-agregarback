@@ -26,14 +26,16 @@ export default {
         negroOscuro: '#0e0e0e',
         grisClaro: '#dfdddd',
         grisOscuro: '#636262',
-        fondoT: 'rgba(51, 51, 51, 0.8)',
+        fondoT:'rgba(51, 51, 51, 0.8)',
+        botonInicio:'#2E76EC'
       },
       fontFamily: {
         primaria: ['Inter', 'sans-serif'],
       },
       spacing: {
-        71: '71px',
-        78: '78px',
+        71:'71px',
+        h72:'72px',
+        78:'78px',
         84: '84px',
         87: '87px',
         134: '134px',

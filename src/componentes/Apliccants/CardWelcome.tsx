@@ -15,7 +15,7 @@ function CardWelcome() {
                     <p className="px-8 py-2 text-2xl text-white bg-secundaryViolet">Un gusto tenerte aquí</p>
                 </div>
                 <div className="relative z-10 mr-6">
-                    <div className="bg-no-repeat bg-center bg-cover rounded-xl" style={{ backgroundImage: `url(${photoProfile})`, height: '240px', width: '220px'}}>
+                    <div className="bg-center bg-no-repeat bg-cover rounded-xl" style={{ backgroundImage: `url(${photoProfile})`, height: '240px', width: '220px'}}>
                     </div>
                 </div>
             </div>

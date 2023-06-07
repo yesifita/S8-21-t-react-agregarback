@@ -20,7 +20,7 @@ export const useUser = () => {
 };
 
 const UserProvider = (props: Props) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('');
   
 const navigate=useNavigate()
   
@@ -28,8 +28,7 @@ const navigate=useNavigate()
     const suscribed = onAuthStateChanged(auth, (currentUser) => {
      console.log(currentUser)
       if (currentUser) {
-        setUser(currentUser);
-        navigate('/recruiter/dashboard')
+        setUser(currentUser);      
       } 
     });
     return suscribed;
