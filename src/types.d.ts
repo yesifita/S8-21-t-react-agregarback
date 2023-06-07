@@ -34,6 +34,34 @@ export interface Perfil{
 export interface FormPerfilP{
 inputValues:Perfil
 }
+ export interface Educacion{
+  titulo:string,
+  institucion:string,
+  mesInicio:string,
+  añoInicio:number,
+  mesFin:string,
+  añoFin:number,
+  texto:string,
+ }
+ export interface FormDataEducacion{
+  inputValues:Educacion
+ }
+
+
+ export interface Experiencia{
+  cargo:string,
+ empresa:string,
+ sector:string,
+  mesInicio:string,
+  añoInicio:number,
+  mesFin:string,
+  añoFin:number,
+  texto:string,
+ }
+
+ export interface FormDataExperiencia{
+  inputValues:Experiencia
+ }
 
 interface Props{
   children: ReactNode

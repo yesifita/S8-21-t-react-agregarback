@@ -21,7 +21,7 @@ const PerfilPostulante = () => {
         </div>
         <div className='grid grid-rows-2 mt-24'>
 
-          <div className="ml-72">
+          <div className=" ml-72">
             <CardDatosContacto />
           </div>
           <div className="ml-72">
