@@ -1,9 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { FormState } from '../../types'
 import { useUser } from '../../context/UserProvider'
 import NavBarLogin from './NavBarLogin'
-import Register from './Register'
+import auth from '../../service/firebase'
 
 const Login = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
@@ -11,24 +11,17 @@ const Login = () => {
     password: '',
   })
   const authUser = useUser()
-  const user=authUser.user
+  const usuario=authUser.user
 
   const navigate = useNavigate()
 
-  const handleLogin = () => {
-    navigate('/recruiter/dashboard')
-  }
-
+  
   const handleSubmit =  (e: React.FormEvent<HTMLFormElement | HTMLButtonElement>)=> {
     e.preventDefault()
-    if(!user){
+    if(!usuario){
       return navigate('/Registro')
     }else{
-      authUser.login(inputValues.email, inputValues.password)
-      setTimeout(() => {
-       handleLogin()
-      }, 3000)
-
+      authUser.login(inputValues.email, inputValues.password)     
     }
   }
 
@@ -41,11 +34,7 @@ const Login = () => {
 
   const handleGoogle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    authUser.loginGoogle()
-
-    setTimeout(() => {
-      handleLogin()
-    }, 7000)
+    authUser.loginGoogle() 
   }
   return (
     <>

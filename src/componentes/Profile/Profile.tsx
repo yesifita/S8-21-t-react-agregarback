@@ -18,7 +18,7 @@ interface Dates {
 
 export default function Profile() {
   const authUser = useUser();
-  const { displayName } = authUser.user;
+  const { displayName,email } = authUser.user;
   
   const [newDates, setNewDates] = useState<Dates>({
     nombre: 'Tienda Nova C.A',
@@ -44,7 +44,7 @@ export default function Profile() {
           <NavMenu />
         </div>
 
-        <div className="absolute pl-16 w-full">
+        <div className="absolute w-full pl-16">
           <NavLogo />
           <div className='mx-10 '>
           <div className="flex justify-between">
@@ -54,11 +54,10 @@ export default function Profile() {
                   <img className="w-32 h-32" src={Avatar} alt="Imagen" />
 
                   <div className="flex flex-col justify-center">
-                  {displayName &&
-                    <h1 className="text-3xl not-italic font-extrabold leading-10 text-primaryBlueDark">
-                      {displayName}
+                                     <h1 className="text-3xl not-italic font-extrabold leading-10 text-primaryBlueDark">
+                      {displayName? displayName : email}
                     </h1>
-                  }
+                  
                     <p className="text-base font-normal leading-5 text-secundaryViolet">
                       Reclutador de Tiendas Nova
                     </p>
@@ -97,28 +96,28 @@ export default function Profile() {
 
               <div className="flex items-center justify-between space-x-5 mt-[3.5rem] w-96">
                 <h6 className="text-lg font-bold leading-5 text-secundaryViolet">Nombre</h6>
-                <div className="w-64 h-12 p-4 text-center bg-secundaryViolet text-white rounded-xl">
+                <div className="w-64 h-12 p-4 text-center text-white bg-secundaryViolet rounded-xl">
                   <p>{newDates.nombre}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
                 <h6 className="text-lg font-bold leading-5 text-secundaryViolet">RUC</h6>
-                <div className="w-64 h-12 p-4 text-center bg-secundaryViolet text-white rounded-xl">
+                <div className="w-64 h-12 p-4 text-center text-white bg-secundaryViolet rounded-xl">
                   <p>{newDates.ruc}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
                 <h6 className="text-lg font-bold leading-5 text-secundaryViolet">Dirección</h6>
-                <div className="w-64 h-12 p-4 text-center bg-secundaryViolet text-white rounded-xl">
+                <div className="w-64 h-12 p-4 text-center text-white bg-secundaryViolet rounded-xl">
                   <p>{newDates.direccion}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-between space-x-5 mt-[1.2rem] w-96">
                 <h6 className="text-lg font-bold leading-5 text-secundaryViolet">Rubro</h6>
-                <div className="w-64 h-12 p-4 text-center bg-secundaryViolet text-white rounded-xl">
+                <div className="w-64 h-12 p-4 text-center text-white bg-secundaryViolet rounded-xl">
                   <p>{newDates.rubro}</p>
                 </div>
               </div>
