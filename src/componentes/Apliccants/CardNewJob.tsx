@@ -14,6 +14,7 @@ export default function CardNewJob() {
           Confia en nuestra experiencia para encontrar el talento ideal que impulse el crecimiento
           de tu organización
         </p>
+        
         <BtnCrearEmpleo />
       </div>
     </div>

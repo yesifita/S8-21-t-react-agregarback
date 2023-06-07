@@ -1,10 +1,8 @@
 export interface User {
  email: string;
-  password: string | number;
-
+  password: string | number
 }
 export interface Job{
-  // imagen: string;
   empresa: string
   puesto :string
   experiencia: boolean
@@ -17,6 +15,24 @@ export interface Job{
   beneficios : boolean
   acuerdo :boolean
 
+}
+
+export interface Perfil{
+  nombre: string,
+  apellido: string,
+  rol:string,
+  skills1: string,
+  skills2: string,
+  skills3: string,
+  skills4: string,
+  skills5: string,
+  skills6: string,
+  ingles:any,
+  texto: string,
+
+}
+export interface FormPerfilP{
+inputValues:Perfil
 }
 
 interface Props{
