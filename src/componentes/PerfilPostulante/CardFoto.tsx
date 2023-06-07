@@ -1,5 +1,5 @@
 import editar from '../../assets/icons/editpencil.svg'
-import foto from '../../assets/images/photoProfile.png'
+import foto from '../../assets/icons/add_photo.svg'
 import FormPerfil from './FormPerfil'
 import { useState } from 'react'
 const Cardfoto = () => {
@@ -23,7 +23,7 @@ const Cardfoto = () => {
             <img src={editar} className="pl-3 "></img>
           </button>
           <div className="w-40 h-40 border-2 border-solid rounded-full border-secundaryGreyLight2 bg-secundaryGreyLight drop-shadow-md">
-            <img src={foto} className="w-40 h-40 bg-cover rounded-full "></img>
+            <img src={foto} className="w-20 h-20 pl-4 mt-8 ml-8 bg-cover "></img>
           </div>
           <p className="text-base font-bold text-secundaryViolet">Eduardo medina</p>
           <div className="h-6 pb-3 pl-2 text-center w-134 text-secondary ">Rol</div>
