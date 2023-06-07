@@ -29,7 +29,7 @@ const ListRoutes = () => {
           <Route path="/postulantes" element={<Apliccants />}></Route>
           <Route path="/registro" element={<Register />}></Route>
           <Route path="/postulados" element={<PostuladosContainer />}></Route>
-          <Route path="/empleo" element={<CrearVacanteReclutador />}></Route>
+          {/* <Route path="/empleo" element={<CrearVacanteReclutador />}></Route> */}
           <Route path="/postulante/perfil" element={<PerfilPostulante />}></Route>
           <Route path="/jobs" element={<JobPosting />}></Route>
           <Route path="/ia" element={<IA />}></Route>
