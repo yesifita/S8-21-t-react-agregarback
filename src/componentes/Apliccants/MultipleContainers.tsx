@@ -1,10 +1,12 @@
-import { DragDropContext, Droppable as DroppableDnd } from 'react-beautiful-dnd'
+import { DragDropContext } from 'react-beautiful-dnd'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { Container } from './Container'
 import { IApliccant } from '../../interfaces/IItemApliccants'
 import { setContainers } from '../../store/slices/apliccants.slices'
 import { useDispatch } from 'react-redux'
+import { doc, updateDoc } from 'firebase/firestore'
+import { db } from '../../service/firebase'
 
 export const MultipleContainers = () => {
   const dispatch = useDispatch()
@@ -19,23 +21,14 @@ export const MultipleContainers = () => {
     }, [] as IApliccant[])
     const newContainers = { ...containers, [containerId]: updateContainer }
     dispatch(setContainers(newContainers))
+    deleteDocument(item.id)
   }
 
-  const getStatus = containerId => {
-    switch (containerId) {
-      case 'guardados':
-        return 'guardados'
-      case 'enProceso':
-        return 'enProceso'
-      case 'readys':
-        return 'ready progress'
-      case 'inTable':
-        return 'in table'
-      case 'payables':
-        return 'payable'
-      default:
-        return 'rejected'
-    }
+  const deleteDocument = async (id: String) => {
+    const docRef = doc(db, `Apliccants/${id}`)
+    await updateDoc(docRef, { active: false })
+      .then(res => console.log(res))
+      .catch(e => console.log(e))
   }
 
   const reorder = (list, startIndex, endIndex) => {
@@ -44,6 +37,13 @@ export const MultipleContainers = () => {
     result.splice(endIndex, 0, removed)
 
     return result
+  }
+
+  const updateDocument = async (id: String, fieldsUpdate: Partial<IApliccant>) => {
+    const docRef = doc(db, `Apliccants/${id}`)
+    await updateDoc(docRef, fieldsUpdate)
+      .then(res => console.log(res))
+      .catch(e => console.log(e))
   }
 
   const handleDragEnd = event => {
@@ -61,6 +61,10 @@ export const MultipleContainers = () => {
       const reorderedList = reorder(sourceList, source.index, destination.index)
       const newItems = { ...containers, [source.droppableId]: reorderedList }
       dispatch(setContainers(newItems))
+
+      newItems[destination.droppableId].map((item: IApliccant) => {
+        updateDocument(item.id, { state: destination.droppableId })
+      })
     } else {
       const sourceClone = Array.from(sourceList)
       const [draggedItem] = sourceClone.splice(source.index, 1)
@@ -72,11 +76,10 @@ export const MultipleContainers = () => {
         [destination.droppableId]: destinationClone,
       }
       dispatch(setContainers(newItems))
-      const status = getStatus(destination.droppableId)
 
-      // axios
-      //   .put('http://localhost:3001/api/ticket', { _id: draggableId, status })
-      //   .catch(error => console.log(error))
+      newItems[destination.droppableId].map((item: IApliccant) => {
+        updateDocument(item.id, { state: destination.droppableId })
+      })
     }
   }
   return (
@@ -88,6 +91,7 @@ export const MultipleContainers = () => {
             title={'Guardados'}
             items={containers.guardados}
             handleDeleteApliccant={handleDeleteApliccant}
+            className="ml-5"
           />
           <Container
             dropId={'enProceso'}
