@@ -6,9 +6,9 @@ export default {
       colors: {
         gradiente: '#4F36F4',
         secondary: '#666565',
-        skyblue: '#008BEA',       
-        botonesHover: '#518f01',     
-        grisTexto: '#616161',       
+        skyblue: '#008BEA',
+        botonesHover: '#518f01',
+        grisTexto: '#616161',
         rojo: '#D6142C',
         primaryBlueDark: '#070729',
         primaryBlueDarkHover: '#1a1a52',
@@ -28,10 +28,9 @@ export default {
         grisOscuro: '#636262',
         fondoT:'rgba(51, 51, 51, 0.8)',
         botonInicio:'#2E76EC'
-
       },
-          fontFamily: {
-primaria:['Inter', 'sans-serif']
+      fontFamily: {
+        primaria: ['Inter', 'sans-serif'],
       },
       spacing: {
         71:'71px',
@@ -40,34 +39,34 @@ primaria:['Inter', 'sans-serif']
         84: '84px',
         87: '87px',
         134: '134px',
-        150:'150px',
-        168:'168px',
+        150: '150px',
+        168: '168px',
         182: '182px',
         199: '199px',
-        234:'234px',
+        234: '234px',
         253: '253px',
-        264:'264px',
-        296:'296px',
+        264: '264px',
+        296: '296px',
         325: '325px',
         327: '327px',
-        349:'349px',
+        349: '349px',
         360: '360px',
-        407:'407px',
-        375:'375px',
-        404:'404px',
+        407: '407px',
+        375: '375px',
+        404: '404px',
         450: '450px',
-        467:'467px',
-        483:'483px',
+        467: '467px',
+        483: '483px',
         505: '505px',
-        512:'512px',
-        643:'643px',
-        664:'664px',
-        720:'720px',
-        734:'734px',
-        819:'819px',
-        609:'609px',
-        662:'662px',
-        673:'673px'
+        512: '512px',
+        643: '643px',
+        664: '664px',
+        720: '720px',
+        734: '734px',
+        819: '819px',
+        609: '609px',
+        662: '662px',
+        673: '673px',
       },
       fontSize: {
         xxs: '10px',
@@ -76,11 +75,12 @@ primaria:['Inter', 'sans-serif']
         25: '25%',
       },
       backgroundImage: {
-        upload:"./src/assets/icons/upload_img.svg"
-    }},
-    fontFamily:{
-      primaria:'Inter, sans-serif'
-    }
+        upload: './src/assets/icons/upload_img.svg',
+      },
+    },
+    fontFamily: {
+      primaria: 'Inter, sans-serif',
+    },
   },
   plugins: [],
-};
+}
