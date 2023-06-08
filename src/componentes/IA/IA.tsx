@@ -1,38 +1,64 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { db } from '../../service/firebase'
+import axios from 'axios'
 
 const IA = () => {
-  const [messages, setMessages] = useState<string[]>([]);
-  const [userMessage, setUserMessage] = useState('');
-
-  const handleUserMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserMessage(e.target.value);
-  };
+  const [messages, setMessages] = useState<string[]>([])
 
   const handleSendMessage = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/chat', { messages: [{ content: userMessage }] });
+      const response = await axios.post('http://localhost:3000/chat', {
+        messages: [{ content: cv }],
+      })
       console.log(response)
 
-      const botMessage = response.data.choices[0].message.content;
-      setMessages(botMessage);
-      setUserMessage('');
+      const botMessage = response.data.choices[0].message.content
+      setMessages(botMessage)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
+
+  const [cv, setCv] = useState({})
+
+  const dataCollection = collection(db, 'perfilUsuario')
+
+  const getData = async () => {
+    const data = await getDocs(dataCollection)
+    const cvTest = data.docs[0]._document.data.value.mapValue.fields.cv.stringValue
+    setCv(cvTest)
+  }
+
+  const handleSaveCv = async e => {
+    e.preventDefault()
+    //await addDoc(dataCollection, { cv: cv })
+  }
+
+  const handleFileChange = event => {
+    setCv(event.target.files[0])
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <div>
-      <div className='flex bg-rojo justify-center'>
-      <input type="text" value={userMessage} onChange={handleUserMessageChange} />
-      <button onClick={handleSendMessage}>Send</button>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleSaveCv}>GUARDAR</button>
+      <div>
+        {/* <img src={file} alt="file" />
+        {convertedText} */}
       </div>
-      <div className='flex bg-primaryGreen justify-center items-center'>
-          <div>{messages}</div>
+      <div className="flex bg-rojo justify-center">
+        <button onClick={handleSendMessage}>Send</button>
+      </div>
+      <div className="flex bg-primaryGreen justify-center items-center p-4">
+        <div>{messages}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default IA;
+export default IA

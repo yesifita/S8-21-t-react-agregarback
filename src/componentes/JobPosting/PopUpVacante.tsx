@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import company from '../../assets/images/santander.svg'
+import computer from '../../assets/icons/computer.svg'
+import medication from '../../assets/icons/medication.svg'
+import school from '../../assets/icons/school.svg'
 import menu from '../../assets/icons/puntos_verticales.svg'
 import Cancel from '../../assets/icons/Cancel.svg'
 
@@ -43,7 +46,7 @@ export default function PopUpVacante({vacanteOpen}) {
         <div className="flex flex-col items-left">
 
           {switches === 'encargado' && (
-          <div className="flex justify-between mt-5">
+          <div className="flex justify-between mt-5 mb-10">
           <div className="flex space-x-4">
             <img className="w-20 h-20" src={company} alt="Imagen" />
 
@@ -86,26 +89,46 @@ export default function PopUpVacante({vacanteOpen}) {
         {switches === 'encargado' && (
           <div className="flex items-center bg-secundaryGreyLight">
 
-            <div className='w-2/4 h-full'>
+            <div className='w-2/4 space-y-8'>
             <div>
-            <div>Experiencia</div>
-            <div>Senior</div>
-            <div>Modalidad</div>
-            <div>Remoto</div>
-            <div>Salario</div>
-            <div>$150.000</div>
-            <div>Nivel de inglés</div>
-            <div>B2 - Intermedio</div>
+            <div className='w-1/3 font-bold text-base leading-4 mt-4 space-y-2'>
+              <h1>Experiencia</h1>
+            <div className='flex justify-center rounded-xl bg-secundaryViolet font-semibold text-white p-2'>Senior</div>
             </div>
-            <div>
-                <h1>Beneficios</h1>
-                <div>Computadora</div>
-                <div>Cobertura prepaga</div>
-                <div>Clases de inglés</div>
+            <div className='w-1/3 font-bold text-base leading-4 mt-4 space-y-2'>
+              <h1>Modalidad</h1>
+            <div className='flex justify-center rounded-xl bg-secundaryViolet font-semibold text-white p-2'>Remoto</div>
+            </div>
+            <div className='w-1/3 font-bold text-base leading-4 mt-4 space-y-2'>
+              <h1>Salario</h1>
+            <div className='flex justify-center rounded-xl bg-secundaryViolet font-semibold text-white p-3'>$150.000</div>
+            </div>
+            <div className='w-1/2 font-bold text-base leading-4 mt-4 space-y-2'>
+              <h1>Nivel de inglés</h1>
+            <div className='flex justify-center rounded-xl bg-secundaryViolet font-semibold text-white p-3'>B2 - Intermedio</div>
+            </div>
+            </div>
+            
+            <div className='space-y-3'>
+                <div className='font-bold text-base leading-5 text-xl'>Beneficios</div>
+                <div className='font-normal text-lg leading-5 text-grisTexto space-y-4'>
+                <div className='flex gap-2'>
+                  <img src={computer} alt="computer" />
+                  Computadora
+                  </div>
+                <div className='flex gap-2'>
+                <img src={medication} alt="medication" />
+                  Cobertura prepaga
+                  </div>
+                <div className='flex gap-2'>
+                <img src={school} alt="school" />
+                  Clases de inglés
+                  </div>
+                </div>
             </div>
             </div>
 
-            <div className='w-2/4 h-full'>
+            <div className='w-2/4'>
                 <div>
                     <h1>Acerca del puesto</h1>
                     <p>Trabajamos en proyectos ágiles con metodología SCRUM relacionados directamente con la nube (AWS), logrando el cumplimiento de los propósitos de los sprints planteados, calidad y funcionalidades especificadas dentro de los storymap de cada proyecto.</p>
