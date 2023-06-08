@@ -1,32 +1,32 @@
-import express from 'express'
-import axios from 'axios'
-import cors from 'cors';
+const express = require('express')
+const axios = require('axios')
+const cors = require('cors')
 
 const app = express()
 const port = 3000
 
 app.use(express.static('public'))
 app.use(express.json())
-app.use(cors()); // Permitir solicitudes CORS desde cualquier origen
-
-// Rutas de prueba
-app.get('/', (req, res) => {
-  res.send('¡Hola desde Express!')
-})
+app.use(cors())
 
 const OPENAI_API_KEY = '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'
 
 app.post('/chat', async (req, res) => {
   try {
     const { messages } = req.body
-    console.log(req.body)
+
     const userMessage = messages[0].content // Accede al contenido del mensaje del usuario
 
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: userMessage }],
+        messages: [
+          {
+            role: 'user',
+            content: `Eres una IA reclutadora de TI. Analiza el currículum proporcionado y ofrece feedback para mejorarlo en términos de resaltar habilidades relevantes, organizar la información de manera efectiva y brindar sugerencias adicionales para aumentar las posibilidades de conseguir un empleo en la industria de TI. Sé constructivo y específico en tu feedback. ${userMessage}`,
+          },
+        ],
         temperature: 0.7,
       },
       {
