@@ -17,7 +17,11 @@
 
 ## Colaboradores 👥
 
+El equipo detrás de Reclutando está conformado por talentosos profesionales dedicados a ofrecer la mejor experiencia posible a nuestros usuarios:
+
 ### Diseño
+ | Foto | Nombre | LinkedIn |
+|------|--------|----------|
 
 
 ### Front-end
