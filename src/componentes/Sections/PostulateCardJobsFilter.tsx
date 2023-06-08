@@ -58,12 +58,12 @@ function PostulateCardJobsFilter() {
             <div className="flex">
                 <button
                     onClick={() => handleButtonClick('button1')}
-                    className={`bg-${activeButton === 'button1' && 'secundaryViolet'} text-${activeButton === 'button1' && 'white'} text-black w-full h-14 rounded-r-none`}
+                    className={`bg-${activeButton === 'button1' && 'secundaryViolet'} text-${activeButton === 'button1' && 'white'} text-black w-full h-14 rounded-l-xl`}
                 >Recomendados para ti
                 </button>
                 <button
                     onClick={() => handleButtonClick('button2')}
-                    className={`bg-${activeButton === 'button2' && 'secundaryViolet'} text-${activeButton === 'button2' && 'white'} text-black w-full h-14 rounded-l-none`}
+                    className={`bg-${activeButton === 'button2' && 'secundaryViolet'} text-${activeButton === 'button2' && 'white'} text-black w-full h-14 rounded-r-xl`}
                 >Postulaciones recientes
                 </button>
             </div>
