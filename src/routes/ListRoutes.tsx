@@ -13,6 +13,7 @@ import JobPosting from '../componentes/JobPosting/JobPosting'
 import IA from '../componentes/IA/IA'
 import PostuDashboard from './postuDashboard'
 import PostuAyuda from './postuAyuda'
+import PostuMejorarCV from './postuMejorarCV'
 
 const ListRoutes = () => {
   return (
@@ -22,9 +23,10 @@ const ListRoutes = () => {
           <Route path="/*" element={<h1>not found</h1>}></Route>
           <Route path="/" element={<Login />}></Route>
           <Route path="/recruiter/dashboard" element={<RecDashboard />}></Route>
-          <Route path="/postulate/dashboard" element={<PostuDashboard />}></Route>
-          <Route path="/postulate/ayuda" element={<PostuAyuda />}></Route>
           <Route path="/recruiter/ayuda" element={<RecAyuda />}></Route>
+          <Route path="/postulate/dashboard" element={<PostuDashboard />}></Route>
+          <Route path="/postulate/mejorar-cv" element={<PostuMejorarCV />}></Route>
+          <Route path="/postulate/ayuda" element={<PostuAyuda />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/postulantes" element={<Apliccants />}></Route>
           <Route path="/registro" element={<Register />}></Route>

@@ -96,7 +96,7 @@ const NavMenuPostu = () => {
                         className={`flex transform duration-300 text-lg mb-6 ${isMenuOpen ? "justify-start" : "justify-center"} items-center ${isMenuOpen ? "w-72" : "w-16"}`}
                         onClick={toggleMenu}
                     >
-                        <Link to={"/empleo"} className="px-4 flex">
+                        <Link to={"/postulate/mejorar-cv"} className="px-4 flex">
                             {isMenuOpen ? (
                                 <BsClipboard2PlusFill className="text-white text-2xl" />
                             ) : (
