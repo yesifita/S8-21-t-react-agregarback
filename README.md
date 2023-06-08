@@ -25,5 +25,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 
 
 ### Front-end
+  | Foto | Nombre | LinkedIn |
+|------|--------|----------|
 
 ## Deploy
