@@ -3,7 +3,7 @@ import NavMenuPostu from "../componentes/Nav/NavMenuPostu";
 import { BsCheck2 } from "react-icons/bs";
 import { AiFillWarning } from "react-icons/ai";
 import photoMejorarCV from '../assets/images/photoMejorarCV.png'
-import BtnMejoCV from "../componentes/Buttons/BtnMejoCV";
+import BtnSubirCV from "../componentes/Buttons/BtnSubirCV";
 
 
 
@@ -16,14 +16,13 @@ export default function PostuMejorarCV() {
             <div className="z-10">
                 <NavMenuPostu/>
             </div>
-            <div className="absolute pl-16 w-full">
-                <div className="z-10">
 
+
+            <div className="absolute pl-16 w-full">
                     <NavLogoPostu/>
-                </div>
 
                 <div className="flex h-screen  text-primaryBlueDarkHover">
-                    <div className="flex flex-col  pt-40 border-r-2 ml-10">
+                    <div className="flex flex-col pt-40 border-r-2 ml-10">
                         <div className="bg-center bg-no-repeat bg-cover rounded-xl mb-10" style={{ backgroundImage: `url(${photoMejorarCV})`, height: '173px', width: '451px'}}>
                         </div>
                         <h2 className="text-3xl font-extrabold mb-10">Mejora tu CV con nuestra herramienta  de inteligencia artificial</h2>
@@ -33,7 +32,7 @@ export default function PostuMejorarCV() {
                             <p className="flex items-center"><span className="text-primaryGreen text-2xl font-extrabold mr-2"><BsCheck2/></span>Debes haber completado todo tu perfil</p>
                             <p className="flex items-center"><span className="text-primaryGreen text-2xl font-extrabold mr-2"><BsCheck2/></span>No puede ser una imagen</p>
                         </div>
-                        <BtnMejoCV/>
+                        <BtnSubirCV/>
                     </div>
 
                     <div className="flex flex-col items-center pt-72 bg-secundaryGreyLigh bg-secundaryGreyLight px-10">
