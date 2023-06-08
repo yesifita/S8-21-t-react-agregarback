@@ -20,18 +20,18 @@ const Tabexperiencia = () => {
       </div>
       <div id="dato_trabajo" className="pl-3 w-72 ">
         <h4 className="h-5 mb-3 text-base font-bold font-primaria text-primaryBlueDark">
-          front end{' '}
+        Jr. Backend Developer
         </h4>
         <p className="w-48 h-4 mb-3 text-xs font-bold font-primaria text-secondary">
-          empresa
+        Santander Tecnología Argentina.
         </p>
         <p className="w-48 h-4 mb-5 text-xs font-semibold font-primaria text-secondary">
-          tiempo
+        Dic. 2021 - actualidad · 1 año 6 meses
         </p>
         <ul className="w-40 h-4 text-xs font-medium list-disc font-primaria text-primaryBlueDark">
-          <li>tareas</li>
-          <li>tareas</li>
-          <li>tareas</li>
+          <li>Creación de programas</li>
+          <li>Java</li>
+          <li>Node JS</li>
         </ul>
       </div>
       <div className="w-48 pl-28">

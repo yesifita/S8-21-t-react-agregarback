@@ -7,16 +7,22 @@ import { db } from '../../service/firebase'
 
 const Cardfoto = () => {
   const [form, setForm] = useState(false)
+const [perfil, setPerfil] = useState({})
+
 
   const dataCollection = collection(db, 'PerfilPostulante')
 
   const getData = async () => {
    const data= await getDocs(dataCollection)
-   console.log(data.docs)
+   setPerfil(
+    data.docs.map( (doc)=>( {...doc.data(), id:doc.id}))
+   )
+   console.log(perfil)
   }
 
   useEffect(() => {
    getData()
+  
   }, [])
   
   return (
@@ -41,33 +47,35 @@ const Cardfoto = () => {
             <img src={foto} className="w-20 h-20 pl-4 mt-8 ml-8 bg-cover "></img>
           </div>
           {/* ******************************titulo nombre**************** */}
-          <p className="text-base font-bold text-secundaryViolet">{}</p>
+          <p className="text-base font-bold text-secundaryViolet">
+            Franco Arenas
+            </p>
 
           {/* **************************profesion************* */}
           <div className="w-48 h-6 pb-3 pl-2 text-center text-secondary ">
-            ¿Cual es tu profesion?
+          Backend Developer
           </div>
         </div>
         {/********************************* * sobre mi ***************/}
         <div id="conteiner_sobreMi" className="flex flex-col pl-3 w-296 h-80">
           <h3 className="pt-2 font-primaria font-base text-primaryBlueDark">Sobre mi</h3>
-          <div className="h-40 text-sm font-normal resize-none bg-secundaryGreyLight w-264 text-primaryBlueDark"></div>
+          <div className="h-40 text-sm font-normal resize-none bg-secundaryGreyLight w-264 text-primaryBlueDark">Soy una persona que le gusta indagar y aprender el por qué de las cosas. En las tecnologías siempre encontré una gran fuente de conocimientos para hacer frente a esa curiosidad. Me apasiona la tecnología y la forma en la que simplifica y optimiza los diferentes procesos</div>
 
           {/***************** *skills************* */}
           <div id="skils" className="mt-4 h-36 w-264">
             <h3 className="w-64 h-5 mb-2 ml-4 text-base font-bold text-primaryBlueDark">Skills</h3>
             <div className="grid grid-cols-3 gap-x-2 gap-y-4">
-              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>
+              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria">Java</div>
               {/* *****************skill2************ */}
-              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>
+              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria">Node JS</div>
 
               {/* *********skill3********* */}
-              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>
+              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria">Jira</div>
               {/* **********skill4****** */}
-              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>
+              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria">VSC</div>
               {/*
                ***********skill5******* */}
-              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>
+              <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria">Git</div>
 
               {/* ************skill6******** */}
               <div className="w-20 h-8 py-2 text-xs font-medium text-center bg-white border-2 border-solid rounded-xl border-secondary text-secondary font-primaria"></div>

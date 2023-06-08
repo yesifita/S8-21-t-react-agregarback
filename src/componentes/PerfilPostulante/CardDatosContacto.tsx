@@ -43,9 +43,9 @@ const CardDatosContacto = () => {
                 </div>
                 <input
                   type="mail"
-                  name="Eduardo.medina@mail.com"
-                  value="Eduardo.medina@mail.com"
-                  placeholder="Eduardo.medina@mail.com"
+                  name="Franco.arenas@gmail.com"
+                  value="Franco.arenas@gmail.com"
+                  placeholder="Franco.arenas@gmail.com"
                   className="h-10 pl-3 pr-2 ml-2 font-semibold text-xxs text-secondary font-primaria text-start rounded-xl w-168 bg-secundaryGreyLight2"
                 ></input>
               </div>
