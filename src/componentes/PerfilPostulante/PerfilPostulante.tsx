@@ -1,6 +1,5 @@
-import logo from '../../assets/images/logo.png'
-import NavLogo from '../Nav/NavLogo'
-import NavMenu from '../Nav/NavMenu'
+import NavLogoPostu from '../Nav/NavLogoPostu'
+import NavMenuPostu from '../Nav/NavMenuPostu'
 import CardDatosContacto from './CardDatosContacto'
 import CardEducacion from './CardEducacion'
 import Cardfoto from './CardFoto'
@@ -10,11 +9,11 @@ const PerfilPostulante = () => {
     <>
       <div className="relative flex">
         <div className="z-10 ">
-          <NavMenu />
+          <NavMenuPostu />
         </div>
 
         <div className="absolute w-full pl-16 bg-secundaryGreyLight">
-          <NavLogo />
+          <NavLogoPostu />
         </div>
         <div>
           <Cardfoto />
