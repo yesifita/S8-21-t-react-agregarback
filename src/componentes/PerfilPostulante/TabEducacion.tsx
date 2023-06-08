@@ -22,18 +22,18 @@ const TabEducacion = () => {
             </div>
             <div id="dato_educacion" className="pl-3 w-72 ">
               <h4 className="h-5 mb-3 text-base font-bold font-primaria text-primaryBlueDark">
-                titulo{' '}
+              Diplomatura Back-end
               </h4>
               <p className="w-48 h-4 mb-3 text-xs font-bold font-primaria text-secondary">
-                universidad
+                Universidad Tecnologica Nacional
               </p>
               <p className="w-48 h-4 mb-5 text-xs font-semibold font-primaria text-secondary">
-                tiempo
+              Abril 2021 - Enero 2023
               </p>
               <ul className="w-40 h-4 text-xs font-medium list-disc font-primaria text-primaryBlueDark">
-                <li>aprendisaje</li>
-                <li>aprendisaje</li>
-                <li>aprendisaje</li>
+                <li>Base de Datos</li>
+                <li>NodeJS</li>
+                <li>Java</li>
               </ul>
             </div>
             <div className="w-48 pl-28">
