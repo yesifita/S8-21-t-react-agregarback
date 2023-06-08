@@ -14,7 +14,14 @@ yarn.lock
 node_modules
 dist
 dist-ssr
+.firebase
+public
+.firebaserc
+firebaserc
+firebase.json
 *.local
+ index-b5c98568.css
+ assets
 
 # Editor directories and files
 .vscode/*

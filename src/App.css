@@ -11,3 +11,8 @@
 #requerimientos input {
     @apply mr-2 font-normal text-base 
 }
+#tab1{
+    @apply relative flex-1 py-4 pl-8 pr-2 text-base font-semibold text-center text-white cursor-pointer bg-secundaryViolet rounded-tl-xl rounded-bl-xl h-14 w-407 font-primaria active:border-none active:bg-white active:text-secundaryViolet 
+}
+
+/* active:after::absolute active:after::w-734 */

@@ -13,7 +13,12 @@ import JobPosting from '../componentes/JobPosting/JobPosting'
 import IA from '../componentes/IA/IA'
 import PostuDashboard from './postuDashboard'
 import PostuAyuda from './postuAyuda'
+
 import PostuMejorarCV from './postuMejorarCV'
+
+import FormEducacion from '../componentes/PerfilPostulante/FormEducacion'
+import FormExperiencia from '../componentes/PerfilPostulante/FormExperiencia'
+
 
 const ListRoutes = () => {
   return (
@@ -35,6 +40,8 @@ const ListRoutes = () => {
           <Route path="/postulante/perfil" element={<PerfilPostulante />}></Route>
           <Route path="/jobs" element={<JobPosting />}></Route>
           <Route path="/ia" element={<IA />}></Route>
+          <Route path="/formeducacion" element={<FormEducacion />}></Route>
+          <Route path="/formExperiencia" element={<FormExperiencia/>}></Route>
         </Routes>
       </UserProvider>
     </>
