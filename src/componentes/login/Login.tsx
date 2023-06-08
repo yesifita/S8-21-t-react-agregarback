@@ -21,7 +21,10 @@ const Login = () => {
     if(!usuario){
       return navigate('/Registro')
     }else{
-      authUser.login(inputValues.email, inputValues.password)     
+      authUser.login(inputValues.email, inputValues.password),
+      setTimeout(() => {
+        navigate('/recruiter/dashboard')
+      }, 2000);     
     }
   }
 
@@ -35,6 +38,9 @@ const Login = () => {
   const handleGoogle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     authUser.loginGoogle() 
+    setTimeout(() => {
+      navigate('/postulate/dashboard')
+    }, 8000);
   }
   return (
     <>
