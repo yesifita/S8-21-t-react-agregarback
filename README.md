@@ -37,7 +37,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 |------|--------|----------|
 | <img src="https://media.licdn.com/dms/image/C4D03AQHnKvwyAcEGvw/profile-displayphoto-shrink_800_800/0/1647384929199?e=1691625600&v=beta&t=82Si2n7y7mUyGqhh2EPSrQbVB-xIo0uVEGC2vitZdgs" width="40" height="40"/> | Margreline Cardozo | <a href="https://www.linkedin.com/in/mcgonzal/">LinkedIn</a> | 
 | <img src="https://media.licdn.com/dms/image/D4D03AQGtpj57CGQfAA/profile-displayphoto-shrink_800_800/0/1681334736714?e=1691625600&v=beta&t=KFf48EZP5AvahPCrFYLJqBOzPSWgvF3y5TYxULMkTt4" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/overlay/photo/">LinkedIn</a> | 
-| <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/325edba4-9699-44af-b12d-afd36a6ce812)" width="40" height="40"/> | Rodrigo Ruiz | <a href="https://www.linkedin.com/in/uirodriruiz/">LinkedIn</a> | 
+| <img src="https://media.licdn.com/dms/image/D4E35AQFH5jUb5SoUJg/profile-framedphoto-shrink_800_800/0/1633372921159?e=1686949200&v=beta&t=TkBlz_nQgOa4eYFZSfOOiEHcmKfFsB2khfSXWsso7m8" width="40" height="40"/> | Rodrigo Ruiz | <a href="https://www.linkedin.com/in/uirodriruiz/">LinkedIn</a> | 
 
 
 
@@ -46,10 +46,10 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 
 | Foto | Nombre | LinkedIn | GitHub |
 |------|--------|----------|---------|
-| <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b5b4a7b5-2d10-45e6-b4e7-067180c5d6ca)"
+| <img src="[![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b5b4a7b5-2d10-45e6-b4e7-067180c5d6ca)](https://media.licdn.com/dms/image/D4D03AQF4rl_kgEvN4w/profile-displayphoto-shrink_800_800/0/1675148876077?e=1691625600&v=beta&t=wGOa78HHlJUda2jjM7WuqNUbJmiTTRGpHqoOz3PYhjs)"
  width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | <a href="https://github.com/francoarenas">GitHub</a> |
 | <img src="" width="40" height="40"/> | Henry Ramirez | <a href="https://www.linkedin.com/in/henry-ramirez-417861259/">LinkedIn</a> | <a href="https://github.com/HenryMilac">GitHub</a> |
-| <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/0880f9da-0aa9-47ab-a8d4-982730c262b5)"
+| <img src="[![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/0880f9da-0aa9-47ab-a8d4-982730c262b5)](https://media.licdn.com/dms/image/D4E03AQGq7z0s8QAy3g/profile-displayphoto-shrink_800_800/0/1671719682201?e=1691625600&v=beta&t=EqT_HmX-St9EgZr9gT4Gl8E6ap8lNCq0gCsLreJHIYg)"
  width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
 | <img src="" width="40" height="40"/> | Yesica fita | <a href="">LinkedIn</a> | <a href="https://github.com/yesifita">GitHub</a> |
 | <img src="" width="40" height="40"/> | Josep Palomino | <a href="">LinkedIn</a> | <a href="https://github.com/JosepF5">GitHub</a> |
