@@ -8,17 +8,10 @@ Reclutando es mucho más que una simple plataforma de búsqueda de empleo. Con R
  
  - **Front-end:**
 
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> <img aling="left" width='40'  height="40" src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-plain.svg"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678118395/descargar_2_uymmsz.svg" alt="axios" width="40" height="40"/>
 
-
-
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
- 
- <img src ="https://redux.js.org" target="_blank" rel="noreferrer"/>
- 
-<img aling="left" width='40'  height="40" src="https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-plain.svg"/>
-
-<img aling="left" width='40'  height="40" src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase.svg"/>
- 
+ - **Back-end:**
+ <img aling="left" width='40'  height="40" src="https://www.gstatic.com/devrel-devsite/prod/v37463d4834445c1e880de1e91d2f8fc2c6a0e86fca4aa6a7bdbb270b040181dc/firebase/images/touchicon-180.png"/>
 
 - **Diseño UX/Ui:** 
 
@@ -46,11 +39,9 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 
 | Foto | Nombre | LinkedIn | GitHub |
 |------|--------|----------|---------|
-| <img src="[![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b5b4a7b5-2d10-45e6-b4e7-067180c5d6ca)](https://media.licdn.com/dms/image/D4D03AQF4rl_kgEvN4w/profile-displayphoto-shrink_800_800/0/1675148876077?e=1691625600&v=beta&t=wGOa78HHlJUda2jjM7WuqNUbJmiTTRGpHqoOz3PYhjs)"
- width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | <a href="https://github.com/francoarenas">GitHub</a> |
+| <img src="https://media.licdn.com/dms/image/D4D03AQF4rl_kgEvN4w/profile-displayphoto-shrink_800_800/0/1675148876077?e=1691625600&v=beta&t=wGOa78HHlJUda2jjM7WuqNUbJmiTTRGpHqoOz3PYhjs" width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | <a href="https://github.com/francoarenas">GitHub</a> |
 | <img src="" width="40" height="40"/> | Henry Ramirez | <a href="https://www.linkedin.com/in/henry-ramirez-417861259/">LinkedIn</a> | <a href="https://github.com/HenryMilac">GitHub</a> |
-| <img src="[![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/0880f9da-0aa9-47ab-a8d4-982730c262b5)](https://media.licdn.com/dms/image/D4E03AQGq7z0s8QAy3g/profile-displayphoto-shrink_800_800/0/1671719682201?e=1691625600&v=beta&t=EqT_HmX-St9EgZr9gT4Gl8E6ap8lNCq0gCsLreJHIYg)"
- width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
+| <img src="https://media.licdn.com/dms/image/D4E03AQGq7z0s8QAy3g/profile-displayphoto-shrink_800_800/0/1671719682201?e=1691625600&v=beta&t=EqT_HmX-St9EgZr9gT4Gl8E6ap8lNCq0gCsLreJHIYg" width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
 | <img src="" width="40" height="40"/> | Yesica fita | <a href="">LinkedIn</a> | <a href="https://github.com/yesifita">GitHub</a> |
 | <img src="" width="40" height="40"/> | Josep Palomino | <a href="">LinkedIn</a> | <a href="https://github.com/JosepF5">GitHub</a> |
 
