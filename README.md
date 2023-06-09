@@ -36,7 +36,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 | Foto | Nombre | LinkedIn |
 |------|--------|----------|
 | <img src="https://media.licdn.com/dms/image/C4D03AQHnKvwyAcEGvw/profile-displayphoto-shrink_800_800/0/1647384929199?e=1691625600&v=beta&t=82Si2n7y7mUyGqhh2EPSrQbVB-xIo0uVEGC2vitZdgs" width="40" height="40"/> | Margreline Cardozo | <a href="https://www.linkedin.com/in/mcgonzal/">LinkedIn</a> | 
-| <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b30927cc-b78e-4c22-b6eb-652ade6cdf62)" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/overlay/photo/">LinkedIn</a> | 
+| <img src="https://media.licdn.com/dms/image/D4D03AQGtpj57CGQfAA/profile-displayphoto-shrink_800_800/0/1681334736714?e=1691625600&v=beta&t=KFf48EZP5AvahPCrFYLJqBOzPSWgvF3y5TYxULMkTt4" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/overlay/photo/">LinkedIn</a> | 
 | <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/325edba4-9699-44af-b12d-afd36a6ce812)" width="40" height="40"/> | Rodrigo Ruiz | <a href="https://www.linkedin.com/in/uirodriruiz/">LinkedIn</a> | 
 
 
