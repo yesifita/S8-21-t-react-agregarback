@@ -29,7 +29,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 | Foto | Nombre | LinkedIn |
 |------|--------|----------|
 | <img src="https://media.licdn.com/dms/image/C4D03AQHnKvwyAcEGvw/profile-displayphoto-shrink_800_800/0/1647384929199?e=1691625600&v=beta&t=82Si2n7y7mUyGqhh2EPSrQbVB-xIo0uVEGC2vitZdgs" width="40" height="40"/> | Margreline Cardozo | <a href="https://www.linkedin.com/in/mcgonzal/">LinkedIn</a> | 
-| <img src="https://media.licdn.com/dms/image/D4D03AQGtpj57CGQfAA/profile-displayphoto-shrink_800_800/0/1681334736714?e=1691625600&v=beta&t=KFf48EZP5AvahPCrFYLJqBOzPSWgvF3y5TYxULMkTt4" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/overlay/photo/">LinkedIn</a> | 
+| <img src="https://media.licdn.com/dms/image/D4D03AQGtpj57CGQfAA/profile-displayphoto-shrink_800_800/0/1681334736714?e=1691625600&v=beta&t=KFf48EZP5AvahPCrFYLJqBOzPSWgvF3y5TYxULMkTt4" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/">LinkedIn</a> | 
 | <img src="https://media.licdn.com/dms/image/D4E35AQFH5jUb5SoUJg/profile-framedphoto-shrink_800_800/0/1633372921159?e=1686949200&v=beta&t=TkBlz_nQgOa4eYFZSfOOiEHcmKfFsB2khfSXWsso7m8" width="40" height="40"/> | Rodrigo Ruiz | <a href="https://www.linkedin.com/in/uirodriruiz/">LinkedIn</a> | 
 
 
