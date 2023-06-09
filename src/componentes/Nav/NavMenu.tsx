@@ -9,7 +9,7 @@ import { IoIosNotifications, IoMdHelpCircle } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useUser } from '../../context/UserProvider';
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 
 
 const NavMenu = () => {
@@ -18,12 +18,12 @@ const NavMenu = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-    const authUser=useUser();
+    const authUser: any = useUser();
     const handleLogout=()=>{
         authUser.logout()
     }
-    const location = useLocation();
-    const dashboardRoute = location.pathname === "/recruiter/dashboard";
+    //const location = useLocation();
+    //const dashboardRoute = location.pathname === "/recruiter/dashboard";
 
 
     return (

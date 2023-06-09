@@ -20,6 +20,7 @@ export default function BtnSubirCV({ setOpen, open, setResponse, setLoading }) {
       const botMessage = response.data.choices[0].message.content
       setMessages(botMessage)
       setResponse(botMessage)
+      console.log(messages)
     } catch (error) {
       console.error(error)
     }  finally {
@@ -30,15 +31,17 @@ export default function BtnSubirCV({ setOpen, open, setResponse, setLoading }) {
   const dataCollection = collection(db, 'perfilUsuario')
 
   const getData = async () => {
-    const data = await getDocs(dataCollection)
-    const cvTest = data.docs[0]._document.data.value.mapValue.fields.cv.stringValue
-    setCv(cvTest)
-    console.log(cv)
-  }
+    const data: any = await getDocs(dataCollection);
+    const cvTest: string = data.docs[0]._document.data.value.mapValue.fields.cv.stringValue;
+    setCv(cvTest);
+    console.log(cv);
+  };
+  
 
   const handleClick = () => {
-    fileInputRef.current.click()
-  }
+    (fileInputRef.current as any)?.click();
+  };
+  
 
   const handleFileChange = event => {
     const file = event.target.files[0]

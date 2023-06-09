@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardJobRecommend from "../Apliccants/CardJobRecommend"
+//import CardJobRecommend from "../Apliccants/CardJobRecommend"
 import CardJobPostulaciones from "../Apliccants/CardJobPostulaciones";
 import logo_Empresa from '../../assets/images/LogoEmpresa.svg'
 import logo_Empresa2 from '../../assets/images/LogoEmpresa2.png'

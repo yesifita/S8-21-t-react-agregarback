@@ -3,7 +3,6 @@ import { FormState } from '../../types'
 import PopUpConfirm from './PopUpConfirm'
 import { useUser } from '../../context/UserProvider'
 import NavBarLogin from './NavBarLogin'
-import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
@@ -12,12 +11,12 @@ const Register = () => {
   })
   const [visible, setVisible] = useState(false)
 
-  const authUser = useUser()
-  const navigate = useNavigate()
+  const authUser: any = useUser();
+  //const navigate = useNavigate()
 
-  const handleLogin = () => {
-    navigate('/recruiter/dashboard')
-  }
+  // const handleLogin = () => {
+  //   navigate('/recruiter/dashboard')
+  // }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | HTMLButtonElement>) => {
     e.preventDefault()

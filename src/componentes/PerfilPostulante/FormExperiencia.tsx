@@ -11,9 +11,9 @@ const FormExperiencia = () => {
     empresa:'',
     sector:'',
      mesInicio:'',
-     añoInicio:'',
+     añoInicio:0,
      mesFin:'',
-     añoFin:'',
+     añoFin:0,
      texto:'',
   })
 
@@ -28,6 +28,7 @@ const FormExperiencia = () => {
     })
   }
   const crearDataExperiencia = async (e) => {
+    e.preventDefault()
     await addDoc(collection(db, 'DatosExperiencia'), { inputValues })
   }
 

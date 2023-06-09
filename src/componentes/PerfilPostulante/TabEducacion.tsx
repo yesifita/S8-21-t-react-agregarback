@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import editar from '../../assets/icons/editpencil.svg'
-import FormEducacion from './FormEducacion'
-import {useState} from 'react'
+//import FormEducacion from './FormEducacion'
+//import {useState} from 'react'
 
 
 const TabEducacion = () => {

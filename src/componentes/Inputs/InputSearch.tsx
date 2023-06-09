@@ -15,11 +15,12 @@ export default function InputSearch() {
     setExpanded(true);
   };
 
-  const handleDocumentClick = (event) => {
-    if (inputRef.current && !inputRef.current.contains(event.target)) {
+  const handleDocumentClick = (event: MouseEvent) => {
+    if (inputRef.current && (inputRef.current as any).contains(event.target)) {
       setExpanded(false);
     }
   };
+  
 
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick);

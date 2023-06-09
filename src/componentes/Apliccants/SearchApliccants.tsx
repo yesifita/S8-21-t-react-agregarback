@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import search from '../../assets/icons/search.svg'
 import { FC } from 'react'
 

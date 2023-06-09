@@ -33,7 +33,7 @@ const FormPerfil = ({ setForm }) => {
     })
   }
   const crearPerfil = async(e)=>{
-    
+    e.preventDefault()
         await addDoc(collection(db, 'PerfilPostulante'), {inputValues })
       
   }

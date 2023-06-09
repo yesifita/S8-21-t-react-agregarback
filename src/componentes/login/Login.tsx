@@ -3,14 +3,13 @@ import { useState } from 'react'
 import { FormState } from '../../types'
 import { useUser } from '../../context/UserProvider'
 import NavBarLogin from './NavBarLogin'
-import auth from '../../service/firebase'
 
 const Login = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
     email: '',
     password: '',
   })
-  const authUser = useUser()
+  const authUser: any = useUser();
   const usuario=authUser.user
 
   const navigate = useNavigate()
@@ -21,7 +20,8 @@ const Login = () => {
     if(!usuario){
       return navigate('/Registro')
     }else{
-      authUser.login(inputValues.email, inputValues.password)     
+      authUser.login(inputValues.email, inputValues.password)  
+      return navigate('/recruiter/dashboard')
     }
   }
 

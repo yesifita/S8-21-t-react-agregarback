@@ -2,7 +2,7 @@ import editar from '../../assets/icons/editpencil.svg'
 import foto from '../../assets/icons/add_photo.svg'
 import FormPerfil from './FormPerfil'
 import { useState,useEffect } from 'react'
-import { collection, getDocs, getDoc, FieldValue } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../service/firebase'
 
 const Cardfoto = () => {

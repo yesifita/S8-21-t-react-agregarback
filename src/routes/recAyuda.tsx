@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from "react";
 export default function RecAyuda() {
   const [expanded, setExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const SearchIcon = (
     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400">

@@ -2,7 +2,7 @@ import { getCollections } from "../../../service/firebase";
 import { useAsync } from "../../../hooks/useAsync";
 import PostuladosList from "../PostuladosList/PostuladosList";
 import FiltrosContainer from "../../filtros/FiltrosContainer/FiltrosContainer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const PostuladosContainer = () => {
   const getProductsFromFirestore = () => getCollections("postulados");

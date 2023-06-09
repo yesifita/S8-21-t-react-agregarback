@@ -48,7 +48,6 @@ const INITIAL_VALUES = {
 }
 
 const CrearVacanteReclutador = () => {
-  const [Image, setImage] = useState('')
   const [inputCheck, setInputCheck] = useState(INITIAL_CHECK)
   const [inputValues, setInputValues] = useState(INITIAL_VALUES)
 
@@ -73,16 +72,17 @@ const CrearVacanteReclutador = () => {
   }
   const refInputFile = useRef(null)
 
-  const showImage = file => {
-    const fileReader = new FileReader()
-    fileReader.readAsDataURL(file)
-  }
+  // const showImage = file => {
+  //   const fileReader = new FileReader()
+  //   fileReader.readAsDataURL(file)
+  // }
 
   const selectImage = () => {
-    refInputFile.current.click()
+    (refInputFile.current  as any)?.click()
   }
 
-  const createJob = async e => {
+  const createJob = async (e: any) => {
+    e.preventDefault()
     await addDoc(collection(db, 'Jobs'), { inputCheck, inputValues })
   }
 

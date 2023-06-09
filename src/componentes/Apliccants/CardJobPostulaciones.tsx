@@ -11,7 +11,7 @@ export default function CardJobPostulaciones({puestoTrabajo}) {
     const fechaEvento = new Date(); 
     // const fechaEvento = new Date(2023, 4, 26);
     const formattedFechaEvento = format(fechaEvento, 'dd MMM. yyyy', { locale: es });
-  
+  console.log(formattedFechaEvento)
     return (
         <Link to={'/'} className='bg-secundaryGreyLight pt-2 pb-4 px-8 border-t border-secundaryGreyLight2 block'>
             <p className='mb-2'>{datePostulaciones}</p>

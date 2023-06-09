@@ -17,7 +17,7 @@ interface Dates {
 }
 
 export default function Profile() {
-  const authUser = useUser();
+  const authUser: any = useUser();
   const { displayName,email } = authUser.user;
   
   const [newDates, setNewDates] = useState<Dates>({
@@ -136,7 +136,7 @@ export default function Profile() {
               <button
                 className="bg-primaryGreen hover:bg-botonesHover text-white text-center font-semibold rounded-xl p-4 w-52 h-auto mt-[2.5rem]"
                 id="EMPRESA"
-                onClick={e => togglePopup(e)}
+                onClick={e => {togglePopup(e), setNewDates(newDates)}}
               >
                 Modificar información
               </button>

@@ -9,7 +9,7 @@ import NavLogoPostu from "../componentes/Nav/NavLogoPostu";
 export default function PostuAyuda() {
   const [expanded, setExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const SearchIcon = (
     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400">
@@ -21,7 +21,7 @@ export default function PostuAyuda() {
     setExpanded(true);
   };
 
-  const handleDocumentClick = (event) => {
+  const handleDocumentClick = (event: any) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
       setExpanded(false);
     }

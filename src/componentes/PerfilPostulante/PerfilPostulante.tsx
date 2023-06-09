@@ -1,4 +1,4 @@
-import logo from '../../assets/images/logo.png'
+//import logo from '../../assets/images/logo.png'
 import NavLogo from '../Nav/NavLogo'
 import NavMenu from '../Nav/NavMenu'
 import CardDatosContacto from './CardDatosContacto'

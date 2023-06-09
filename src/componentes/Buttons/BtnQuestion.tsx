@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdRemove } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 

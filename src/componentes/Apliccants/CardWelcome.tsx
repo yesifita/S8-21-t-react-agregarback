@@ -2,7 +2,7 @@ import { useUser } from '../../context/UserProvider'
 import photoProfile from '../../assets/images/photoProfile.png'
 
 function CardWelcome() {
-    const authUser = useUser();
+    const authUser: any = useUser();
     const { displayName,email } = authUser.user;
 
     return (

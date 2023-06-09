@@ -47,7 +47,7 @@ export const MultipleContainers = () => {
   }
 
   const handleDragEnd = event => {
-    const { source, destination, draggableId } = event
+    const { source, destination } = event
     if (!destination) return
     if (source.index === destination.index && source.droppableId === destination.droppableId) {
       return

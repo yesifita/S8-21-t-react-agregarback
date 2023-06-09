@@ -1,4 +1,4 @@
-import { useState, CSSProperties } from 'react'
+import { useState } from 'react'
 import NavMenu from '../Nav/NavMenu'
 import NavLogo from '../Nav/NavLogo'
 import warning from '../../assets/images/warning.svg'

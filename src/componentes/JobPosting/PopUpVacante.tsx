@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import company from '../../assets/images/santander.svg'
 import computer from '../../assets/icons/computer.svg'
 import medication from '../../assets/icons/medication.svg'
@@ -22,16 +22,17 @@ export default function PopUpVacante({vacanteOpen}) {
         codigoArea: '+54',
         cargo: 'Selecciona una opción',
       })
+      console.log(newDates)
       const [switches, setSwitch] = useState("encargado")
-      const activo = `bg-primaryBlueDark text-blanco border-none font-bold rounded-none ${switches === "encargado" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
-      const noActivo = `bg-secundaryGreyLight2 text-primaryBlueDark text-center font-bold rounded-none ${switches === "recuperación" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
+      //const activo = `bg-primaryBlueDark text-blanco border-none font-bold rounded-none ${switches === "encargado" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
+      //const noActivo = `bg-secundaryGreyLight2 text-primaryBlueDark text-center font-bold rounded-none ${switches === "recuperación" ? 'rounded-l-lg' : 'rounded-r-lg'} w-4/5 h-12`
     
-      function handleInput(e: React.ChangeEvent<HTMLInputElement>): void {
-        setNewDates((prevState: Dates) => ({
-          ...prevState,
-          [e.target.name]: e.target.value,
-        }))
-      }
+      // function handleInput(e: React.ChangeEvent<HTMLInputElement>): void {
+      //   setNewDates((prevState: Dates) => ({
+      //     ...prevState,
+      //     [e.target.name]: e.target.value,
+      //   }))
+      // }
 
       const [menuOpen, setMenuOpen] = useState(false)
 
@@ -153,14 +154,14 @@ OpenAPI (no excluyente)</p>
         <button
           className="hover:bg-rojo hover:text-blanco hover:border-none text-secondary font-bold border-2 border-secondary rounded-xl w-4/5 h-12"
           id="PERSONALES"
-          onClick={e => (e)}
+          onClick={() => setSwitch('')}
         >
           Eliminar publicación
         </button>
         <button
           className="bg-primaryGreen hover:bg-botonesHover text-white text-center font-bold rounded-xl w-4/5 h-12"
           id="PERSONALES"
-          onClick={e => (e)}
+          onClick={() => setNewDates(newDates)}
         >
           Editar publicación
         </button>

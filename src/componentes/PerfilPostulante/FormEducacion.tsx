@@ -10,9 +10,9 @@ const FormEducacion = () => {
     titulo: '',
     institucion: '',
     mesInicio: '',
-    añoInicio: '',
+    añoInicio: 0,
     mesFin: '',
-    añoFin: '',
+    añoFin: 0,
     texto: '',
   })
 
@@ -27,6 +27,7 @@ const FormEducacion = () => {
     })
   }
   const crearDataEducacion = async (e) => {
+    e.preventDefault()
     await addDoc(collection(db, 'DatosEducacion'), { inputValues })
   }
 

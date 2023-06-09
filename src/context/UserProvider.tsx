@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../service/firebase";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
  ''
 
@@ -20,9 +20,10 @@ export const useUser = () => {
 };
 
 const UserProvider = (props: Props) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState<any>('');
+
   
-const navigate=useNavigate()
+//const navigate=useNavigate()
   
   useEffect(() => {
     const suscribed = onAuthStateChanged(auth, (currentUser) => {

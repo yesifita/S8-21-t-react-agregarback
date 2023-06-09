@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../service/firebase'
 import axios from 'axios'
 
@@ -25,10 +25,11 @@ const IA = () => {
   const dataCollection = collection(db, 'perfilUsuario')
 
   const getData = async () => {
-    const data = await getDocs(dataCollection)
-    const cvTest = data.docs[0]._document.data.value.mapValue.fields.cv.stringValue
-    setCv(cvTest)
-  }
+    const data: any = await getDocs(dataCollection);
+    const cvTest: string = data.docs[0]._document.data.value.mapValue.fields.cv.stringValue;
+    setCv(cvTest);
+    console.log(cv);
+  };
 
   const handleSaveCv = async e => {
     e.preventDefault()
