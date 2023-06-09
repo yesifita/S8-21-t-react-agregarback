@@ -21,7 +21,7 @@ const Login = () => {
     if(!usuario){
       return navigate('/Registro')
     }else{
-      authUser.login(inputValues.email, inputValues.password),
+      authUser.login(inputValues.email, inputValues.password);
       setTimeout(() => {
         navigate('/recruiter/dashboard')
       }, 2000);     
