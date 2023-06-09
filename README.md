@@ -35,7 +35,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 
 | Foto | Nombre | LinkedIn |
 |------|--------|----------|
-| <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/909303da-0a0e-49b5-a625-ab47c41898fb)" width="40" height="40"/> | Margreline Cardozo | <a href="https://www.linkedin.com/in/mcgonzal/">LinkedIn</a> | 
+| <img src="https://media.licdn.com/dms/image/C4D03AQHnKvwyAcEGvw/profile-displayphoto-shrink_800_800/0/1647384929199?e=1691625600&v=beta&t=82Si2n7y7mUyGqhh2EPSrQbVB-xIo0uVEGC2vitZdgs" width="40" height="40"/> | Margreline Cardozo | <a href="https://www.linkedin.com/in/mcgonzal/">LinkedIn</a> | 
 | <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b30927cc-b78e-4c22-b6eb-652ade6cdf62)" width="40" height="40"/> | Paula Gareis | <a href="https://www.linkedin.com/in/pauladanielagareis/overlay/photo/">LinkedIn</a> | 
 | <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/325edba4-9699-44af-b12d-afd36a6ce812)" width="40" height="40"/> | Rodrigo Ruiz | <a href="https://www.linkedin.com/in/uirodriruiz/">LinkedIn</a> | 
 
@@ -47,12 +47,12 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 | Foto | Nombre | LinkedIn | GitHub |
 |------|--------|----------|---------|
 | <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/b5b4a7b5-2d10-45e6-b4e7-067180c5d6ca)"
-width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | 
+ width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | <a href="https://github.com/francoarenas">GitHub</a> |
 | <img src="" width="40" height="40"/> | Henry Ramirez | <a href="https://www.linkedin.com/in/henry-ramirez-417861259/">LinkedIn</a> | <a href="https://github.com/HenryMilac">GitHub</a> |
 | <img src="![image](https://github.com/No-Country/S8-21-t-react-agregarback/assets/100691940/0880f9da-0aa9-47ab-a8d4-982730c262b5)"
-width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
+ width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
 | <img src="" width="40" height="40"/> | Yesica fita | <a href="">LinkedIn</a> | <a href="https://github.com/yesifita">GitHub</a> |
-| <img src="" width="40" height="40"/> | Josep Palomino | <a href=""">LinkedIn</a> | <a href="https://github.com/JosepF5">GitHub</a> |
+| <img src="" width="40" height="40"/> | Josep Palomino | <a href="">LinkedIn</a> | <a href="https://github.com/JosepF5">GitHub</a> |
 
 
 ## Deploy
