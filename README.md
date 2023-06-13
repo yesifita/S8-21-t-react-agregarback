@@ -1,4 +1,4 @@
-﻿### **Reclutando**
+﻿## **Reclutando**
 
 Reclutando es mucho más que una simple plataforma de búsqueda de empleo. Con Reclutando, los postulantes tienen la oportunidad de descubrir y asegurar su trabajo ideal, mientras que los reclutadores pueden agilizar y optimizar todo el proceso de selección. Pero eso no es todo, los postulantes también obtienen un beneficio adicional: la posibilidad de mejorar su currículum vitae. A través de nuestra avanzada herramienta de inteligencia artificial, los postulantes recibirán valiosos consejos y sugerencias para perfeccionar su currículum, lo que aumentará sus posibilidades de destacarse ante los reclutadores. Con Reclutando, damos a los postulantes todas las herramientas que necesitan para triunfar en su búsqueda de empleo y destacarse en el competitivo mercado laboral actual.
  
@@ -47,3 +47,21 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 
 
 ## Deploy
+
+ https://s8-21-t-react-agregarback.web.app/  
+
+ ## Video 
+
+https://youtu.be/Rdkyz_n8YqI 
+
+## Prototipo - Inicio de sesión:
+
+https://www.figma.com/proto/9lMhmnBJxiz5aTfHTdVWZN/No-Country-%2F-Reclutand%F0%9F%94%8D?page-id=1%3A9&type=design&node-id=884-9303&viewport=-238%2C-5740%2C0.35&scaling=scale-down&starting-point-node-id=884%3A9303&show-proto-sidebar=1
+
+## Reclutador (Dashboard):
+
+https://www.figma.com/proto/9lMhmnBJxiz5aTfHTdVWZN/No-Country-%2F-Reclutand%F0%9F%94%8D?page-id=1%3A9&type=design&node-id=530-5099&viewport=-238%2C-5740%2C0.35&scaling=scale-down&starting-point-node-id=530%3A5099&show-proto-sidebar=1
+
+## Postulante (Dashboard):
+
+https://www.figma.com/proto/9lMhmnBJxiz5aTfHTdVWZN/No-Country-%2F-Reclutand%F0%9F%94%8D?page-id=1%3A9&type=design&node-id=1404-14802&viewport=-238%2C-5740%2C0.35&scaling=scale-down&starting-point-node-id=1404%3A14802&show-proto-sidebar=1
