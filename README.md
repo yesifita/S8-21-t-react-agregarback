@@ -42,7 +42,7 @@ El equipo detrás de Reclutando está conformado por talentosos profesionales de
 | <img src="https://media.licdn.com/dms/image/D4D03AQF4rl_kgEvN4w/profile-displayphoto-shrink_800_800/0/1675148876077?e=1691625600&v=beta&t=wGOa78HHlJUda2jjM7WuqNUbJmiTTRGpHqoOz3PYhjs" width="40" height="40"/> | Franco Arenas | <a href="https://www.linkedin.com/in/franco-arenas/">LinkedIn</a> | <a href="https://github.com/francoarenas">GitHub</a> |
 | <img src="" width="40" height="40"/> | Henry Ramirez | <a href="https://www.linkedin.com/in/henry-ramirez-417861259/">LinkedIn</a> | <a href="https://github.com/HenryMilac">GitHub</a> |
 | <img src="https://media.licdn.com/dms/image/D4E03AQGq7z0s8QAy3g/profile-displayphoto-shrink_800_800/0/1671719682201?e=1691625600&v=beta&t=EqT_HmX-St9EgZr9gT4Gl8E6ap8lNCq0gCsLreJHIYg" width="40" height="40"/> | Soraya Sanchez | <a href="https://www.linkedin.com/in/soraya-yenile-sanchez/">LinkedIn</a> | <a href="https://github.com/SanchezSoraya">GitHub</a> |
-| <img src="" width="40" height="40"/> | Yesica fita | <a href="">LinkedIn</a> | <a href="https://github.com/yesifita">GitHub</a> |
+| <img src="" width="40" height="40"/> | Yesica fita | <a href="https://www.linkedin.com/in/yesica-fita-0aa447245/">LinkedIn</a> | <a href="https://github.com/yesifita">GitHub</a> |
 | <img src="" width="40" height="40"/> | Josep Palomino | <a href="">LinkedIn</a> | <a href="https://github.com/JosepF5">GitHub</a> |
 
 
